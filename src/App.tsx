@@ -12,6 +12,7 @@ import ReactMyComponents from "./pages/ReactMyComponents";
 import ReactMyComponentsIcon from "./pages/ReactMyComponentsIcon";
 import ReactMyComponentsModal from "./pages/ReactMyComponentsModal";
 import Layout from "./pages/Layout";
+import ReactMyComponentsButtonPage from "./pages/ReactMyComponentsButtonPage";
 
 const App = () => {
   return (
@@ -26,6 +27,10 @@ const App = () => {
             <Route
               path="/react/my-components"
               element={<ReactMyComponents />}
+            />
+            <Route
+              path="/react/my-components/button"
+              element={<ReactMyComponentsButtonPage />}
             />
             <Route
               path="/react/my-components/icon"
