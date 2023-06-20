@@ -1,4 +1,4 @@
-import { ReactElement, cloneElement } from "react";
+import { MouseEvent, ReactElement, cloneElement, useState } from "react";
 
 const Button = ({
   children,
@@ -8,7 +8,18 @@ const Button = ({
   color = colors.default,
   secondaryColor = "white",
   size = medium,
+  onClick = () => {},
 }: ComponentProps) => {
+  const [isHovering, setIsHovering] = useState<boolean>(false);
+
+  const handleMouseEnter = () => {
+    setIsHovering(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovering(false);
+  };
+
   const buttonColor: string = colors[color] ? colors[color] : color;
 
   const getPropsByVariant = (
@@ -34,28 +45,34 @@ const Button = ({
   };
 
   return (
-    <div
+    <button
+      data-testid="button"
+      onClick={onClick}
       style={{
         backgroundColor: getPropsByVariant(
-          "transparent",
+          isHovering ? "white" : "transparent",
           buttonColor,
-          secondaryColor
+          isHovering ? "white" : "transparent"
         ),
-        border: getPropsByVariant("", "", `1px solid ${buttonColor}`),
+        border: getPropsByVariant("", "", `1px solid ${color}`),
       }}
-      className={`flex w-max items-center justify-center rounded-md ${getPropsBySize(
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+      className={`flex w-max items-center justify-center rounded-md bg-transparent hover:bg-white hover:brightness-95 ${getPropsBySize(
         "pb-1 pl-2 pr-2 pt-1",
         "pb-2 pl-3 pr-3 pt-2",
         "pb-2 pl-4 pr-4 pt-2"
       )}`}
     >
-      <button
+      <div
         style={{
           color: getPropsByVariant(buttonColor, secondaryColor, buttonColor),
         }}
-        className="uppercase"
       >
-        <div className="flex items-center justify-center">
+        <div
+          className="flex items-center justify-center"
+          data-testid="button-content"
+        >
           {startIcon &&
             cloneElement(startIcon, {
               size: getPropsBySize("15", "20", "25"),
@@ -66,24 +83,31 @@ const Button = ({
               ),
               className: children ? "mr-2" : "",
             })}
-          <p
-            className={`m-0 p-0 text-center ${getPropsBySize(
-              "text-sm",
-              "text-base",
-              "text-xl"
-            )}`}
-          >
-            {children}
-          </p>
+          {children && (
+            <p
+              data-testid="button-text"
+              className={`m-0 p-0 text-center uppercase ${getPropsBySize(
+                "text-sm",
+                "text-base",
+                "text-xl"
+              )}`}
+            >
+              {children}
+            </p>
+          )}
           {endIcon &&
             cloneElement(endIcon, {
               size: 20,
-              color: getPropsByVariant(buttonColor, "white", buttonColor),
+              color: getPropsByVariant(
+                buttonColor,
+                secondaryColor,
+                buttonColor
+              ),
               className: children ? "ml-2" : "",
             })}
         </div>
-      </button>
-    </div>
+      </div>
+    </button>
   );
 };
 
@@ -97,6 +121,7 @@ type ComponentProps = {
   color?: "error" | "default" | "success" | string;
   secondaryColor?: string;
   size?: "small" | "medium" | "large";
+  onClick?: React.MouseEventHandler;
 };
 
 const contained = "contained";
