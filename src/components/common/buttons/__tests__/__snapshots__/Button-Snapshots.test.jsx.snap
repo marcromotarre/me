@@ -1,0 +1,421 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`renders correct color button 1`] = `
+<DocumentFragment>
+  <button
+    class="flex w-max items-center justify-center rounded-md bg-transparent hover:bg-white hover:brightness-95 pb-2 pl-3 pr-3 pt-2"
+    data-testid="button"
+    style="background-color: red;"
+  >
+    <div
+      style=""
+    >
+      <div
+        class="flex items-center justify-center"
+        data-testid="button-content"
+      >
+        <svg
+          class="mr-2"
+          fill="none"
+          height="20"
+          viewBox="0 0 72 72"
+          width="20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect
+            fill="black"
+            height="72"
+            width="72"
+          />
+        </svg>
+        <p
+          class="m-0 p-0 text-center uppercase text-base"
+          data-testid="button-text"
+        >
+          Contained Button
+        </p>
+      </div>
+    </div>
+  </button>
+</DocumentFragment>
+`;
+
+exports[`renders correct endIcon text button 1`] = `
+<DocumentFragment>
+  <button
+    class="flex w-max items-center justify-center rounded-md bg-transparent hover:bg-white hover:brightness-95 pb-2 pl-3 pr-3 pt-2"
+    data-testid="button"
+    style="background-color: rgb(96 165 250);"
+  >
+    <div
+      style="color: white;"
+    >
+      <div
+        class="flex items-center justify-center"
+        data-testid="button-content"
+      >
+        <p
+          class="m-0 p-0 text-center uppercase text-base"
+          data-testid="button-text"
+        >
+          TextButton
+        </p>
+        <svg
+          class="ml-2"
+          fill="none"
+          height="20"
+          viewBox="0 0 72 72"
+          width="20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect
+            fill="white"
+            height="72"
+            width="72"
+          />
+        </svg>
+      </div>
+    </div>
+  </button>
+</DocumentFragment>
+`;
+
+exports[`renders correct icon button 1`] = `
+<DocumentFragment>
+  <button
+    class="flex w-max items-center justify-center rounded-md bg-transparent hover:bg-white hover:brightness-95 pb-2 pl-3 pr-3 pt-2"
+    data-testid="button"
+    style="background-color: rgb(96 165 250);"
+  >
+    <div
+      style="color: white;"
+    >
+      <div
+        class="flex items-center justify-center"
+        data-testid="button-content"
+      >
+        <svg
+          class=""
+          fill="none"
+          height="20"
+          viewBox="0 0 72 72"
+          width="20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect
+            fill="white"
+            height="72"
+            width="72"
+          />
+        </svg>
+      </div>
+    </div>
+  </button>
+</DocumentFragment>
+`;
+
+exports[`renders correct large button 1`] = `
+<DocumentFragment>
+  <button
+    class="flex w-max items-center justify-center rounded-md bg-transparent hover:bg-white hover:brightness-95 pb-2 pl-4 pr-4 pt-2"
+    data-testid="button"
+    style="background-color: rgb(96 165 250);"
+  >
+    <div
+      style="color: white;"
+    >
+      <div
+        class="flex items-center justify-center"
+        data-testid="button-content"
+      >
+        <svg
+          class="mr-2"
+          fill="none"
+          height="25"
+          viewBox="0 0 72 72"
+          width="25"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect
+            fill="white"
+            height="72"
+            width="72"
+          />
+        </svg>
+        <p
+          class="m-0 p-0 text-center uppercase text-xl"
+          data-testid="button-text"
+        >
+          Large Button
+        </p>
+      </div>
+    </div>
+  </button>
+</DocumentFragment>
+`;
+
+exports[`renders correct medium button 1`] = `
+<DocumentFragment>
+  <button
+    class="flex w-max items-center justify-center rounded-md bg-transparent hover:bg-white hover:brightness-95 pb-2 pl-3 pr-3 pt-2"
+    data-testid="button"
+    style="background-color: rgb(96 165 250);"
+  >
+    <div
+      style="color: white;"
+    >
+      <div
+        class="flex items-center justify-center"
+        data-testid="button-content"
+      >
+        <svg
+          class="mr-2"
+          fill="none"
+          height="20"
+          viewBox="0 0 72 72"
+          width="20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect
+            fill="white"
+            height="72"
+            width="72"
+          />
+        </svg>
+        <p
+          class="m-0 p-0 text-center uppercase text-base"
+          data-testid="button-text"
+        >
+          Medium Button
+        </p>
+      </div>
+    </div>
+  </button>
+</DocumentFragment>
+`;
+
+exports[`renders correct small button 1`] = `
+<DocumentFragment>
+  <button
+    class="flex w-max items-center justify-center rounded-md bg-transparent hover:bg-white hover:brightness-95 pb-1 pl-2 pr-2 pt-1"
+    data-testid="button"
+    style="background-color: rgb(96 165 250);"
+  >
+    <div
+      style="color: white;"
+    >
+      <div
+        class="flex items-center justify-center"
+        data-testid="button-content"
+      >
+        <svg
+          class="mr-2"
+          fill="none"
+          height="15"
+          viewBox="0 0 72 72"
+          width="15"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect
+            fill="white"
+            height="72"
+            width="72"
+          />
+        </svg>
+        <p
+          class="m-0 p-0 text-center uppercase text-sm"
+          data-testid="button-text"
+        >
+          Small Button
+        </p>
+      </div>
+    </div>
+  </button>
+</DocumentFragment>
+`;
+
+exports[`renders correct startIcon text button 1`] = `
+<DocumentFragment>
+  <button
+    class="flex w-max items-center justify-center rounded-md bg-transparent hover:bg-white hover:brightness-95 pb-2 pl-3 pr-3 pt-2"
+    data-testid="button"
+    style="background-color: rgb(96 165 250);"
+  >
+    <div
+      style="color: white;"
+    >
+      <div
+        class="flex items-center justify-center"
+        data-testid="button-content"
+      >
+        <svg
+          class="mr-2"
+          fill="none"
+          height="20"
+          viewBox="0 0 72 72"
+          width="20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect
+            fill="white"
+            height="72"
+            width="72"
+          />
+        </svg>
+        <p
+          class="m-0 p-0 text-center uppercase text-base"
+          data-testid="button-text"
+        >
+          TextButton
+        </p>
+      </div>
+    </div>
+  </button>
+</DocumentFragment>
+`;
+
+exports[`renders correct text button 1`] = `
+<DocumentFragment>
+  <button
+    class="flex w-max items-center justify-center rounded-md bg-transparent hover:bg-white hover:brightness-95 pb-2 pl-3 pr-3 pt-2"
+    data-testid="button"
+    style="background-color: rgb(96 165 250);"
+  >
+    <div
+      style="color: white;"
+    >
+      <div
+        class="flex items-center justify-center"
+        data-testid="button-content"
+      >
+        <p
+          class="m-0 p-0 text-center uppercase text-base"
+          data-testid="button-text"
+        >
+          TextButton
+        </p>
+      </div>
+    </div>
+  </button>
+</DocumentFragment>
+`;
+
+exports[`renders correct text contained button 1`] = `
+<DocumentFragment>
+  <button
+    class="flex w-max items-center justify-center rounded-md bg-transparent hover:bg-white hover:brightness-95 pb-2 pl-3 pr-3 pt-2"
+    data-testid="button"
+    style="background-color: rgb(96 165 250);"
+  >
+    <div
+      style="color: white;"
+    >
+      <div
+        class="flex items-center justify-center"
+        data-testid="button-content"
+      >
+        <svg
+          class="mr-2"
+          fill="none"
+          height="20"
+          viewBox="0 0 72 72"
+          width="20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect
+            fill="white"
+            height="72"
+            width="72"
+          />
+        </svg>
+        <p
+          class="m-0 p-0 text-center uppercase text-base"
+          data-testid="button-text"
+        >
+          Contained Button
+        </p>
+      </div>
+    </div>
+  </button>
+</DocumentFragment>
+`;
+
+exports[`renders correct text outlined button 1`] = `
+<DocumentFragment>
+  <button
+    class="flex w-max items-center justify-center rounded-md bg-transparent hover:bg-white hover:brightness-95 pb-2 pl-3 pr-3 pt-2"
+    data-testid="button"
+    style="background-color: transparent;"
+  >
+    <div
+      style="color: rgb(96 165 250);"
+    >
+      <div
+        class="flex items-center justify-center"
+        data-testid="button-content"
+      >
+        <svg
+          class="mr-2"
+          fill="none"
+          height="20"
+          viewBox="0 0 72 72"
+          width="20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect
+            fill="rgb(96 165 250)"
+            height="72"
+            width="72"
+          />
+        </svg>
+        <p
+          class="m-0 p-0 text-center uppercase text-base"
+          data-testid="button-text"
+        >
+          Contained Button
+        </p>
+      </div>
+    </div>
+  </button>
+</DocumentFragment>
+`;
+
+exports[`renders correct text variant button 1`] = `
+<DocumentFragment>
+  <button
+    class="flex w-max items-center justify-center rounded-md bg-transparent hover:bg-white hover:brightness-95 pb-2 pl-3 pr-3 pt-2"
+    data-testid="button"
+    style="background-color: transparent;"
+  >
+    <div
+      style="color: rgb(96 165 250);"
+    >
+      <div
+        class="flex items-center justify-center"
+        data-testid="button-content"
+      >
+        <svg
+          class="mr-2"
+          fill="none"
+          height="20"
+          viewBox="0 0 72 72"
+          width="20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <rect
+            fill="rgb(96 165 250)"
+            height="72"
+            width="72"
+          />
+        </svg>
+        <p
+          class="m-0 p-0 text-center uppercase text-base"
+          data-testid="button-text"
+        >
+          Large Button
+        </p>
+      </div>
+    </div>
+  </button>
+</DocumentFragment>
+`;

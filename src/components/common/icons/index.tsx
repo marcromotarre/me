@@ -1,3 +1,4 @@
+import Rectangle from "./RectangleIcon";
 import React from "./ReactIcon";
 import Redux from "./ReduxIcon";
 import Figma from "./FigmaIcon";
@@ -15,6 +16,7 @@ import Cypress from "./CypressIcon";
 import Prisma from "./PrismaIcon";
 import Github from "./GithubIcon";
 
+export const RectangleIcon = Rectangle;
 export const ReactIcon = React;
 export const ReduxIcon = Redux;
 export const FigmaIcon = Figma;
@@ -33,6 +35,7 @@ export const PrismaIcon = Prisma;
 export const GithubIcon = Github;
 
 const Icons = {
+  RectangleIcon: RectangleIcon,
   ReactIcon: ReactIcon,
   ReduxIcon: ReduxIcon,
   FigmaIcon: FigmaIcon,
