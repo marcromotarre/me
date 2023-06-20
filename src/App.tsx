@@ -11,7 +11,6 @@ import ReactHooksPage from "./pages/ReactHooks";
 import ReactMyComponents from "./pages/ReactMyComponents";
 import ReactMyComponentsIcon from "./pages/ReactMyComponentsIcon";
 import ReactMyComponentsModal from "./pages/ReactMyComponentsModal";
-import Page from "./pages/Page";
 import Layout from "./pages/Layout";
 
 const App = () => {
