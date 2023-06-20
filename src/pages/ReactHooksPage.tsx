@@ -1,8 +1,5 @@
 import { useLayoutEffect, useRef, useState } from "react";
-import Header from "../components/Header";
-import Title from "../components/common/Title";
 import Code from "../components/common/code/Code";
-import ReactIcon from "../components/common/icons/ReactIcon";
 import {
   expensiveMathOperationCode,
   expensiveMathOperationUsingMemo,
@@ -17,9 +14,7 @@ import {
 import useStateExampleCode from "../data/codes/UseStateExampleCode";
 import useStateInicialitzationCode from "../data/codes/UseStateInicialitzationCode";
 import UseMemoModal from "../components/mr-modals/UseMemoModal";
-import UseLayoutEffectModal from "../components/mr-modals/UseLayoutEffectModal";
 import { useLayoutEffectCode } from "../data/codes/UseLayoutEffectCode";
-import LateralMenu from "../components/common/lateral-menu/LateralMenu";
 
 const ReactHooksPage = () => {
   const [useMemoModalState, setUseMemoModalState] = useState(false);
@@ -34,8 +29,7 @@ const ReactHooksPage = () => {
   });
 
   return (
-    <div className="grid grid-cols-1 gap-y-4 p-8">
-      <Title icon={<ReactIcon size={30} />} title="React Hooks" />
+    <>
       <p className="font-light">
         React Hooks are a feature introduced in React 16.8 that allow developers
         to use state and other React features in functional components without
@@ -189,7 +183,7 @@ const ReactHooksPage = () => {
       <Code>
         <>{useLayoutEffectCode}</>
       </Code>
-    </div>
+    </>
   );
 };
 

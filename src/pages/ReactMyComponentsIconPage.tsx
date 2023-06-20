@@ -43,8 +43,7 @@ const ReactMyComponentsIcon = () => {
   ];
 
   return (
-    <div className="grid grid-cols-1 gap-y-4 p-8">
-      <Title icon={<ReactIcon size={30} />} title="React My Components" />
+    <>
       <p className="text-xl">Icon</p>
       <p className="font-light">
         In order to have all icons grouped by a single import I created an index
@@ -241,7 +240,7 @@ export default YarnIcon;
           </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

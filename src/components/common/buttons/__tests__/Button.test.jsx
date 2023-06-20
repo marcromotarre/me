@@ -97,8 +97,73 @@ test("End Icon Button with text", async () => {
   button.unmount();
 });
 
-test("Button text variant", async () => {
+test("Button text variant", () => {
   const button = render(<Button variant="text">Icon Text Button</Button>);
-  expect(button);
+  const buttonHTML = button.getByRole("button");
+  expect(buttonHTML.getAttribute("style")).equals(
+    "background-color: transparent;"
+  );
+  button.unmount();
+});
+
+test("Button outlined variant", () => {
+  const button = render(<Button variant="outlined">Icon Text Button</Button>);
+  const buttonHTML = button.getByRole("button");
+  expect(buttonHTML.getAttribute("style")).equals(
+    "background-color: transparent;"
+  );
+  button.unmount();
+});
+
+test("Button small size", async () => {
+  const button = render(
+    <Button size="small" startIcon={<RectangleIcon />}>
+      Icon Text Button
+    </Button>
+  );
+  const buttonText = await button.findByTestId("button-text");
+  expect(buttonText.getAttribute("class")).includes("text-sm");
+  const buttonContent = await button.findByTestId("button-content");
+  const buttonIcon = buttonContent.children[0];
+  expect(buttonIcon.getAttribute("width")).equals("15");
+  button.unmount();
+});
+
+test("Button medium size", async () => {
+  const button = render(
+    <Button size="medium" startIcon={<RectangleIcon />}>
+      Icon Text Button
+    </Button>
+  );
+  const buttonText = await button.findByTestId("button-text");
+  expect(buttonText.getAttribute("class")).includes("text-base");
+  const buttonContent = await button.findByTestId("button-content");
+  const buttonIcon = buttonContent.children[0];
+  expect(buttonIcon.getAttribute("width")).equals("20");
+  button.unmount();
+});
+
+test("Button large size", async () => {
+  const button = render(
+    <Button size="large" startIcon={<RectangleIcon />}>
+      Icon Text Button
+    </Button>
+  );
+  const buttonText = await button.findByTestId("button-text");
+  expect(buttonText.getAttribute("class")).includes("text-xl");
+  const buttonContent = await button.findByTestId("button-content");
+  const buttonIcon = buttonContent.children[0];
+  expect(buttonIcon.getAttribute("width")).equals("25");
+  button.unmount();
+});
+
+test("Button colored", () => {
+  const button = render(
+    <Button startIcon={<RectangleIcon />} color="error" secondaryColor="yellow">
+      Icon Text Button
+    </Button>
+  );
+  const buttonHTML = button.getByRole("button");
+  expect(buttonHTML.getAttribute("style")).equals("background-color: #d32f2f;");
   button.unmount();
 });

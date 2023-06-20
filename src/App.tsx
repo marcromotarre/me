@@ -7,11 +7,11 @@ import store from "./store";
 import ReactPage from "./pages/ReactPage";
 import ReduxPage from "./pages/ReduxPage";
 import GitPage from "./pages/GitPage";
-import ReactHooksPage from "./pages/ReactHooks";
-import ReactMyComponents from "./pages/ReactMyComponents";
-import ReactMyComponentsIcon from "./pages/ReactMyComponentsIcon";
+import ReactHooksPage from "./pages/ReactHooksPage";
+import ReactMyComponents from "./pages/ReactMyComponentsPage";
+import ReactMyComponentsIcon from "./pages/ReactMyComponentsIconPage";
 import ReactMyComponentsModal from "./pages/ReactMyComponentsModal";
-import Layout from "./pages/Layout";
+import Layout from "./pages/layouts/Layout";
 import ReactMyComponentsButtonPage from "./pages/ReactMyComponentsButtonPage";
 
 const App = () => {

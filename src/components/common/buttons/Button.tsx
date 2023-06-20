@@ -51,7 +51,7 @@ const Button = ({
           buttonColor,
           isHovering ? "white" : "transparent"
         ),
-        border: getPropsByVariant("", "", `1px solid ${color}`),
+        border: getPropsByVariant("", "", `1px solid ${buttonColor}`),
       }}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}

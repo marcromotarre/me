@@ -1,72 +1,268 @@
 import Button from "../components/common/buttons/Button";
-import { ReactIcon } from "../components/common/icons";
+import Code from "../components/common/code/Code";
+import { ReactIcon, ReduxIcon } from "../components/common/icons";
 
 const ReactMyComponentsButtonPage = () => {
   return (
-    <div>
-      <div className="m-4 grid grid-cols-3 gap-y-3">
-        <Button variant="text">Text</Button>
-        <Button variant="contained">Contained</Button>
-        <Button variant="outlined">Outlined</Button>
-        <Button startIcon={<ReactIcon />} variant="text">
-          Text
+    <>
+      <p className="text-xl">Button</p>
+
+      <p className="font-light">
+        {`As part of my components library I created a component <Button />`}
+      </p>
+      <p className="font-light">{`It's very easy to use:`}</p>
+      <div className="display grid grid-cols-[max-content_auto] gap-x-3">
+        <Button>text</Button>
+        <Code noHeader>
+          <>{`<Button>text</Button>`}</>
+        </Code>
+      </div>
+      <p className="font-light">
+        {`You can mouseover the button component and you can notice that the button color changes.`}
+      </p>
+      <p className="font-light">{`Also the mouse icon is set to clickable.`}</p>
+      <p className="font-light">
+        {`Let's se in more depth what properties we can edit about the <Button /> Component`}
+      </p>
+
+      <p className="text-xl">Icon Text Button</p>
+      <p className="font-light">
+        {`If we combine the <Button /> Component with the <Icon /> Component we can beautiful unique Iconed Buttons`}
+      </p>
+      <div className="display grid grid-cols-[max-content_auto] gap-x-3">
+        <Button startIcon={<ReactIcon />}>text</Button>
+        <Code noHeader>
+          <>{`<Button startIcon={<ReactIcon />}>text</Button>`}</>
+        </Code>
+      </div>
+      <p className="font-light">{`Or after the text`}</p>
+      <div className="display grid grid-cols-[max-content_auto] gap-x-3">
+        <Button endIcon={<ReactIcon />}>text</Button>
+        <Code noHeader>
+          <>{`<Button endIcon={<ReactIcon />}>text</Button>`}</>
+        </Code>
+      </div>
+      <p className="font-light">{`Or both`}</p>
+      <div className="display grid grid-cols-[max-content_auto] gap-x-3">
+        <Button startIcon={<ReactIcon />} endIcon={<ReactIcon />}>
+          React
         </Button>
-        <Button startIcon={<ReactIcon />} variant="contained">
-          Contained
+        <Code noHeader>
+          <>{`<Button startIcon={<ReactIcon />}  endIcon={<ReactIcon />}>React</Button>`}</>
+        </Code>
+      </div>
+      <p className="font-light">{`Maybe you want to set different Icons in each side`}</p>
+      <div className="display grid grid-cols-[max-content_auto] gap-x-3">
+        <Button startIcon={<ReactIcon />} endIcon={<ReduxIcon />}>
+          React-Redux
         </Button>
-        <Button startIcon={<ReactIcon />} variant="outlined">
-          Outlined
+        <Code noHeader>
+          <>{`<Button startIcon={<ReactIcon />}  endIcon={<ReduxIcon />}>React-Redux</Button>`}</>
+        </Code>
+      </div>
+
+      <p className="text-xl">Icon Button</p>
+      <p className="font-light">{`We show just the icon wihtout text`}</p>
+      <div className="display grid grid-cols-[max-content_auto] gap-x-3">
+        <Button startIcon={<ReactIcon />} />
+        <Code noHeader>
+          <>{`<Button startIcon={<ReactIcon />} />`}</>
+        </Code>
+      </div>
+
+      <p className="text-xl">Button Variant</p>
+      <p className="font-light">{`I've created a property called variant to change easily the look & feel of the button`}</p>
+      <div className="display grid grid-cols-[max-content_auto] gap-x-3">
+        <Button variant="text">variant</Button>
+        <Code noHeader>
+          <>{`<Button variant="text">variant</Button>`}</>
+        </Code>
+      </div>
+      <div className="display grid grid-cols-[max-content_auto] gap-x-3">
+        <Button variant="contained">variant</Button>
+        <Code noHeader>
+          <>{`<Button variant="contained">variant</Button>`}</>
+        </Code>
+      </div>
+      <div className="display grid grid-cols-[max-content_auto] gap-x-3">
+        <Button variant="outlined">variant</Button>
+        <Code noHeader>
+          <>{`<Button variant="outlined">variant</Button>`}</>
+        </Code>
+      </div>
+      <p className="font-light">{`And of course we can use Icons and variants at the same time`}</p>
+      <div className="display grid grid-cols-[max-content_auto] gap-x-3">
+        <Button variant="text" startIcon={<ReactIcon />}>
+          variant
         </Button>
-        <Button endIcon={<ReactIcon />} variant="text">
-          Text
+        <Code noHeader>
+          <>{`<Button variant="text" startIcon={<ReactIcon />}>variant</Button>`}</>
+        </Code>
+      </div>
+      <div className="display grid grid-cols-[max-content_auto] gap-x-3">
+        <Button variant="contained" startIcon={<ReactIcon />}>
+          variant
         </Button>
-        <Button endIcon={<ReactIcon />} variant="contained">
-          Contained
+        <Code noHeader>
+          <>{`<Button variant="contained" startIcon={<ReactIcon />}>variant</Button>`}</>
+        </Code>
+      </div>
+      <div className="display grid grid-cols-[max-content_auto] gap-x-3">
+        <Button variant="outlined" startIcon={<ReactIcon />}>
+          variant
         </Button>
-        <Button endIcon={<ReactIcon />} variant="outlined">
-          Outlined
+        <Code noHeader>
+          <>{`<Button variant="outlined" startIcon={<ReactIcon />}>variant</Button>`}</>
+        </Code>
+      </div>
+      <p className="font-light">{`Or just the icon`}</p>
+      <div className="display grid grid-cols-[max-content_auto] gap-x-3">
+        <Button variant="text" startIcon={<ReactIcon />} />
+        <Code noHeader>
+          <>{`<Button variant="text" startIcon={<ReactIcon />} />`}</>
+        </Code>
+      </div>
+      <div className="display grid grid-cols-[max-content_auto] gap-x-3">
+        <Button variant="contained" startIcon={<ReactIcon />} />
+        <Code noHeader>
+          <>{`<Button variant="contained" startIcon={<ReactIcon />} />`}</>
+        </Code>
+      </div>
+      <div className="display grid grid-cols-[max-content_auto] gap-x-3">
+        <Button variant="outlined" startIcon={<ReactIcon />} />
+        <Code noHeader>
+          <>{`<Button variant="outlined" startIcon={<ReactIcon />} />`}</>
+        </Code>
+      </div>
+
+      <p className="text-xl">Button Size</p>
+      <p className="font-light">{`I've created 3 different sizes for the buttons (small, medium & large)`}</p>
+
+      <div className="display grid grid-cols-[max-content_auto] gap-x-3">
+        <Button size="small" startIcon={<ReactIcon />}>
+          React
         </Button>
-        <Button color={"error"} variant="outlined">
+        <Code noHeader>
+          <>{`<Button size="small" startIcon={<ReactIcon />}>React</Button>`}</>
+        </Code>
+      </div>
+      <div className="display grid grid-cols-[max-content_auto] gap-x-3">
+        <Button size="medium" startIcon={<ReactIcon />}>
+          React
+        </Button>
+        <Code noHeader>
+          <>{`<Button size="medium" startIcon={<ReactIcon />}>React</Button>`}</>
+        </Code>
+      </div>
+      <div className="display grid grid-cols-[max-content_auto] gap-x-3">
+        <Button size="large" startIcon={<ReactIcon />}>
+          React
+        </Button>
+        <Code noHeader>
+          <>{`<Button size="large" startIcon={<ReactIcon />}>React</Button>`}</>
+        </Code>
+      </div>
+
+      <p className="text-xl">Button Color</p>
+      <p className="font-light">{`Also I've added the color property`}</p>
+      <p className="font-light">{`I defined some standard values`}</p>
+      <p className="font-light">{`As error`}</p>
+      <div className="display grid grid-cols-[max-content_auto] gap-x-3">
+        <Button variant="text" color="error">
           Error
         </Button>
-        <Button color={"success"} variant="contained">
-          Success
-        </Button>
-        <Button variant="contained">Default</Button>
-        <Button size="small" startIcon={<ReactIcon />} variant="text">
-          Small
-        </Button>
-        <Button size="small" startIcon={<ReactIcon />} variant="contained">
-          Small
-        </Button>
-        <Button size="small" startIcon={<ReactIcon />} variant="outlined">
-          Small
-        </Button>
-
-        <Button size="medium" startIcon={<ReactIcon />} variant="text">
-          medium
-        </Button>
-        <Button size="medium" startIcon={<ReactIcon />} variant="contained">
-          medium
-        </Button>
-        <Button size="medium" startIcon={<ReactIcon />} variant="outlined">
-          medium
-        </Button>
-
-        <Button size="large" startIcon={<ReactIcon />} variant="text">
-          large
-        </Button>
-        <Button size="large" startIcon={<ReactIcon />} variant="contained">
-          large
-        </Button>
-        <Button size="large" startIcon={<ReactIcon />} variant="outlined">
-          large
-        </Button>
-        <Button startIcon={<ReactIcon />} variant="text" />
-        <Button startIcon={<ReactIcon />} variant="contained" />
-        <Button startIcon={<ReactIcon />} variant="outlined" />
+        <Code noHeader>
+          <>{`<Button variant="text" color="error">Error</Button>`}</>
+        </Code>
       </div>
-    </div>
+      <div className="display grid grid-cols-[max-content_auto] gap-x-3">
+        <Button variant="contained" color="error">
+          Error
+        </Button>
+        <Code noHeader>
+          <>{`<Button variant="contained" color="error">Error</Button>`}</>
+        </Code>
+      </div>
+      <div className="display grid grid-cols-[max-content_auto] gap-x-3">
+        <Button variant="outlined" color="error">
+          Error
+        </Button>
+        <Code noHeader>
+          <>{`<Button variant="outlined" color="error">Error</Button>`}</>
+        </Code>
+      </div>
+
+      {/**
+       *
+       *
+       *
+       *
+       */}
+      <div>
+        <div className="m-4 grid grid-cols-3 gap-y-3">
+          <Button variant="text">Text</Button>
+          <Button variant="contained">Contained</Button>
+          <Button variant="outlined">Outlined</Button>
+          <Button startIcon={<ReactIcon />} variant="text">
+            Text
+          </Button>
+          <Button startIcon={<ReactIcon />} variant="contained">
+            Contained
+          </Button>
+          <Button startIcon={<ReactIcon />} variant="outlined">
+            Outlined
+          </Button>
+          <Button endIcon={<ReactIcon />} variant="text">
+            Text
+          </Button>
+          <Button endIcon={<ReactIcon />} variant="contained">
+            Contained
+          </Button>
+          <Button endIcon={<ReactIcon />} variant="outlined">
+            Outlined
+          </Button>
+          <Button color={"error"} variant="outlined">
+            Error
+          </Button>
+          <Button color={"success"} variant="contained">
+            Success
+          </Button>
+          <Button variant="contained">Default</Button>
+          <Button size="small" startIcon={<ReactIcon />} variant="text">
+            Small
+          </Button>
+          <Button size="small" startIcon={<ReactIcon />} variant="contained">
+            Small
+          </Button>
+          <Button size="small" startIcon={<ReactIcon />} variant="outlined">
+            Small
+          </Button>
+
+          <Button size="medium" startIcon={<ReactIcon />} variant="text">
+            medium
+          </Button>
+          <Button size="medium" startIcon={<ReactIcon />} variant="contained">
+            medium
+          </Button>
+          <Button size="medium" startIcon={<ReactIcon />} variant="outlined">
+            medium
+          </Button>
+
+          <Button size="large" startIcon={<ReactIcon />} variant="text">
+            large
+          </Button>
+          <Button size="large" startIcon={<ReactIcon />} variant="contained">
+            large
+          </Button>
+          <Button size="large" startIcon={<ReactIcon />} variant="outlined">
+            large
+          </Button>
+          <Button startIcon={<ReactIcon />} variant="text" />
+          <Button startIcon={<ReactIcon />} variant="contained" />
+          <Button startIcon={<ReactIcon />} variant="outlined" />
+        </div>
+      </div>
+    </>
   );
 };
 

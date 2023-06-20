@@ -1,5 +1,4 @@
 import { cloneElement, useState } from "react";
-import Header from "../components/Header";
 import Title from "../components/common/Title";
 import Code from "../components/common/code/Code";
 import {
@@ -88,8 +87,7 @@ const ReactMyComponentsModal = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [modalIndex, setModalIndex] = useState(0);
   return (
-    <div className="grid grid-cols-1 gap-y-4 p-8">
-      <Title icon={<ReactIcon size={30} />} title="React My Components" />
+    <>
       <p className="text-xl">Modal</p>
 
       <p className="font-light">
@@ -308,7 +306,7 @@ const ModalFooter = ({ children }: { children?: ReactElement }) => {
 </Modal>
 `}</>
       </Code>
-    </div>
+    </>
   );
 };
 
