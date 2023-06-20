@@ -1,5 +1,4 @@
-import { MouseEvent, ReactElement, cloneElement, useState } from "react";
-
+import { ReactElement, cloneElement, useState } from "react";
 const Button = ({
   children,
   variant = contained,
@@ -24,13 +23,14 @@ const Button = ({
 
   const getPropsByVariant = (
     textProp: string,
-    containedProps: string,
+    containedProp: string,
     outlinedProp: string
   ): string => {
-    if (variant === text) return textProp;
-    if (variant === contained) return containedProps;
-    if (variant === outlined) return outlinedProp;
-    return "";
+    return variant === text
+      ? textProp
+      : variant === outlined
+      ? outlinedProp
+      : containedProp;
   };
 
   const getPropsBySize = (
@@ -38,10 +38,7 @@ const Button = ({
     mediumProp: string,
     largeProp: string
   ): string => {
-    if (size === small) return smallProp;
-    if (size === medium) return mediumProp;
-    if (size === large) return largeProp;
-    return "";
+    return size === small ? smallProp : size === large ? largeProp : mediumProp;
   };
 
   return (

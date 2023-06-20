@@ -1,5 +1,6 @@
 import { expect, test, vi } from "vitest";
 import { fireEvent, render } from "@testing-library/react";
+
 import Button from "../Button";
 import { RectangleIcon } from "../../icons";
 
@@ -16,15 +17,26 @@ test("Button contains a <button /> HTML Tag", () => {
 
 test("Button is clickable", () => {
   const mockCallback = vi.fn();
-  const button = render(
-    <Button onClick={mockCallback} variant="text">
-      Text Button
-    </Button>
-  );
+  const button = render(<Button onClick={mockCallback}>Text Button</Button>);
   const buttonHTML = button.getByRole("button");
   expect(mockCallback.mock.calls).toHaveLength(0);
   fireEvent.click(buttonHTML);
   expect(mockCallback.mock.calls).toHaveLength(1);
+  button.unmount();
+});
+
+test("Button is hoverable", async () => {
+  const button = render(<Button variant="text">Text Button</Button>);
+  const buttonHTML = button.getByRole("button");
+  expect(buttonHTML.getAttribute("style")).equals(
+    "background-color: transparent;"
+  );
+  fireEvent.mouseEnter(buttonHTML);
+  expect(buttonHTML.getAttribute("style")).equals("background-color: white;");
+  fireEvent.mouseLeave(buttonHTML);
+  expect(buttonHTML.getAttribute("style")).equals(
+    "background-color: transparent;"
+  );
   button.unmount();
 });
 
