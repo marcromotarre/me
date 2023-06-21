@@ -1,19 +1,54 @@
-import { isString } from "util";
-import { ReactIcon } from "../icons";
-import { ReactElement } from "react";
+import {
+  ErrorCircledIcon,
+  InfoCircledIcon,
+  SuccessCircledIcon,
+  WarningIcon,
+} from "../icons";
+import { ReactElement, cloneElement } from "react";
 
-const Alert = ({ children, severity = custom }: ComponentProps) => {
-  const { border, light, dark } = colors[severity];
+const Alert = ({
+  children,
+  severity = "success",
+  variant = "default",
+  icon = true,
+}: {
+  children?: string | ReactElement;
+  severity?: "error" | "warning" | "info" | "success";
+  color?: "error" | "warning" | "info" | "success";
+  variant?: "filled" | "outlined" | "default";
+  icon?: boolean | ReactElement;
+}) => {
+  const {
+    borderColor,
+    inColor,
+    textColor,
+    iconColor,
+    icon: componentIcon,
+  } = data[severity];
   return (
     <div
-      style={{ borderColor: border, backgroundColor: light }}
-      className="grid w-auto  border p-3"
+      style={{
+        borderColor: borderColor[variant],
+        backgroundColor: inColor[variant],
+      }}
+      className="grid w-auto rounded-md border p-3"
     >
-      <div className="grid w-fit grid-cols-[50px_auto] items-center justify-center">
-        <ReactIcon size={30} color={dark} />
-        <div>
+      <div
+        className={`grid w-fit ${
+          icon ? "grid-cols-[50px_auto]" : "grid-cols-1"
+        } items-center justify-center`}
+      >
+        {icon
+          ? icon === true
+            ? cloneElement(componentIcon, {
+                size: 30,
+                color: iconColor[variant],
+              })
+            : cloneElement(icon, { size: 30, color: iconColor[variant] })
+          : null}
+        <div style={{ color: textColor[variant] }}>
           {typeof children === "string" ? (
-            <p style={{ color: dark }}>{children}</p>
+            <p style={{ color: textColor[variant] }}>{children}</p>
           ) : (
             children
           )}
@@ -25,41 +60,97 @@ const Alert = ({ children, severity = custom }: ComponentProps) => {
 
 export default Alert;
 
-type ComponentProps = {
-  children?: string | ReactElement;
-  severity: "custom" | "error" | "warning" | "info" | "success";
-};
-
-const colors = {
-  custom: {
-    light: "#fff",
-    dark: "#000",
-    border: "#000",
-  },
+const data = {
   error: {
-    light: "#FDE9E7",
-    dark: "#E22B04",
-    border: "#DDBAB3",
+    icon: <ErrorCircledIcon />,
+    textColor: {
+      default: "#E22B04",
+      outlined: "#E22B04",
+      filled: "white",
+    },
+    inColor: {
+      default: "#EDF6EA",
+      outlined: "transparent",
+      filled: "#E22B04",
+    },
+    borderColor: {
+      default: "#DDBAB3",
+      outlined: "#E22B04",
+      filled: "transparent",
+    },
+    iconColor: {
+      default: "#E22B04",
+      outlined: "#E22B04",
+      filled: "white",
+    },
   },
   warning: {
-    light: "#FEF8E6",
-    dark: "#EDA434",
-    border: "#EEE2CB",
+    icon: <WarningIcon />,
+    textColor: {
+      default: "#EFA434",
+      outlined: "#EFA434",
+      filled: "white",
+    },
+    inColor: {
+      default: "#FEF8E6",
+      outlined: "transparent",
+      filled: "#EFA434",
+    },
+    borderColor: {
+      default: "#EEE2CB",
+      outlined: "#EFA434",
+      filled: "transparent",
+    },
+    iconColor: {
+      default: "#EDA434",
+      outlined: "#EDA434",
+      filled: "white",
+    },
   },
   success: {
-    light: "#EDF6EA",
-    dark: "#4E9D30",
-    border: "#E2EEDD",
+    icon: <SuccessCircledIcon />,
+    textColor: {
+      default: "#4E9635",
+      outlined: "#4E9635",
+      filled: "white",
+    },
+    inColor: {
+      default: "#EDF6EA",
+      outlined: "transparent",
+      filled: "#4E9635",
+    },
+    borderColor: {
+      default: "#DDBAB3",
+      outlined: "#4E9635",
+      filled: "transparent",
+    },
+    iconColor: {
+      default: "#4E9635",
+      outlined: "#4E9635",
+      filled: "white",
+    },
   },
   info: {
-    light: "#F4F7FF",
-    dark: "#2045FB",
-    border: "#C0C4E0",
+    icon: <InfoCircledIcon />,
+    textColor: {
+      default: "#2045FB",
+      outlined: "#2045FB",
+      filled: "white",
+    },
+    inColor: {
+      default: "#F4F7FF",
+      outlined: "transparent",
+      filled: "#2045FB",
+    },
+    borderColor: {
+      default: "#C0C4E0",
+      outlined: "#2045FB",
+      filled: "transparent",
+    },
+    iconColor: {
+      default: "#2045FB",
+      outlined: "#2045FB",
+      filled: "white",
+    },
   },
 };
-
-const custom = "custom";
-const error = "error";
-const warning = "warning";
-const info = "info";
-const success = "success";

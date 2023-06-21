@@ -25,6 +25,7 @@ import ReactPatternsCompoundComponentPage from "./pages/react/patterns/ReactPatt
 import ReactPatternsProviderPage from "./pages/react/patterns/ReactPatternsProviderPage";
 import ReactPatternsContainerPresentationPage from "./pages/react/patterns/ReactPatternsContainerPresentationPage";
 import ReactPatternsRenderPropsPage from "./pages/react/patterns/ReactPatternsRenderPropsPage";
+import ReactMyComponentsAlertPage from "./pages/react/my-components/ReactMyComponentsAlertPage";
 
 const App = () => {
   return (
@@ -59,6 +60,10 @@ const App = () => {
             <Route
               path="/react/my-components/button/snapshots"
               element={<ReactMyComponentsButtonSnapshotsPage />}
+            />
+            <Route
+              path="/react/my-components/Alert"
+              element={<ReactMyComponentsAlertPage />}
             />
             <Route
               path="/react/my-components/icon"

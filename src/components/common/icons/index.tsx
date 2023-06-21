@@ -15,6 +15,10 @@ import Npm from "./NpmIcon";
 import Cypress from "./CypressIcon";
 import Prisma from "./PrismaIcon";
 import Github from "./GithubIcon";
+import SuccessCircled from "./SuccessCircledIcon";
+import ErrorCircled from "./ErrorCircledIcon";
+import InfoCircled from "./InfoCircledIcon";
+import Warning from "./WarningIcon";
 
 export const RectangleIcon = Rectangle;
 export const ReactIcon = React;
@@ -33,6 +37,10 @@ export const NpmIcon = Npm;
 export const CypressIcon = Cypress;
 export const PrismaIcon = Prisma;
 export const GithubIcon = Github;
+export const SuccessCircledIcon = SuccessCircled;
+export const InfoCircledIcon = InfoCircled;
+export const ErrorCircledIcon = ErrorCircled;
+export const WarningIcon = Warning;
 
 const Icons = {
   RectangleIcon: RectangleIcon,
@@ -51,6 +59,10 @@ const Icons = {
   NpmIcon: NpmIcon,
   CypressIcon: CypressIcon,
   GithubIcon: GithubIcon,
+  SuccessCircledIcon: SuccessCircledIcon,
+  InfoCircledIcon: InfoCircledIcon,
+  ErrorCircledIcon: ErrorCircledIcon,
+  WarningIcon: WarningIcon,
 };
 
 export default Icons;

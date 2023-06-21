@@ -89,6 +89,7 @@ const TABLE_OF_CONTENTS_DATA: Array<SectionType> = [
               },
             ],
           },
+          { path: "/react/my-components/alert", name: "Alert" },
           { path: "/react/my-components/modal", name: "Modal" },
           { path: "/react/my-components/code", name: "Code" },
           { path: "/react/my-components/icon", name: "Icon" },
