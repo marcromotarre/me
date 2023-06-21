@@ -110,7 +110,7 @@ function PokemonsContainerComponent() {
 
   if (!data) return null;
 
-  return <Pokemons pokemons={data} />;
+  return <Pokemons data={data} />;
 }
 
 export default ReactPatternsContainerPresentationPage;
