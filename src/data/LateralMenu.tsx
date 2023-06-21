@@ -117,6 +117,10 @@ const TABLE_OF_CONTENTS_DATA: Array<SectionType> = [
             name: "Higher Order Component (HOC) Pattern",
           },
           {
+            path: "/react/patterns/render-props-pattern",
+            name: "Render Props Pattern",
+          },
+          {
             path: "/react/patterns/provider-pattern",
             name: "Provider Pattern",
           },

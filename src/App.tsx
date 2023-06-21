@@ -24,6 +24,7 @@ import ReactPatternsHooksPage from "./pages/react/patterns/ReactPatternsHooksPag
 import ReactPatternsCompoundComponentPage from "./pages/react/patterns/ReactPatternsCompoundComponentPage";
 import ReactPatternsProviderPage from "./pages/react/patterns/ReactPatternsProviderPage";
 import ReactPatternsContainerPresentationPage from "./pages/react/patterns/ReactPatternsContainerPresentationPage";
+import ReactPatternsRenderPropsPage from "./pages/react/patterns/ReactPatternsRenderPropsPage";
 
 const App = () => {
   return (
@@ -75,6 +76,10 @@ const App = () => {
             <Route
               path="/react/patterns/hoc-pattern"
               element={<ReactPatternsHigherOrderComponentPage />}
+            />
+            <Route
+              path="/react/patterns/render-props-pattern"
+              element={<ReactPatternsRenderPropsPage />}
             />
             <Route
               path="/react/patterns/provider-pattern"
