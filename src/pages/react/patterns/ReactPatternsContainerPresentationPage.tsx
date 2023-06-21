@@ -7,6 +7,9 @@ import {
   PokemonCode,
   PokemonsCode,
 } from "../../../data/codes/react/patterns/ContainerPresentationalCode";
+import Pokemon from "../../../components/Pokemon";
+import Pokemons from "../../../components/Pokemons";
+import Alert from "../../../components/common/alert/Alert";
 
 const ReactPatternsContainerPresentationPage = () => {
   return (
@@ -29,7 +32,6 @@ const ReactPatternsContainerPresentationPage = () => {
         Here goes the view. This component will take care of how data will be
         shown to the user
       </p>
-
       <p className="font-light">
         We are going to use for this example the Pokemon API:
         https://pokeapi.co/api/v2/pokemon/
@@ -38,6 +40,41 @@ const ReactPatternsContainerPresentationPage = () => {
         If you have any doubt about fetching you can have a look to the API Call
         Section
       </p>
+      <Alert severity="success">
+        <>
+          <span className="font-semibold">Separation of concerns:</span>{" "}
+          Presentational components can be pure functions which are responsible
+          for the UI, whereas container components are responsible for the state
+          and data of the application. This makes it easy to enforce the
+          separation of concerns.
+        </>
+      </Alert>
+      <Alert severity="success">
+        <>
+          <span className="font-semibold">Reusability:</span> We can easily
+          reuse the presentational components throughout our application for
+          different purposes.
+        </>
+      </Alert>
+      <Alert severity="success">
+        <>
+          <span className="font-semibold">Flexibility:</span>{" "}
+          {`Since
+          presentational components don't alter the application logic, the
+          appearance of presentational components can easily be altered by
+          someone without knowledge of the codebase, for example a designer. If
+          the presentational component was reused in many parts of the
+          application, the change can be consistent throughout the app`}
+        </>
+      </Alert>
+      <Alert severity="warning">
+        <>
+          <span className="font-semibold">Overkill:</span> The
+          Container/Presentational pattern can easily be an overkill in smaller
+          sized application.
+        </>
+      </Alert>
+
       <p className="text-l">Container Component</p>
       <p className="font-light">{`Let's program the logic of our feature. In this case de <PokemonsContainerComponent /> will fetch the data. When the data is loaded it will send it to the view.`}</p>
       <Code>
@@ -76,22 +113,4 @@ function PokemonsContainerComponent() {
   return <Pokemons pokemons={data} />;
 }
 
-function Pokemons({ pokemons }: { pokemons: PokemonsType }) {
-  return (
-    <div className="grid grid-cols-10 items-center justify-center">
-      {pokemons.map((pokemon: PokemonType, index: number) => (
-        <Pokemon key={index} name={pokemon.name} sprite={pokemon.sprite} />
-      ))}
-    </div>
-  );
-}
-
-function Pokemon({ name, sprite }: { name: string; sprite?: string }) {
-  return (
-    <div className="flex flex-col items-center justify-center">
-      <img src={sprite} alt={name}></img>
-      <p>{name}</p>
-    </div>
-  );
-}
 export default ReactPatternsContainerPresentationPage;
