@@ -128,6 +128,7 @@ export function TemperatureConverter(props: {
     <div className="flex items-center justify-center rounded-md bg-[#151519] p-6">
       <div className="grid grid-cols-1 gap-y-3">
         <input
+          className="rounded-md border-none bg-[#37373e] pb-[5px] pl-[10px] pr-[10px] pt-[5px] text-white"
           type="number"
           placeholder="Degrees Celcius"
           onChange={(e) => setValue(parseInt(e.target.value))}

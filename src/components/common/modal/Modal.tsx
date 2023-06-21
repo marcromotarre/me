@@ -58,10 +58,7 @@ const Modal = ({ children, onClose = () => {} }: ModalProps) => {
         className="fixed h-screen w-screen bg-black opacity-60"
       ></button>
       <div className="fixed left-1/2 top-1/2 w-[min(600px,95%)] -translate-x-1/2  -translate-y-1/2">
-        <div
-          className="flex h-[max(fit-content,80vh)] max-h-[80vh] 
-       flex-col rounded bg-white"
-        >
+        <div className="flex h-[max(fit-content,80vh)] max-h-[80vh] flex-col rounded bg-white">
           {header &&
             React.cloneElement(header, {
               onClose: onCloseModal,
