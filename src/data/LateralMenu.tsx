@@ -51,7 +51,19 @@ export default [
         path: "/react/my-components",
         name: "My Components",
         children: [
-          { path: "/react/my-components/button", name: "Button" },
+          {
+            path: "/react/my-components/button",
+            name: "Button",
+            children: [
+              { path: "/react/my-components/button/use", name: "Use" },
+              { path: "/react/my-components/button/code", name: "Code" },
+              { path: "/react/my-components/button/tests", name: "Testing" },
+              {
+                path: "/react/my-components/button/snapshots",
+                name: "Snapshots",
+              },
+            ],
+          },
           { path: "/react/my-components/modal", name: "Modal" },
           { path: "/react/my-components/code", name: "Code" },
           { path: "/react/my-components/icon", name: "Icon" },

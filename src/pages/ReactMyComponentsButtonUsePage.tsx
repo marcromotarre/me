@@ -1,30 +1,11 @@
 import Button from "../components/common/buttons/Button";
 import Code from "../components/common/code/Code";
 import { ReactIcon, ReduxIcon } from "../components/common/icons";
-import { ButtonCode } from "../data/codes/ButtonCode";
-import {
-  ButtonTestingCode1,
-  ButtonTestingCode10,
-  ButtonTestingCode11,
-  ButtonTestingCode12,
-  ButtonTestingCode13,
-  ButtonTestingCode14,
-  ButtonTestingCode15,
-  ButtonTestingCode2,
-  ButtonTestingCode3,
-  ButtonTestingCode4,
-  ButtonTestingCode5,
-  ButtonTestingCode6,
-  ButtonTestingCode7,
-  ButtonTestingCode8,
-  ButtonTestingCode9,
-} from "../data/codes/ButtonTestingCode";
 
-const ReactMyComponentsButtonPage = () => {
+const ReactMyComponentsButtonUsePage = () => {
   return (
     <>
       <p className="text-xl">Button</p>
-
       <p className="font-light">
         {`As part of my components library I created a component <Button />`}
       </p>
@@ -257,65 +238,8 @@ const ReactMyComponentsButtonPage = () => {
           <>{`<Button color="#FFDF00" secondaryColor="black" startIcon={<ReactIcon />}>BEAUTifUL</Button>`}</>
         </Code>
       </div>
-
-      <p className="text-xl">Code</p>
-      <p className="font-light">{`Let's have a look at the code. As the other components in the library <Button /> component has been developed in typescript`}</p>
-      <Code>
-        <>{ButtonCode}</>
-      </Code>
-
-      <p className="text-xl">Testing</p>
-      <p className="font-light">{``}</p>
-      <Code>
-        <>{ButtonTestingCode1}</>
-      </Code>
-      <Code>
-        <>{ButtonTestingCode2}</>
-      </Code>
-      <Code>
-        <>{ButtonTestingCode3}</>
-      </Code>
-      <Code>
-        <>{ButtonTestingCode4}</>
-      </Code>
-      <Code>
-        <>{ButtonTestingCode5}</>
-      </Code>
-      <Code>
-        <>{ButtonTestingCode6}</>
-      </Code>
-      <Code>
-        <>{ButtonTestingCode7}</>
-      </Code>
-      <Code>
-        <>{ButtonTestingCode8}</>
-      </Code>
-      <Code>
-        <>{ButtonTestingCode9}</>
-      </Code>
-      <Code>
-        <>{ButtonTestingCode10}</>
-      </Code>
-      <Code>
-        <>{ButtonTestingCode11}</>
-      </Code>
-      <Code>
-        <>{ButtonTestingCode12}</>
-      </Code>
-      <Code>
-        <>{ButtonTestingCode2}</>
-      </Code>
-      <Code>
-        <>{ButtonTestingCode13}</>
-      </Code>
-      <Code>
-        <>{ButtonTestingCode14}</>
-      </Code>
-      <Code>
-        <>{ButtonTestingCode15}</>
-      </Code>
     </>
   );
 };
 
-export default ReactMyComponentsButtonPage;
+export default ReactMyComponentsButtonUsePage;

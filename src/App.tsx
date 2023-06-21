@@ -13,6 +13,9 @@ import ReactMyComponentsIcon from "./pages/ReactMyComponentsIconPage";
 import ReactMyComponentsModal from "./pages/ReactMyComponentsModal";
 import Layout from "./pages/layouts/Layout";
 import ReactMyComponentsButtonPage from "./pages/ReactMyComponentsButtonPage";
+import ReactMyComponentsButtonUsePage from "./pages/ReactMyComponentsButtonUsePage";
+import ReactMyComponentsButtonTestsPage from "./pages/ReactMyComponentsButtonTestsPage";
+import ReactMyComponentsButtonSnapshotsPage from "./pages/ReactMyComponentsButtonSnapshotsPage";
 
 const App = () => {
   return (
@@ -31,6 +34,22 @@ const App = () => {
             <Route
               path="/react/my-components/button"
               element={<ReactMyComponentsButtonPage />}
+            />
+            <Route
+              path="/react/my-components/button/use"
+              element={<ReactMyComponentsButtonUsePage />}
+            />
+            <Route
+              path="/react/my-components/button/code"
+              element={<ReactMyComponentsButtonPage />}
+            />
+            <Route
+              path="/react/my-components/button/tests"
+              element={<ReactMyComponentsButtonTestsPage />}
+            />
+            <Route
+              path="/react/my-components/button/snapshots"
+              element={<ReactMyComponentsButtonSnapshotsPage />}
             />
             <Route
               path="/react/my-components/icon"
