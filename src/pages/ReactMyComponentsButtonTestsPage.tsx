@@ -60,9 +60,6 @@ const ReactMyComponentsButtonTestsPage = () => {
         <>{ButtonTestingCode12}</>
       </Code>
       <Code>
-        <>{ButtonTestingCode2}</>
-      </Code>
-      <Code>
         <>{ButtonTestingCode13}</>
       </Code>
       <Code>

@@ -16,6 +16,7 @@ import ReactMyComponentsButtonPage from "./pages/ReactMyComponentsButtonPage";
 import ReactMyComponentsButtonUsePage from "./pages/ReactMyComponentsButtonUsePage";
 import ReactMyComponentsButtonTestsPage from "./pages/ReactMyComponentsButtonTestsPage";
 import ReactMyComponentsButtonSnapshotsPage from "./pages/ReactMyComponentsButtonSnapshotsPage";
+import ReactMyComponentsButtonCodePage from "./pages/ReactMyComponentsButtonCodePage";
 
 const App = () => {
   return (
@@ -41,7 +42,7 @@ const App = () => {
             />
             <Route
               path="/react/my-components/button/code"
-              element={<ReactMyComponentsButtonPage />}
+              element={<ReactMyComponentsButtonCodePage />}
             />
             <Route
               path="/react/my-components/button/tests"
