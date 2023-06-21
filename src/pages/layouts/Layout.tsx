@@ -9,6 +9,9 @@ const SECTIONS = {
     <Title icon={<ReactIcon size={30} />} title="React My Components" />
   ),
   "/react/hooks": <Title icon={<ReactIcon size={30} />} title="React Hooks" />,
+  "/react/patterns": (
+    <Title icon={<ReactIcon size={30} />} title="React Patterns" />
+  ),
 };
 
 const InformationLayout = () => {

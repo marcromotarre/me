@@ -1,4 +1,29 @@
-export default [
+export const getChildren = (
+  sectionNames: Array<string>
+): Array<SectionType> => {
+  let foundSections = [...TABLE_OF_CONTENTS_DATA];
+  let accumulativePathName = "";
+  sectionNames.map((sectionName) => {
+    if (foundSections) {
+      accumulativePathName = `${accumulativePathName}/${sectionName}`;
+
+      const filteredSections = foundSections.find(
+        (section) => section.path === accumulativePathName
+      );
+
+      foundSections = filteredSections ? filteredSections.children : [];
+    }
+  });
+  return foundSections ? foundSections : [];
+};
+
+export type SectionType = {
+  path: string;
+  name: string;
+  children?: Array<SectionType>;
+};
+
+const TABLE_OF_CONTENTS_DATA: Array<SectionType> = [
   {
     path: "/project-setup",
     name: "Project Setup",
@@ -84,8 +109,12 @@ export default [
         name: "Patterns",
         children: [
           {
+            path: "/react/patterns/container-presentation",
+            name: "Container Presentation Pattern",
+          },
+          {
             path: "/react/patterns/hoc-pattern",
-            name: "Provider HOC Pattern",
+            name: "Higher Order Component (HOC) Pattern",
           },
           {
             path: "/react/patterns/provider-pattern",
@@ -172,3 +201,5 @@ export default [
     children: [{ path: "/ux-ui", name: "Figma" }],
   },
 ];
+
+export default TABLE_OF_CONTENTS_DATA;

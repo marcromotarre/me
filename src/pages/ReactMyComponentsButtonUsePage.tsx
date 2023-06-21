@@ -238,6 +238,14 @@ const ReactMyComponentsButtonUsePage = () => {
           <>{`<Button color="#FFDF00" secondaryColor="black" startIcon={<ReactIcon />}>BEAUTifUL</Button>`}</>
         </Code>
       </div>
+      <p className="text-xl">Button onClick</p>
+      <p className="font-light">{`And the most important part of a <Button /> the onClick prop`}</p>
+      <div className="display grid grid-cols-[max-content_auto] gap-x-3">
+        <Button onClick={() => {}}>clickable</Button>
+        <Code noHeader>
+          <>{`<Button onClick={()=>{}}>clickable</Button>`}</>
+        </Code>
+      </div>
     </>
   );
 };

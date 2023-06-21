@@ -55,7 +55,7 @@ const Button = ({
       }}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className={`flex w-max items-center justify-center rounded-md bg-transparent hover:bg-white hover:brightness-95 ${getPropsBySize(
+      className={`flex h-fit w-max items-center justify-center rounded-md bg-transparent hover:bg-white hover:brightness-95 ${getPropsBySize(
         "pb-1 pl-2 pr-2 pt-1",
         "pb-2 pl-3 pr-3 pt-2",
         "pb-2 pl-4 pr-4 pt-2"

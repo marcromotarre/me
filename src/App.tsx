@@ -17,6 +17,13 @@ import ReactMyComponentsButtonUsePage from "./pages/ReactMyComponentsButtonUsePa
 import ReactMyComponentsButtonTestsPage from "./pages/ReactMyComponentsButtonTestsPage";
 import ReactMyComponentsButtonSnapshotsPage from "./pages/ReactMyComponentsButtonSnapshotsPage";
 import ReactMyComponentsButtonCodePage from "./pages/ReactMyComponentsButtonCodePage";
+import ReactPatternsPage from "./pages/react/patterns/ReactPatternsPage";
+import ReactPatternsHigherOrderComponentPage from "./pages/react/patterns/ReactPatternsHigherOrderComponentPage";
+import ReactPatternsConditionalRenderingDesignPage from "./pages/react/patterns/ReactPatternsConditionalRenderingDesignPage";
+import ReactPatternsHooksPage from "./pages/react/patterns/ReactPatternsHooksPage";
+import ReactPatternsCompoundComponentPage from "./pages/react/patterns/ReactPatternsCompoundComponentPage";
+import ReactPatternsProviderPage from "./pages/react/patterns/ReactPatternsProviderPage";
+import ReactPatternsContainerPresentationPage from "./pages/react/patterns/ReactPatternsContainerPresentationPage";
 
 const App = () => {
   return (
@@ -59,6 +66,31 @@ const App = () => {
             <Route
               path="/react/my-components/modal"
               element={<ReactMyComponentsModal />}
+            />
+            <Route path="/react/patterns" element={<ReactPatternsPage />} />
+            <Route
+              path="/react/patterns/container-presentation"
+              element={<ReactPatternsContainerPresentationPage />}
+            />
+            <Route
+              path="/react/patterns/hoc-pattern"
+              element={<ReactPatternsHigherOrderComponentPage />}
+            />
+            <Route
+              path="/react/patterns/provider-pattern"
+              element={<ReactPatternsProviderPage />}
+            />
+            <Route
+              path="/react/patterns/compound-component-pattern"
+              element={<ReactPatternsCompoundComponentPage />}
+            />
+            <Route
+              path="/react/patterns/hooks-pattern"
+              element={<ReactPatternsHooksPage />}
+            />
+            <Route
+              path="/react/patterns/conditional-rendering-design-pattern"
+              element={<ReactPatternsConditionalRenderingDesignPage />}
             />
             <Route path="/redux/" element={<ReduxPage />} />
             <Route path="/git/" element={<GitPage />} />
