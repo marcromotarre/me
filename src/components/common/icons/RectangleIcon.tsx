@@ -9,6 +9,7 @@ const RectangleIcon = ({
 }) => {
   return (
     <svg
+      data-testid={"rectangle-icon"}
       width={size}
       height={size}
       viewBox="0 0 72 72"

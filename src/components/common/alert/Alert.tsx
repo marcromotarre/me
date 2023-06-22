@@ -1,10 +1,5 @@
-import {
-  ErrorCircledIcon,
-  InfoCircledIcon,
-  SuccessCircledIcon,
-  WarningIcon,
-} from "../icons";
 import { ReactElement, cloneElement } from "react";
+import ALERT_CONSTS from "./consts";
 
 const Alert = ({
   children,
@@ -24,9 +19,10 @@ const Alert = ({
     textColor,
     iconColor,
     icon: componentIcon,
-  } = data[severity];
+  } = ALERT_CONSTS[severity];
   return (
     <div
+      data-testid="alert"
       style={{
         borderColor: borderColor[variant],
         backgroundColor: inColor[variant],
@@ -34,6 +30,7 @@ const Alert = ({
       className="grid w-auto rounded-md border p-3"
     >
       <div
+        data-testid="alert-content"
         className={`grid w-fit ${
           icon ? "grid-cols-[50px_auto]" : "grid-cols-1"
         } items-center justify-center`}
@@ -46,9 +43,11 @@ const Alert = ({
               })
             : cloneElement(icon, { size: 30, color: iconColor[variant] })
           : null}
-        <div style={{ color: textColor[variant] }}>
+        <div data-testid="alert-children" style={{ color: textColor[variant] }}>
           {typeof children === "string" ? (
-            <p style={{ color: textColor[variant] }}>{children}</p>
+            <p data-testid="alert-text" style={{ color: textColor[variant] }}>
+              {children}
+            </p>
           ) : (
             children
           )}
@@ -59,98 +58,3 @@ const Alert = ({
 };
 
 export default Alert;
-
-const data = {
-  error: {
-    icon: <ErrorCircledIcon />,
-    textColor: {
-      default: "#E22B04",
-      outlined: "#E22B04",
-      filled: "white",
-    },
-    inColor: {
-      default: "#EDF6EA",
-      outlined: "transparent",
-      filled: "#E22B04",
-    },
-    borderColor: {
-      default: "#DDBAB3",
-      outlined: "#E22B04",
-      filled: "transparent",
-    },
-    iconColor: {
-      default: "#E22B04",
-      outlined: "#E22B04",
-      filled: "white",
-    },
-  },
-  warning: {
-    icon: <WarningIcon />,
-    textColor: {
-      default: "#EFA434",
-      outlined: "#EFA434",
-      filled: "white",
-    },
-    inColor: {
-      default: "#FEF8E6",
-      outlined: "transparent",
-      filled: "#EFA434",
-    },
-    borderColor: {
-      default: "#EEE2CB",
-      outlined: "#EFA434",
-      filled: "transparent",
-    },
-    iconColor: {
-      default: "#EDA434",
-      outlined: "#EDA434",
-      filled: "white",
-    },
-  },
-  success: {
-    icon: <SuccessCircledIcon />,
-    textColor: {
-      default: "#4E9635",
-      outlined: "#4E9635",
-      filled: "white",
-    },
-    inColor: {
-      default: "#EDF6EA",
-      outlined: "transparent",
-      filled: "#4E9635",
-    },
-    borderColor: {
-      default: "#DDBAB3",
-      outlined: "#4E9635",
-      filled: "transparent",
-    },
-    iconColor: {
-      default: "#4E9635",
-      outlined: "#4E9635",
-      filled: "white",
-    },
-  },
-  info: {
-    icon: <InfoCircledIcon />,
-    textColor: {
-      default: "#2045FB",
-      outlined: "#2045FB",
-      filled: "white",
-    },
-    inColor: {
-      default: "#F4F7FF",
-      outlined: "transparent",
-      filled: "#2045FB",
-    },
-    borderColor: {
-      default: "#C0C4E0",
-      outlined: "#2045FB",
-      filled: "transparent",
-    },
-    iconColor: {
-      default: "#2045FB",
-      outlined: "#2045FB",
-      filled: "white",
-    },
-  },
-};

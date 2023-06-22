@@ -1,5 +1,4 @@
 import { useNavigate } from "react-router-dom";
-import Header from "../components/Header";
 import Title from "../components/common/Title";
 import ReactIcon from "../components/common/icons/ReactIcon";
 import ComponentsData from "../data/ComponentsData";

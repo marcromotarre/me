@@ -4,6 +4,11 @@ import { fireEvent, render } from "@testing-library/react";
 import Button from "../Button";
 import { RectangleIcon } from "../../icons";
 
+test("should render the component", () => {
+  const button = render(<Button>Text Button</Button>);
+  button.unmount();
+});
+
 test("Button contains a <button /> HTML Tag", () => {
   const button = render(
     <Button onClick={() => {}} variant="text">
