@@ -1,10 +1,7 @@
 import Modal from "../common/modal/Modal";
-import ReactIcon from "../common/icons/ReactIcon";
-import InfoIcon from "../common/icons/InfoIcon";
 import classnames from "classnames";
 import { useNavigate } from "react-router-dom";
-import Code from "../common/code/Code";
-import JavascriptIcon from "../common/icons/JavascriptIcon";
+import { JavascriptIcon } from "../common/icons";
 
 const JavascriptModal = ({
   onClose = () => {},

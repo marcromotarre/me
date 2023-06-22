@@ -1,6 +1,5 @@
 import Modal from "../common/modal/Modal";
-import ReactIcon from "../common/icons/ReactIcon";
-import InfoIcon from "../common/icons/InfoIcon";
+import { InfoCircledIcon, ReactIcon } from "../common/icons";
 import classnames from "classnames";
 import { useNavigate } from "react-router-dom";
 import Code from "../common/code/Code";
@@ -72,7 +71,7 @@ const ReactModal = ({ onClose = () => {} }: { onClose?: VoidFunction }) => {
         </Modal.Body>
         <Modal.Footer>
           <div className="grid grid-cols-[max-content_auto] items-center gap-x-3">
-            <InfoIcon color={"#7675FC"} size={25} />
+            <InfoCircledIcon color={"#7675FC"} size={25} />
             <p className="font-light text-black">
               This application have been developed with React
             </p>

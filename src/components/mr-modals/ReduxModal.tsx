@@ -1,6 +1,5 @@
 import Modal from "../common/modal/Modal";
-import InfoIcon from "../common/icons/InfoIcon";
-import ReduxIcon from "../common/icons/ReduxIcon";
+import { InfoCircledIcon, ReduxIcon } from "../common/icons";
 import { useNavigate } from "react-router-dom";
 
 const ReduxModal = ({ onClose = () => {} }: { onClose?: VoidFunction }) => {
@@ -51,7 +50,7 @@ const ReduxModal = ({ onClose = () => {} }: { onClose?: VoidFunction }) => {
         </Modal.Body>
         <Modal.Footer>
           <div className="grid grid-cols-[max-content_auto] items-center gap-x-3">
-            <InfoIcon color={"#7675FC"} size={25} />
+            <InfoCircledIcon color={"#7675FC"} size={25} />
             <p className="font-light text-black">
               This application have been developed with React Redux & Redux
               Toolkit

@@ -1,6 +1,5 @@
 import Modal from "../common/modal/Modal";
-import InfoIcon from "../common/icons/InfoIcon";
-import GitIcon from "../common/icons/GitIcon";
+import { InfoCircledIcon, GitIcon } from "../common/icons";
 import Code from "../common/code/Code";
 import { useNavigate } from "react-router-dom";
 
@@ -37,7 +36,7 @@ const GitModal = ({ onClose = () => {} }: { onClose?: VoidFunction }) => {
         </Modal.Body>
         <Modal.Footer>
           <div className="grid grid-cols-[max-content_auto] items-center gap-x-3">
-            <InfoIcon color={"#7675FC"} size={25} />
+            <InfoCircledIcon color={"#7675FC"} size={25} />
             <p className="font-light text-black">
               This application is stored in GitHub and have been created
               branches during the development

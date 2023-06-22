@@ -1,6 +1,5 @@
 import Modal from "../common/modal/Modal";
-import InfoIcon from "../common/icons/InfoIcon";
-import { TypescriptIcon } from "../common/icons";
+import { TypescriptIcon, InfoCircledIcon } from "../common/icons";
 
 const TypescriptModal = ({
   onClose = () => {},
@@ -45,7 +44,7 @@ const TypescriptModal = ({
         </Modal.Body>
         <Modal.Footer>
           <div className="grid grid-cols-[max-content_auto] items-center gap-x-3">
-            <InfoIcon color={"#7675FC"} size={25} />
+            <InfoCircledIcon color={"#7675FC"} size={25} />
             <p className="font-light text-black">
               All this project components are typescript Files and have properly
               .eslint configured

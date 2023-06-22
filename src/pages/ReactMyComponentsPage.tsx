@@ -1,8 +1,8 @@
 import { useNavigate } from "react-router-dom";
 import Title from "../components/common/Title";
-import ReactIcon from "../components/common/icons/ReactIcon";
 import ComponentsData from "../data/ComponentsData";
 import classnames from "classnames";
+import { ReactIcon } from "../components/common/icons";
 const ReactMyComponents = () => {
   const navigate = useNavigate();
   return (

@@ -1,6 +1,5 @@
 import Modal from "../common/modal/Modal";
-import InfoIcon from "../common/icons/InfoIcon";
-import { CypressIcon } from "../common/icons";
+import { CypressIcon, InfoCircledIcon } from "../common/icons";
 
 const CypressModal = ({ onClose = () => {} }: { onClose?: VoidFunction }) => {
   return (
@@ -26,7 +25,7 @@ const CypressModal = ({ onClose = () => {} }: { onClose?: VoidFunction }) => {
         </Modal.Body>
         <Modal.Footer>
           <div className="grid grid-cols-[max-content_auto] items-center gap-x-3">
-            <InfoIcon color={"#7675FC"} size={25} />
+            <InfoCircledIcon color={"#7675FC"} size={25} />
             <p className="font-light text-black">
               This application have been developed with React Redux & Redux
               Toolkit

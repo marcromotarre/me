@@ -1,7 +1,6 @@
 import React, { ReactElement, useEffect, useState } from "react";
 import classnames from "classnames";
-import JavascriptIcon from "../icons/JavascriptIcon";
-import CopyIcon from "../icons/CopyIcon";
+import { TypescriptIcon, CopyIcon } from "../icons";
 const Code = ({
   children,
   syntax,
@@ -69,9 +68,9 @@ const Code = ({
       {!noHeader && (
         <div className="flex w-full items-center justify-between bg-[#2E2E38] p-2">
           <div className="grid grid-cols-[min-content_min-content] items-center gap-x-2 pl-3 ">
-            <JavascriptIcon size={15} />
+            <TypescriptIcon size={15} />
             <p className="select-none text-xs font-light text-white">
-              Javascript
+              Typescript
             </p>
           </div>
           <button

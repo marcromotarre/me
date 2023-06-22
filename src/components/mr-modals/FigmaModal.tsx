@@ -1,7 +1,6 @@
 import Modal from "../common/modal/Modal";
-import InfoIcon from "../common/icons/InfoIcon";
+import { InfoCircledIcon, FigmaIcon } from "../common/icons";
 import { useNavigate } from "react-router-dom";
-import FigmaIcon from "../common/icons/FigmaIcon";
 
 const FigmaModal = ({ onClose = () => {} }: { onClose?: VoidFunction }) => {
   const navigate = useNavigate();
@@ -43,7 +42,7 @@ const FigmaModal = ({ onClose = () => {} }: { onClose?: VoidFunction }) => {
         </Modal.Body>
         <Modal.Footer>
           <div className="grid grid-cols-[max-content_auto] items-center gap-x-3">
-            <InfoIcon color={"#7675FC"} size={25} />
+            <InfoCircledIcon color={"#7675FC"} size={25} />
             <p className="font-light text-black">
               <span className="text-[#FF4D12]">{`I've `}</span>
               <span className="text-[#FF7361]">{`designed `}</span>

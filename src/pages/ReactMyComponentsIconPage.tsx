@@ -1,6 +1,3 @@
-import Header from "../components/Header";
-import Title from "../components/common/Title";
-import classnames from "classnames";
 import {
   ReactIcon,
   ReduxIcon,

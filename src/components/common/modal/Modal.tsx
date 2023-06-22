@@ -5,7 +5,7 @@ import React, {
   ReactElement,
 } from "react";
 import { createPortal } from "react-dom";
-import CloseIcon from "../icons/close";
+import CloseIcon from "../icons/mr-icons/close";
 import Title from "../Title";
 
 const Modal = ({ children, onClose = () => {} }: ModalProps) => {

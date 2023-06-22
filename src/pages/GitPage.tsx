@@ -1,6 +1,6 @@
 import Header from "../components/Header";
 import Title from "../components/common/Title";
-import GitIcon from "../components/common/icons/GitIcon";
+import { GitIcon } from "../components/common/icons";
 
 const GitPage = () => {
   return (

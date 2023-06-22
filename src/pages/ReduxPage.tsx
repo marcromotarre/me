@@ -1,7 +1,7 @@
 import Header from "../components/Header";
 import Title from "../components/common/Title";
 import Code from "../components/common/code/Code";
-import ReduxIcon from "../components/common/icons/ReduxIcon";
+import { ReduxIcon } from "../components/common/icons";
 
 const ReduxPage = () => {
   return (

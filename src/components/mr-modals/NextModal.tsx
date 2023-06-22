@@ -1,5 +1,4 @@
 import Modal from "../common/modal/Modal";
-import InfoIcon from "../common/icons/InfoIcon";
 import { NextIcon } from "../common/icons";
 
 const NextModal = ({ onClose = () => {} }: { onClose?: VoidFunction }) => {
