@@ -1,69 +1,22 @@
-import Rectangle from "./mr-icons/RectangleIcon";
-import React from "./mr-icons/ReactIcon";
-import Redux from "./mr-icons/ReduxIcon";
-import Figma from "./mr-icons/FigmaIcon";
-import Recoil from "./mr-icons/RecoilIcon";
-import Git from "./mr-icons/GitIcon";
-import Typescript from "./mr-icons/TypescriptIcon";
-import Javascript from "./mr-icons/JavascriptIcon";
-import Webpack from "./mr-icons/WebpackIcon";
-import Next from "./mr-icons/NextIcon";
-import Jest from "./mr-icons/JestIcon";
-import Node from "./mr-icons/NodeIcon";
-import Yarn from "./mr-icons/YarnIcon";
-import Npm from "./mr-icons/NpmIcon";
-import Cypress from "./mr-icons/CypressIcon";
-import Prisma from "./mr-icons/PrismaIcon";
-import Github from "./mr-icons/GithubIcon";
-import SuccessCircled from "./mr-icons/SuccessCircledIcon";
-import ErrorCircled from "./mr-icons/ErrorCircledIcon";
-import InfoCircled from "./mr-icons/InfoCircledIcon";
-import Warning from "./mr-icons/WarningIcon";
-import Copy from "./mr-icons/CopyIcon";
-
-export const RectangleIcon = Rectangle;
-export const ReactIcon = React;
-export const ReduxIcon = Redux;
-export const FigmaIcon = Figma;
-export const RecoilIcon = Recoil;
-export const GitIcon = Git;
-export const TypescriptIcon = Typescript;
-export const JavascriptIcon = Javascript;
-export const WebpackIcon = Webpack;
-export const NextIcon = Next;
-export const JestIcon = Jest;
-export const NodeIcon = Node;
-export const YarnIcon = Yarn;
-export const NpmIcon = Npm;
-export const CypressIcon = Cypress;
-export const PrismaIcon = Prisma;
-export const GithubIcon = Github;
-export const SuccessCircledIcon = SuccessCircled;
-export const InfoCircledIcon = InfoCircled;
-export const ErrorCircledIcon = ErrorCircled;
-export const WarningIcon = Warning;
-export const CopyIcon = Copy;
-
-export default {
-  RectangleIcon,
-  ReactIcon,
-  ReduxIcon,
-  FigmaIcon,
-  RecoilIcon,
-  GitIcon,
-  TypescriptIcon,
-  JavascriptIcon,
-  WebpackIcon,
-  NextIcon,
-  JestIcon,
-  NodeIcon,
-  YarnIcon,
-  NpmIcon,
-  CypressIcon,
-  GithubIcon,
-  SuccessCircledIcon,
-  InfoCircledIcon,
-  ErrorCircledIcon,
-  WarningIcon,
-  CopyIcon,
-};
+export { default as ReactIcon } from "./mr-icons/ReactIcon";
+export { default as RectangleIcon } from "./mr-icons/RectangleIcon";
+export { default as ReduxIcon } from "./mr-icons/ReduxIcon";
+export { default as FigmaIcon } from "./mr-icons/FigmaIcon";
+export { default as RecoilIcon } from "./mr-icons/RecoilIcon";
+export { default as GitIcon } from "./mr-icons/GitIcon";
+export { default as TypescriptIcon } from "./mr-icons/TypescriptIcon";
+export { default as JavascriptIcon } from "./mr-icons/JavascriptIcon";
+export { default as WebpackIcon } from "./mr-icons/WebpackIcon";
+export { default as NextIcon } from "./mr-icons/NextIcon";
+export { default as JestIcon } from "./mr-icons/JestIcon";
+export { default as NodeIcon } from "./mr-icons/NodeIcon";
+export { default as YarnIcon } from "./mr-icons/YarnIcon";
+export { default as NpmIcon } from "./mr-icons/NpmIcon";
+export { default as CypressIcon } from "./mr-icons/CypressIcon";
+export { default as PrismaIcon } from "./mr-icons/PrismaIcon";
+export { default as GithubIcon } from "./mr-icons/GithubIcon";
+export { default as SuccessCircledIcon } from "./mr-icons/SuccessCircledIcon";
+export { default as InfoCircledIcon } from "./mr-icons/InfoCircledIcon";
+export { default as ErrorCircledIcon } from "./mr-icons/ErrorCircledIcon";
+export { default as WarningIcon } from "./mr-icons/WarningIcon";
+export { default as CopyIcon } from "./mr-icons/CopyIcon";

@@ -5,7 +5,9 @@ const ReactMyComponentsAlertPage = () => {
   return (
     <>
       <p className="text-xl">Alert</p>
-      <Alert severity="success">This is a success Alert</Alert>
+      <Alert icon={<ReactIcon />} severity="success">
+        This is a success Alert
+      </Alert>
       <Alert severity="info">This is a info Alert</Alert>
       <Alert severity="warning">This is a warning Alert</Alert>
       <Alert severity="error">This is a warning Alert</Alert>

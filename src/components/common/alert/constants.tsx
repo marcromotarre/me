@@ -12,7 +12,7 @@ export const INFO_DARK_COLOR = "#2045FB";
 export const INFO_LIGHT_COLOR = "#F4F7FF";
 
 export const ERROR_DARK_COLOR = "#E22B04";
-export const ERROR_LIGHT_COLOR = "#DDBAB3";
+export const ERROR_LIGHT_COLOR = "#FDE9E7";
 
 export const WARNING_DARK_COLOR = "#EFA434";
 export const WARNING_LIGHT_COLOR = "#FEF8E6";
@@ -59,8 +59,8 @@ export default {
       filled: "transparent",
     },
     iconColor: {
-      default: "#EDA434",
-      outlined: "#EDA434",
+      default: WARNING_DARK_COLOR,
+      outlined: WARNING_DARK_COLOR,
       filled: "white",
     },
   },

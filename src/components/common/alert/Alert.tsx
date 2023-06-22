@@ -1,5 +1,5 @@
 import { ReactElement, cloneElement } from "react";
-import ALERT_CONSTS from "./consts";
+import ALERT_CONSTS from "./constants";
 
 const Alert = ({
   children,
