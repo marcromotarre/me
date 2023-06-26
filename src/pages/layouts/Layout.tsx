@@ -3,6 +3,9 @@ import Header from "../../components/Header";
 import LateralMenu from "../../components/common/lateral-menu/LateralMenu";
 import Title from "../../components/common/Title";
 import { JavascriptIcon, ReactIcon } from "../../components/common/icons";
+import Breadcrumb from "../../components/common/breadcrumb/Breadcrumb";
+import BreadcrumbLink from "../../components/common/breadcrumb/BreadcrumbLink";
+import TABLE_OF_CONTENTS_DATA, { getLinearList } from "../../data/LateralMenu";
 
 const SECTIONS = {
   "/react/my-components": (
@@ -22,7 +25,20 @@ const InformationLayout = () => {
   const sectionId = Object.keys(SECTIONS).find((sectionId) =>
     location.pathname.startsWith(sectionId)
   );
-  console.log(location.pathname, sectionId);
+  const sections = location.pathname.split("/");
+  sections.shift();
+  sections.map((section, index) => {
+    return "/" + sections.filter((_, i) => i <= index).join("/");
+  });
+
+  const linearList = getLinearList(TABLE_OF_CONTENTS_DATA);
+  const breadcrumbs = sections
+    .map((_, index) => {
+      return "/" + sections.filter((_, i) => i <= index).join("/");
+    })
+    .map((section) =>
+      linearList.find((linearItem) => linearItem.path === section)
+    );
   return (
     <div className="flex h-[100vh] flex-col">
       <div className="h-[50px] flex-initial">
@@ -32,7 +48,23 @@ const InformationLayout = () => {
         <div className="h-[100%] overflow-x-hidden overflow-y-scroll p-3 shadow-2xl sm:invisible md:invisible lg:visible">
           <LateralMenu />
         </div>
-        <div className="h-[100%] overflow-x-hidden overflow-y-scroll">
+        <div className="relative h-[100%] overflow-x-hidden overflow-y-scroll">
+          <div className="fixed m-4">
+            <Breadcrumb
+              separator="/"
+              style={{
+                color: "black",
+                backgroundColor: "#E7EBF0",
+              }}
+            >
+              {breadcrumbs.map((section, index) => (
+                <BreadcrumbLink key={index} href={section.path}>
+                  {section.name}
+                </BreadcrumbLink>
+              ))}
+            </Breadcrumb>
+          </div>
+
           <div className="grid grid-cols-1 gap-y-4 p-8">
             {SECTIONS[sectionId]}
             <Outlet />

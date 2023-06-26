@@ -17,10 +17,30 @@ export const getChildren = (
   return foundSections ? foundSections : [];
 };
 
+export const getFullInfo = (sectionNames) => {};
+
 export type SectionType = {
   path: string;
   name: string;
   children?: Array<SectionType>;
+};
+
+export const getLinearList = (
+  sections: Array<SectionType>
+): Array<SectionType> => {
+  return sections.reduce((acc: Array<SectionType>, curr: SectionType) => {
+    let linear = [curr];
+    if (curr.children) {
+      linear = [...linear, ...getLinearList(curr.children)];
+    }
+    return [
+      ...acc,
+      ...linear.map((section: SectionType) => ({
+        name: section.name,
+        path: section.path,
+      })),
+    ];
+  }, []);
 };
 
 const TABLE_OF_CONTENTS_DATA: Array<SectionType> = [

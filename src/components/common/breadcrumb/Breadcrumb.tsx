@@ -32,6 +32,7 @@ const Breadcrumb = ({
               style: {
                 color: style.color,
                 fontWeight: index === links.length - 1 ? "500" : "",
+                href: index === links.length - 1 ? "" : link.href,
               },
             })}
             {index < links.length - 1 && <Typography>{separator}</Typography>}
