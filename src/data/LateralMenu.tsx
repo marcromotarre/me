@@ -1,3 +1,6 @@
+import { ReactElement } from "react";
+import { ReactIcon } from "../components/common/icons";
+
 export const getChildren = (
   sectionNames: Array<string>
 ): Array<SectionType> => {
@@ -22,6 +25,7 @@ export const getFullInfo = (sectionNames) => {};
 export type SectionType = {
   path: string;
   name: string;
+  icon?: ReactElement;
   children?: Array<SectionType>;
 };
 
@@ -38,6 +42,7 @@ export const getLinearList = (
       ...linear.map((section: SectionType) => ({
         name: section.name,
         path: section.path,
+        icon: section.icon,
       })),
     ];
   }, []);
@@ -83,6 +88,7 @@ const TABLE_OF_CONTENTS_DATA: Array<SectionType> = [
   {
     path: "/react",
     name: "React",
+    icon: <ReactIcon />,
     children: [
       {
         path: "/react/state-managers",

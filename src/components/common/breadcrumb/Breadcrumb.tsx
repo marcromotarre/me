@@ -15,11 +15,7 @@ const Breadcrumb = ({
   return (
     <div
       style={{
-        display: "grid",
-        gridTemplateColumns: `repeat(${
-          links.length * 2 - 1
-        }, max-content [col-start])`,
-        columnGap: "10px",
+        display: "flex",
         ...defaultStyles,
         ...style,
       }}
@@ -35,7 +31,12 @@ const Breadcrumb = ({
                 href: index === links.length - 1 ? "" : link.href,
               },
             })}
-            {index < links.length - 1 && <Typography>{separator}</Typography>}
+
+            {index < links.length - 1 && (
+              <div className="ml-2 mr-2">
+                <Typography>{separator}</Typography>
+              </div>
+            )}
           </React.Fragment>
         );
       })}

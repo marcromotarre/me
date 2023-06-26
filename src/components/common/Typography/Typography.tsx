@@ -198,7 +198,9 @@ const classNames = ({ gutterBottom }: { gutterBottom: boolean }) => {
     h6: `text-lg font-normal ${gutterBottom ? GUTTER_BOTTOM : ""}`,
     subtitle1: `text-base font-normal ${gutterBottom ? GUTTER_BOTTOM : ""}`,
     subtitle2: `text-sm ${gutterBottom ? GUTTER_BOTTOM : ""}`,
-    body1: `text-base font-light ${gutterBottom ? GUTTER_BOTTOM : ""}`,
+    body1: `sm:text-sm md:text-base lg:text-base font-light ${
+      gutterBottom ? GUTTER_BOTTOM : ""
+    }`,
     body2: `text-sm font-normal ${gutterBottom ? GUTTER_BOTTOM : ""}`,
     button: `text-sm font-medium ${gutterBottom ? GUTTER_BOTTOM : ""}`,
     caption: `text-sm font-normal ${gutterBottom ? GUTTER_BOTTOM : ""}`,

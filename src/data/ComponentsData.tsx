@@ -1,5 +1,15 @@
 export default [
   {
+    name: "<Breadcrumb />",
+    backgoundColor: "bg-denim",
+    url: "/react/my-components/breadcrumb",
+  },
+  {
+    name: "<Card />",
+    backgoundColor: "bg-denim",
+    url: "/react/my-components/card",
+  },
+  {
     name: "<Button />",
     backgoundColor: "bg-denim",
     url: "/react/my-components/button/use",

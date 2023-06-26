@@ -10,19 +10,11 @@ const ReactMyComponentsBreadcrumbPage = () => {
       <Typography>
         Breadcrumb is a component to easily navigate across pages.
       </Typography>
-      <Breadcrumb
-        separator="/"
-        style={{ color: "black", backgroundColor: "#E7EBF0" }}
-      >
-        <BreadcrumbLink icon={<ReactIcon />} href="/react">
-          React
-        </BreadcrumbLink>
-        <BreadcrumbLink href="/react/my-components">
-          My Components
-        </BreadcrumbLink>
-        <BreadcrumbLink href="/react/my-components/breadcrumb">
-          Breadcrumb
-        </BreadcrumbLink>
+      <Breadcrumb separator="/" style={{ color: "black" }}>
+        <BreadcrumbLink>Section 1</BreadcrumbLink>
+        <BreadcrumbLink>Section 1.5</BreadcrumbLink>
+        <BreadcrumbLink>Section 1.5.3</BreadcrumbLink>
+        <BreadcrumbLink>Section 1.5.3.2</BreadcrumbLink>
       </Breadcrumb>
     </>
   );

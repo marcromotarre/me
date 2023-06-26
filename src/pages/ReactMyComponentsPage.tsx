@@ -1,13 +1,10 @@
 import { useNavigate } from "react-router-dom";
-import Title from "../components/common/Title";
 import ComponentsData from "../data/ComponentsData";
 import classnames from "classnames";
-import { ReactIcon } from "../components/common/icons";
 const ReactMyComponents = () => {
   const navigate = useNavigate();
   return (
     <div className="grid grid-cols-1 gap-y-4 p-8">
-      <Title icon={<ReactIcon size={30} />} title="React My Components" />
       <p className="font-light">
         Here you have a list of components developed by me.You can click on them
         to know more information such as the implementation code or some
