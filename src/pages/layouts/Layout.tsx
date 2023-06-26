@@ -48,26 +48,25 @@ const InformationLayout = () => {
         <div className="h-[100%] overflow-x-hidden overflow-y-scroll p-3 shadow-2xl sm:invisible md:invisible lg:visible">
           <LateralMenu />
         </div>
-        <div className="relative h-[100%] overflow-x-hidden overflow-y-scroll">
-          <div className="fixed m-4">
-            <Breadcrumb
-              separator="/"
-              style={{
-                color: "black",
-                backgroundColor: "#E7EBF0",
-              }}
-            >
-              {breadcrumbs.map((section, index) => (
-                <BreadcrumbLink key={index} href={section.path}>
-                  {section.name}
-                </BreadcrumbLink>
-              ))}
-            </Breadcrumb>
-          </div>
-
-          <div className="grid grid-cols-1 gap-y-4 p-8">
-            {SECTIONS[sectionId]}
-            <Outlet />
+        <div className="h-[100%] overflow-x-hidden overflow-y-scroll p-8">
+          <Breadcrumb
+            separator="/"
+            style={{
+              color: "black",
+              backgroundColor: "#E7EBF0",
+            }}
+          >
+            {breadcrumbs.map((section, index) => (
+              <BreadcrumbLink key={index} href={section.path}>
+                {section.name}
+              </BreadcrumbLink>
+            ))}
+          </Breadcrumb>
+          <div className="">
+            <div className="grid grid-cols-1 gap-y-4">
+              {SECTIONS[sectionId]}
+              <Outlet />
+            </div>
           </div>
         </div>
       </div>
