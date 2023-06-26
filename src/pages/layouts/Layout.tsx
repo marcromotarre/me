@@ -45,7 +45,7 @@ const InformationLayout = () => {
         <Header />
       </div>
       <div className="grid h-[calc(100%_-_50px)] sm:grid-cols-[0px_auto] md:grid-cols-[0px_auto] lg:grid-cols-[300px_auto]">
-        <div className="h-[100%] overflow-x-hidden overflow-y-scroll p-3 shadow-2xl sm:invisible md:invisible lg:visible">
+        <div className="h-[100%] overflow-x-hidden overflow-y-scroll shadow-2xl sm:invisible md:invisible lg:visible">
           <LateralMenu />
         </div>
         <div className="h-[100%] overflow-x-hidden overflow-y-scroll sm:p-4 md:p-8 lg:p-8">

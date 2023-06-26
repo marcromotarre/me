@@ -1,5 +1,12 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import pages from "../../../data/LateralMenu";
+import Accordion from "../accordion/Accordion";
+import AccordionSummary from "../accordion/AccordionSummary";
+import AccordionDetails from "../accordion/AccordionDetails";
+import Typography from "../Typography/Typography";
+import { UpIcon } from "../icons";
+import { cloneElement } from "react";
+import { relative } from "path";
 
 const PageButton = ({
   page,
@@ -12,33 +19,52 @@ const PageButton = ({
 }) => {
   const navigate = useNavigate();
   return (
-    <>
-      <button
-        onClick={() => {
-          navigate(page.path);
+    <div className="relative">
+      <Accordion style={{ position: "relative" }}>
+        <AccordionSummary expandIcon={page.children ? <UpIcon /> : null}>
+          <button
+            className="flex w-[100%] items-center justify-start"
+            onClick={(e) => {
+              e.stopPropagation();
+              navigate(page.path);
+            }}
+          >
+            {page.icon &&
+              cloneElement(page.icon, { className: "mr-3", color: "black" })}
+            <Typography>{page.name}</Typography>
+          </button>
+        </AccordionSummary>
+        <AccordionDetails>
+          {page.children &&
+            page.children.map((subpage: Page, index) => (
+              <div className="pl-6">
+                <PageButton
+                  key={`${page.name}_${page.path}_${index}`}
+                  page={subpage}
+                  level={level + 1}
+                  pathname={pathname}
+                />
+              </div>
+            ))}
+        </AccordionDetails>
+      </Accordion>
+      <div
+        style={{
+          width: "100%",
+          height: "3px",
+          backgroundColor: "black",
+          position: "absolute",
+          zIndex: "30",
         }}
-        className={`text-left ${pathname == page.path ? "font-bold" : ""}`}
-        style={{ marginLeft: `${20 * level}px` }}
-      >
-        {page.name}
-      </button>
-      {page.children &&
-        page.children.map((subpage: Page, index) => (
-          <PageButton
-            key={`${page.name}_${page.path}_${index}`}
-            page={subpage}
-            level={level + 1}
-            pathname={pathname}
-          />
-        ))}
-    </>
+      ></div>
+    </div>
   );
 };
 
 const LateralMenu = () => {
   const location = useLocation();
   return (
-    <div className="grid grid-cols-1 justify-start gap-y-4">
+    <div className="grid grid-cols-1 justify-start">
       {pages.map((page: Page) => (
         <PageButton key={page.path} page={page} pathname={location.pathname} />
       ))}

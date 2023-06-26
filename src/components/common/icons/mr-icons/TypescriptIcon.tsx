@@ -5,6 +5,7 @@ const TypescriptIcon = ({
   sColor = "white",
   backgroundColor = "#007ACC",
   size = 20,
+  className = "",
 }: {
   color?: string;
   lettersColor?: string;
@@ -16,6 +17,7 @@ const TypescriptIcon = ({
 }) => {
   return (
     <svg
+      className={className}
       width={size}
       height={size}
       viewBox="0 0 84 84"

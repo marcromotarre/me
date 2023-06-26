@@ -1,5 +1,10 @@
 import { ReactElement } from "react";
-import { ReactIcon } from "../components/common/icons";
+import {
+  JavascriptIcon,
+  NextIcon,
+  ReactIcon,
+  TypescriptIcon,
+} from "../components/common/icons";
 
 export const getChildren = (
   sectionNames: Array<string>
@@ -169,11 +174,12 @@ const TABLE_OF_CONTENTS_DATA: Array<SectionType> = [
       { path: "/react/interesting-questions", name: "Interesting Questions" },
     ],
   },
-  { path: "/nextjs", name: "Nextjs" },
+  { path: "/nextjs", name: "Nextjs", icon: <NextIcon /> },
 
   {
     path: "/javascript",
     name: "Javascript",
+    icon: <JavascriptIcon />,
     children: [
       { path: "/javascript/arrays", name: "Arrays" },
       {
@@ -212,7 +218,7 @@ const TABLE_OF_CONTENTS_DATA: Array<SectionType> = [
       },
     ],
   },
-  { path: "/typescript", name: "Typescript" },
+  { path: "/typescript", name: "Typescript", icon: <TypescriptIcon /> },
   {
     path: "/testing",
     name: "Testing",

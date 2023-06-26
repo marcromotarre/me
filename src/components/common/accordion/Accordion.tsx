@@ -2,7 +2,7 @@ import React, { ReactElement, cloneElement, useState } from "react";
 import AccordionDetails from "./AccordionDetails";
 import AccordionSummary from "./AccordionSummary";
 
-const Accordion = ({ children }: ComponentProps) => {
+const Accordion = ({ children, style = {} }: ComponentProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const AccordionSummaryMemo = React.memo(AccordionSummary);
   const AccordionDetailsMemo = React.memo(AccordionDetails);
@@ -16,11 +16,12 @@ const Accordion = ({ children }: ComponentProps) => {
   );
 
   return (
-    <div className="w-[100%] bg-slate-300">
+    <div className="w-[100%] bg-slate-300" style={style}>
       <div
         className={`flex  w-[100%] justify-center`}
-        onClick={() => {
-          setIsOpen(!isOpen);
+        onClick={(e) => {
+          e.preventDefault();
+          if (accordionDetails) setIsOpen(!isOpen);
         }}
       >
         {cloneElement(accordionSummary, {})}
