@@ -6,7 +6,9 @@ const Typography = ({
   paragraph = false,
   gutterBottom = false,
   component,
+  style,
 }: ComponentProps) => {
+  const _style = { ...defaultStyles, ...style };
   const applyProps = (content: string) => {
     if (paragraph)
       return <p className={classNames({ gutterBottom })[variant]}>{content}</p>;
@@ -14,32 +16,46 @@ const Typography = ({
     if (component) {
       if (component === "h1")
         return (
-          <h1 className={classNames({ gutterBottom })[variant]}>{content}</h1>
+          <h1 style={_style} className={classNames({ gutterBottom })[variant]}>
+            {content}
+          </h1>
         );
       if (component === "h2")
         return (
-          <h2 className={classNames({ gutterBottom })[variant]}>{content}</h2>
+          <h2 style={_style} className={classNames({ gutterBottom })[variant]}>
+            {content}
+          </h2>
         );
       if (component === "h3")
         return (
-          <h3 className={classNames({ gutterBottom })[variant]}>{content}</h3>
+          <h3 style={_style} className={classNames({ gutterBottom })[variant]}>
+            {content}
+          </h3>
         );
       if (component === "h4")
         return (
-          <h4 className={classNames({ gutterBottom })[variant]}>{content}</h4>
+          <h4 style={_style} className={classNames({ gutterBottom })[variant]}>
+            {content}
+          </h4>
         );
       if (component === "h5")
         return (
-          <h5 className={classNames({ gutterBottom })[variant]}>{content}</h5>
+          <h5 style={_style} className={classNames({ gutterBottom })[variant]}>
+            {content}
+          </h5>
         );
       if (component === "h6")
         return (
-          <h6 className={classNames({ gutterBottom })[variant]}>{content}</h6>
+          <h6 style={_style} className={classNames({ gutterBottom })[variant]}>
+            {content}
+          </h6>
         );
 
       if (component === "subtitle1")
         return (
-          <h6 className={classNames({ gutterBottom })[variant]}>{content}</h6>
+          <h6 style={_style} className={classNames({ gutterBottom })[variant]}>
+            {content}
+          </h6>
         );
       if (component === "subtitle2")
         return (
@@ -47,68 +63,123 @@ const Typography = ({
         );
       if (component === "body1")
         return (
-          <p className={classNames({ gutterBottom })[variant]}>{content}</p>
+          <p style={_style} className={classNames({ gutterBottom })[variant]}>
+            {content}
+          </p>
         );
       if (component === "body2")
         return (
-          <p className={classNames({ gutterBottom })[variant]}>{content}</p>
+          <p style={_style} className={classNames({ gutterBottom })[variant]}>
+            {content}
+          </p>
         );
       if (component === "button")
         return (
-          <span className={classNames({ gutterBottom })[variant]}>
+          <span
+            style={_style}
+            className={classNames({ gutterBottom })[variant]}
+          >
             {content}
           </span>
         );
       if (component === "caption")
         return (
-          <span className={classNames({ gutterBottom })[variant]}>
+          <span
+            style={_style}
+            className={classNames({ gutterBottom })[variant]}
+          >
             {content}
           </span>
         );
       if (component === "overline")
         return (
-          <span className={classNames({ gutterBottom })[variant]}>
+          <span
+            style={_style}
+            className={classNames({ gutterBottom })[variant]}
+          >
             {content}
           </span>
         );
     }
 
     if (variant === "h1")
-      return <h1 className={classNames({ gutterBottom }).h1}>{content}</h1>;
+      return (
+        <h1 style={_style} className={classNames({ gutterBottom }).h1}>
+          {content}
+        </h1>
+      );
     if (variant === "h2")
-      return <h2 className={classNames({ gutterBottom }).h2}>{content}</h2>;
+      return (
+        <h2 style={_style} className={classNames({ gutterBottom }).h2}>
+          {content}
+        </h2>
+      );
     if (variant === "h3")
-      return <h3 className={classNames({ gutterBottom }).h3}>{content}</h3>;
+      return (
+        <h3 style={_style} className={classNames({ gutterBottom }).h3}>
+          {content}
+        </h3>
+      );
     if (variant === "h4")
-      return <h4 className={classNames({ gutterBottom }).h4}>{content}</h4>;
+      return (
+        <h4 style={_style} className={classNames({ gutterBottom }).h4}>
+          {content}
+        </h4>
+      );
     if (variant === "h5")
-      return <h5 className={classNames({ gutterBottom }).h5}>{content}</h5>;
+      return (
+        <h5 style={_style} className={classNames({ gutterBottom }).h5}>
+          {content}
+        </h5>
+      );
     if (variant === "h6")
-      return <h6 className={classNames({ gutterBottom }).h6}>{content}</h6>;
+      return (
+        <h6 style={_style} className={classNames({ gutterBottom }).h6}>
+          {content}
+        </h6>
+      );
 
     if (variant === "subtitle1")
       return (
-        <h6 className={classNames({ gutterBottom }).subtitle1}>{content}</h6>
+        <h6 style={_style} className={classNames({ gutterBottom }).subtitle1}>
+          {content}
+        </h6>
       );
     if (variant === "subtitle2")
       return (
-        <h6 className={classNames({ gutterBottom }).subtitle2}>{content}</h6>
+        <h6 style={_style} className={classNames({ gutterBottom }).subtitle2}>
+          {content}
+        </h6>
       );
     if (variant === "body1")
-      return <p className={classNames({ gutterBottom }).body1}>{content}</p>;
+      return (
+        <p style={_style} className={classNames({ gutterBottom }).body1}>
+          {content}
+        </p>
+      );
     if (variant === "body2")
-      return <p className={classNames({ gutterBottom }).body2}>{content}</p>;
+      return (
+        <p style={_style} className={classNames({ gutterBottom }).body2}>
+          {content}
+        </p>
+      );
     if (variant === "button")
       return (
-        <span className={classNames({ gutterBottom }).button}>{content}</span>
+        <span style={_style} className={classNames({ gutterBottom }).button}>
+          {content}
+        </span>
       );
     if (variant === "caption")
       return (
-        <span className={classNames({ gutterBottom }).caption}>{content}</span>
+        <span style={_style} className={classNames({ gutterBottom }).caption}>
+          {content}
+        </span>
       );
     if (variant === "overline")
       return (
-        <span className={classNames({ gutterBottom }).overline}>{content}</span>
+        <span style={_style} className={classNames({ gutterBottom }).overline}>
+          {content}
+        </span>
       );
   };
 
@@ -119,23 +190,25 @@ export default Typography;
 
 const classNames = ({ gutterBottom }: { gutterBottom: boolean }) => {
   return {
-    h1: `text-6xl font-normal ${gutterBottom ? GUTTER_BOTTOM : ""}`,
-    h2: `text-5xl font-normal ${gutterBottom ? GUTTER_BOTTOM : ""}`,
-    h3: `text-4xl font-normal ${gutterBottom ? GUTTER_BOTTOM : ""}`,
-    h4: `text-3xl font-normal ${gutterBottom ? GUTTER_BOTTOM : ""}`,
-    h5: `text-2xl font-normal ${gutterBottom ? GUTTER_BOTTOM : ""}`,
-    h6: `text-xl font-normal ${gutterBottom ? GUTTER_BOTTOM : ""}`,
-    subtitle1: `text-lg font-normal ${gutterBottom ? GUTTER_BOTTOM : ""}`,
-    subtitle2: `text-base ${gutterBottom ? GUTTER_BOTTOM : ""}`,
-    body1: `text-lg font-normal ${gutterBottom ? GUTTER_BOTTOM : ""}`,
-    body2: `text-base font-normal ${gutterBottom ? GUTTER_BOTTOM : ""}`,
-    button: `text-base font-medium ${gutterBottom ? GUTTER_BOTTOM : ""}`,
-    caption: `text-base font-normal ${gutterBottom ? GUTTER_BOTTOM : ""}`,
+    h1: `text-5xl font-normal ${gutterBottom ? GUTTER_BOTTOM : ""}`,
+    h2: `text-4xl font-normal ${gutterBottom ? GUTTER_BOTTOM : ""}`,
+    h3: `text-3xl font-normal ${gutterBottom ? GUTTER_BOTTOM : ""}`,
+    h4: `text-2xl font-normal ${gutterBottom ? GUTTER_BOTTOM : ""}`,
+    h5: `text-xl font-normal ${gutterBottom ? GUTTER_BOTTOM : ""}`,
+    h6: `text-lg font-normal ${gutterBottom ? GUTTER_BOTTOM : ""}`,
+    subtitle1: `text-base font-normal ${gutterBottom ? GUTTER_BOTTOM : ""}`,
+    subtitle2: `text-sm ${gutterBottom ? GUTTER_BOTTOM : ""}`,
+    body1: `text-base font-light ${gutterBottom ? GUTTER_BOTTOM : ""}`,
+    body2: `text-sm font-normal ${gutterBottom ? GUTTER_BOTTOM : ""}`,
+    button: `text-sm font-medium ${gutterBottom ? GUTTER_BOTTOM : ""}`,
+    caption: `text-sm font-normal ${gutterBottom ? GUTTER_BOTTOM : ""}`,
     overline: `text-sm font-normal ${gutterBottom ? GUTTER_BOTTOM : ""}`,
   };
 };
 
 const GUTTER_BOTTOM = "mb-3";
+
+const defaultStyles = {};
 
 type FontType =
   | "h1"
@@ -152,10 +225,13 @@ type FontType =
   | "caption"
   | "overline";
 
+type Style = { fontWeight?: string };
+
 type ComponentProps = {
   component?: FontType;
   variant?: FontType;
   children: ReactElement | string;
   paragraph?: boolean;
   gutterBottom?: boolean;
+  style?: Style;
 };

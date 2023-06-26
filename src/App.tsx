@@ -26,6 +26,11 @@ import ReactPatternsProviderPage from "./pages/react/patterns/ReactPatternsProvi
 import ReactPatternsContainerPresentationPage from "./pages/react/patterns/ReactPatternsContainerPresentationPage";
 import ReactPatternsRenderPropsPage from "./pages/react/patterns/ReactPatternsRenderPropsPage";
 import ReactMyComponentsAlertPage from "./pages/react/my-components/ReactMyComponentsAlertPage";
+import ReactMyComponentsTypographyPage from "./pages/react/my-components/ReactMyComponentsTypographyPage";
+import ReactMyComponentsCardPage from "./pages/react/my-components/ReactMyComponentsCardPage";
+import JavascriptArraysPage from "./pages/javascript/array/JavascriptArraysPage";
+import ReactMyComponentsAccordionPage from "./pages/react/my-components/ReactMyComponentsAccordionPage";
+import ReactMyComponentsBreadcrumbPage from "./pages/react/my-components/ReactMyComponentsBreadcrumbPage";
 
 const App = () => {
   return (
@@ -35,6 +40,10 @@ const App = () => {
           <Route path="/" element={<PortfolioPage />} />
           <Route element={<Layout />}>
             <Route path="/javascript" element={<JavascriptPage />} />
+            <Route
+              path="/javascript/arrays"
+              element={<JavascriptArraysPage />}
+            />
             <Route path="/react/:id" element={<ReactPage />} />
             <Route path="/react/hooks" element={<ReactHooksPage />} />
             <Route
@@ -62,8 +71,24 @@ const App = () => {
               element={<ReactMyComponentsButtonSnapshotsPage />}
             />
             <Route
-              path="/react/my-components/Alert"
+              path="/react/my-components/alert"
               element={<ReactMyComponentsAlertPage />}
+            />
+            <Route
+              path="/react/my-components/typography"
+              element={<ReactMyComponentsTypographyPage />}
+            />
+            <Route
+              path="/react/my-components/accordion"
+              element={<ReactMyComponentsAccordionPage />}
+            />
+            <Route
+              path="/react/my-components/breadcrumb"
+              element={<ReactMyComponentsBreadcrumbPage />}
+            />
+            <Route
+              path="/react/my-components/card"
+              element={<ReactMyComponentsCardPage />}
             />
             <Route
               path="/react/my-components/icon"

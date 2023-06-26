@@ -90,6 +90,10 @@ const TABLE_OF_CONTENTS_DATA: Array<SectionType> = [
             ],
           },
           { path: "/react/my-components/alert", name: "Alert" },
+          { path: "/react/my-components/accordion", name: "Accordion" },
+          { path: "/react/my-components/breadcrumb", name: "Breadcrumb" },
+          { path: "/react/my-components/card", name: "Card" },
+          { path: "/react/my-components/typography", name: "Typography" },
           { path: "/react/my-components/modal", name: "Modal" },
           { path: "/react/my-components/code", name: "Code" },
           { path: "/react/my-components/icon", name: "Icon" },
@@ -145,6 +149,7 @@ const TABLE_OF_CONTENTS_DATA: Array<SectionType> = [
     path: "/javascript",
     name: "Javascript",
     children: [
+      { path: "/javascript/arrays", name: "Arrays" },
       {
         path: "/javascript/patterns",
         name: "Patterns",

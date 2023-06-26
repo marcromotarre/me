@@ -2,7 +2,7 @@ import { Outlet, useLocation } from "react-router-dom";
 import Header from "../../components/Header";
 import LateralMenu from "../../components/common/lateral-menu/LateralMenu";
 import Title from "../../components/common/Title";
-import { ReactIcon } from "../../components/common/icons";
+import { JavascriptIcon, ReactIcon } from "../../components/common/icons";
 
 const SECTIONS = {
   "/react/my-components": (
@@ -11,6 +11,9 @@ const SECTIONS = {
   "/react/hooks": <Title icon={<ReactIcon size={30} />} title="React Hooks" />,
   "/react/patterns": (
     <Title icon={<ReactIcon size={30} />} title="React Patterns" />
+  ),
+  "/javascript/arrays": (
+    <Title icon={<JavascriptIcon size={30} />} title="Arrays" />
   ),
 };
 
