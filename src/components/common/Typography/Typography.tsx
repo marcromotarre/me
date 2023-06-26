@@ -190,21 +190,41 @@ export default Typography;
 
 const classNames = ({ gutterBottom }: { gutterBottom: boolean }) => {
   return {
-    h1: `text-5xl font-normal ${gutterBottom ? GUTTER_BOTTOM : ""}`,
-    h2: `text-4xl font-normal ${gutterBottom ? GUTTER_BOTTOM : ""}`,
-    h3: `text-3xl font-normal ${gutterBottom ? GUTTER_BOTTOM : ""}`,
+    h1: `sm:text-4xl md:text-5xl lg:text-5xl font-normal ${
+      gutterBottom ? GUTTER_BOTTOM : ""
+    }`,
+    h2: `sm:text-3xl md:text-4xl lg:text-4xl font-normal ${
+      gutterBottom ? GUTTER_BOTTOM : ""
+    }`,
+    h3: `sm:text-2xl md:text-3xl lg:text-3xl font-normal ${
+      gutterBottom ? GUTTER_BOTTOM : ""
+    }`,
     h4: `text-2xl font-normal ${gutterBottom ? GUTTER_BOTTOM : ""}`,
-    h5: `text-xl font-normal ${gutterBottom ? GUTTER_BOTTOM : ""}`,
-    h6: `text-lg font-normal ${gutterBottom ? GUTTER_BOTTOM : ""}`,
-    subtitle1: `text-base font-normal ${gutterBottom ? GUTTER_BOTTOM : ""}`,
+    h5: `sm:text-lg md:text-2xl lg:text-2xl text-xl font-normal ${
+      gutterBottom ? GUTTER_BOTTOM : ""
+    }`,
+    h6: `sm:text-lg md:text-xl lg:text-xl  font-normal ${
+      gutterBottom ? GUTTER_BOTTOM : ""
+    }`,
+    subtitle1: `sm:text-sm md:text-base lg:text-base font-normal ${
+      gutterBottom ? GUTTER_BOTTOM : ""
+    }`,
     subtitle2: `text-sm ${gutterBottom ? GUTTER_BOTTOM : ""}`,
     body1: `sm:text-sm md:text-base lg:text-base font-light ${
       gutterBottom ? GUTTER_BOTTOM : ""
     }`,
-    body2: `text-sm font-normal ${gutterBottom ? GUTTER_BOTTOM : ""}`,
-    button: `text-sm font-medium ${gutterBottom ? GUTTER_BOTTOM : ""}`,
-    caption: `text-sm font-normal ${gutterBottom ? GUTTER_BOTTOM : ""}`,
-    overline: `text-sm font-normal ${gutterBottom ? GUTTER_BOTTOM : ""}`,
+    body2: `sm:text-xs md:text-sm lg:text-sm font-normal ${
+      gutterBottom ? GUTTER_BOTTOM : ""
+    }`,
+    button: `sm:text-xs md:text-sm lg:text-sm font-medium ${
+      gutterBottom ? GUTTER_BOTTOM : ""
+    }`,
+    caption: `sm:text-xs md:text-sm lg:text-sm font-normal ${
+      gutterBottom ? GUTTER_BOTTOM : ""
+    }`,
+    overline: `sm:text-xs md:text-sm lg:text-sm font-normal ${
+      gutterBottom ? GUTTER_BOTTOM : ""
+    }`,
   };
 };
 

@@ -20,3 +20,4 @@ export { default as InfoCircledIcon } from "./mr-icons/InfoCircledIcon";
 export { default as ErrorCircledIcon } from "./mr-icons/ErrorCircledIcon";
 export { default as WarningIcon } from "./mr-icons/WarningIcon";
 export { default as CopyIcon } from "./mr-icons/CopyIcon";
+export { default as UpIcon } from "./mr-icons/UpIcon";
