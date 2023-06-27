@@ -1,4 +1,4 @@
-const NextIcon = ({
+const UpIcon = ({
   color = "black",
   strokeColor = "transparent",
   strokeWidth = "0.2",
@@ -31,4 +31,4 @@ const NextIcon = ({
   );
 };
 
-export default NextIcon;
+export default UpIcon;

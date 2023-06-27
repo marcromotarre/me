@@ -16,7 +16,7 @@ const Accordion = ({ children, style = {} }: ComponentProps) => {
   );
 
   return (
-    <div className="w-[100%] bg-slate-300" style={style}>
+    <div className="w-[100%] " style={style}>
       <div
         className={`flex  w-[100%] justify-center`}
         onClick={(e) => {

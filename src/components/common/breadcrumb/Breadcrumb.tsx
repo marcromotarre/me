@@ -1,41 +1,45 @@
-import React, { ReactElement, cloneElement } from "react";
-import BreadcrumbLink from "./BreadcrumbLink";
-import Typography from "../Typography/Typography";
-import { link } from "fs";
+import React, { ReactElement } from "react";
+import BreadcrumbLink, {
+  ComponentsProps as BreadcrumbLinkProps,
+} from "./BreadcrumbLink";
+import BreadcrumbSeparator from "./BreadcrumbSeparator";
 
-const Breadcrumb = ({
+const Breadcrumb: React.FC<ComponentProps> = ({
   children,
   separator = "/",
   style = {},
-}: ComponentProps) => {
-  const BreadcrumbLinkMemo = React.memo(BreadcrumbLink);
+}) => {
   const links = [...(Array.isArray(children) ? children : [children])].filter(
-    (child) => child.type.name === BreadcrumbLinkMemo.type.name
+    (child) => child?.props.__TYPE === "BreadcrumbLink"
   );
+
+  const _style = { ...defaultStyles, ...style };
+
   return (
     <div
       style={{
         display: "flex",
-        ...defaultStyles,
-        ...style,
+        ..._style,
       }}
       className="w-fit rounded-lg pb-2 pl-4 pr-4 pt-2 "
     >
       {links.map((link, index: number) => {
         return (
           <React.Fragment key={index}>
-            {cloneElement(link, {
-              style: {
-                color: style.color,
-                fontWeight: index === links.length - 1 ? "500" : "",
-                href: index === links.length - 1 ? "" : link.href,
-              },
-            })}
-
+            {link && (
+              <BreadcrumbLink
+                {...link.props}
+                style={{
+                  ...link.props.style,
+                  ..._style,
+                  fontWeight: index === links.length - 1 ? "500" : "",
+                }}
+              >
+                {link.props.children}
+              </BreadcrumbLink>
+            )}
             {index < links.length - 1 && (
-              <div className="ml-2 mr-2">
-                <Typography>{separator}</Typography>
-              </div>
+              <BreadcrumbSeparator separator={separator} />
             )}
           </React.Fragment>
         );
@@ -45,14 +49,15 @@ const Breadcrumb = ({
 };
 
 const defaultStyles: Styles = {
-  color: "black",
   backgroundColor: "transparent",
 };
 
 type ComponentProps = {
   style?: Styles;
-  children: ReactElement | Array<ReactElement>;
-  separator?: string;
+  separator?: string | ReactElement;
+  children?:
+    | React.ReactElement<BreadcrumbLinkProps>
+    | React.ReactElement<BreadcrumbLinkProps>[];
 };
 export default Breadcrumb;
 

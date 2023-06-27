@@ -15,8 +15,15 @@ const SECTIONS = {
   "/react/patterns": (
     <Title icon={<ReactIcon size={30} />} title="React Patterns" />
   ),
+  "/react": <Title icon={<ReactIcon size={30} />} title="React" />,
   "/javascript/arrays": (
     <Title icon={<JavascriptIcon size={30} />} title="Arrays" />
+  ),
+  "/javascript": (
+    <Title icon={<JavascriptIcon size={30} />} title="Javascript" />
+  ),
+  "/typescript": (
+    <Title icon={<JavascriptIcon size={30} />} title="Typescript" />
   ),
 };
 
@@ -50,23 +57,25 @@ const InformationLayout = () => {
         </div>
         <div className="h-[100%] overflow-x-hidden overflow-y-scroll sm:p-4 md:p-8 lg:p-8">
           <div className="mb-4 flex sm:items-center sm:justify-center md:items-center md:justify-center lg:items-center lg:justify-start">
-            <Breadcrumb
-              separator="/"
-              style={{
-                color: "black",
-                backgroundColor: "#E7EBF0",
-              }}
-            >
-              {breadcrumbs.map((section, index) => (
-                <BreadcrumbLink
-                  key={index}
-                  icon={section.icon}
-                  href={section.path}
-                >
-                  {section.name}
-                </BreadcrumbLink>
-              ))}
-            </Breadcrumb>
+            {
+              <Breadcrumb
+                separator="/"
+                style={{
+                  color: "black",
+                  backgroundColor: "#E7EBF0",
+                }}
+              >
+                {breadcrumbs.map((section, index) => (
+                  <BreadcrumbLink
+                    key={index}
+                    icon={section.icon}
+                    href={section.path}
+                  >
+                    {section.name}
+                  </BreadcrumbLink>
+                ))}
+              </Breadcrumb>
+            }
           </div>
           <div className="grid grid-cols-1 gap-y-4">
             {SECTIONS[sectionId]}

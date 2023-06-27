@@ -1,10 +1,10 @@
 import { createRoot } from "react-dom/client";
 import PortfolioPage from "./pages/PortfolioPage";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import JavascriptPage from "./pages/JavascriptPage";
+import JavascriptPage from "./pages/javascript/JavascriptPage";
 import { Provider } from "react-redux";
 import store from "./store";
-import ReactPage from "./pages/ReactPage";
+import ReactPage from "./pages/react/ReactPage";
 import ReduxPage from "./pages/ReduxPage";
 import GitPage from "./pages/GitPage";
 import ReactHooksPage from "./pages/ReactHooksPage";
@@ -44,7 +44,7 @@ const App = () => {
               path="/javascript/arrays"
               element={<JavascriptArraysPage />}
             />
-            <Route path="/react/:id" element={<ReactPage />} />
+            <Route path="/react/" element={<ReactPage />} />
             <Route path="/react/hooks" element={<ReactHooksPage />} />
             <Route
               path="/react/my-components"

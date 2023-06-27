@@ -27,7 +27,7 @@ const BreadcrumbLink = ({
           size: 16,
           color: style.color,
         })}
-      <Typography style={{ fontWeight: style.fontWeight }}>
+      <Typography style={{ fontWeight: style.fontWeight, color: style.color }}>
         {children}
       </Typography>
     </button>
@@ -36,11 +36,16 @@ const BreadcrumbLink = ({
 
 type Styles = { fontWeight?: string; color?: string };
 
-type ComponentsProps = {
+export type ComponentsProps = {
   children: string;
   href?: string;
   icon?: ReactElement;
   style?: Styles;
+  __TYPE?: string;
+};
+
+BreadcrumbLink.defaultProps = {
+  __TYPE: "BreadcrumbLink",
 };
 
 const defaultStyles: Styles = {

@@ -23,6 +23,7 @@ const PageButton = ({
       <Accordion style={{ position: "relative" }}>
         <AccordionSummary expandIcon={page.children ? <UpIcon /> : null}>
           <button
+            style={{ paddingLeft: `${level * 24}px` }}
             className="flex w-[100%] items-center justify-start"
             onClick={(e) => {
               e.stopPropagation();
@@ -37,7 +38,7 @@ const PageButton = ({
         <AccordionDetails>
           {page.children &&
             page.children.map((subpage: Page, index) => (
-              <div className="pl-6">
+              <div>
                 <PageButton
                   key={`${page.name}_${page.path}_${index}`}
                   page={subpage}
@@ -48,15 +49,6 @@ const PageButton = ({
             ))}
         </AccordionDetails>
       </Accordion>
-      <div
-        style={{
-          width: "100%",
-          height: "3px",
-          backgroundColor: "black",
-          position: "absolute",
-          zIndex: "30",
-        }}
-      ></div>
     </div>
   );
 };

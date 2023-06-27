@@ -247,7 +247,7 @@ type FontType =
   | "caption"
   | "overline";
 
-type Style = { fontWeight?: string };
+type Style = { fontWeight?: string; color?: string };
 
 type ComponentProps = {
   component?: FontType;

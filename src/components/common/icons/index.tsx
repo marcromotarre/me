@@ -21,3 +21,5 @@ export { default as ErrorCircledIcon } from "./mr-icons/ErrorCircledIcon";
 export { default as WarningIcon } from "./mr-icons/WarningIcon";
 export { default as CopyIcon } from "./mr-icons/CopyIcon";
 export { default as UpIcon } from "./mr-icons/UpIcon";
+export { default as RightIcon } from "./mr-icons/RightIcon";
+export { default as ReactComponentIcon } from "./mr-icons/ReactComponentIcon";
