@@ -1,15 +1,24 @@
-import Typography from "../../../components/common/Typography/Typography";
-import Alert from "../../../components/common/alert/Alert";
-import Breadcrumb from "../../../components/common/breadcrumb/Breadcrumb";
-import BreadcrumbLink from "../../../components/common/breadcrumb/BreadcrumbLink";
+import Typography from "../../../../components/common/Typography/Typography";
+import Alert from "../../../../components/common/alert/Alert";
+import Breadcrumb from "../../../../components/common/breadcrumb/Breadcrumb";
+import BreadcrumbLink from "../../../../components/common/breadcrumb/BreadcrumbLink";
+import Code from "../../../../components/common/code/Code";
 import {
   ReactComponentIcon,
   ReactIcon,
   ReduxIcon,
   RightIcon,
-} from "../../../components/common/icons";
+} from "../../../../components/common/icons";
+import {
+  BreadcrumWithCustomSeparatorCode,
+  BreadcrumWithCustomSeparatorIconCode,
+  BreadcrumWithHrefCode,
+  BreadcrumbChangeColorCode,
+  BreadcrumbsWithIconsCode,
+  DefaultBreadcrumCode,
+} from "../../../../data/codes/react/my-components/breadcrum/BreadcrumCode";
 
-const ReactMyComponentsBreadcrumbPage = () => {
+const ReactMyComponentsBreadcrumbUsePage = () => {
   return (
     <>
       <Typography variant="h3">Breadcrumb</Typography>
@@ -24,6 +33,9 @@ const ReactMyComponentsBreadcrumbPage = () => {
           <BreadcrumbLink>Section 1.5.3.2</BreadcrumbLink>
         </Breadcrumb>
       </div>
+      <Code>
+        <>{DefaultBreadcrumCode}</>
+      </Code>
       <Typography variant="h4">href</Typography>
       <Typography>
         Use href prop in links to navigate through your application
@@ -43,6 +55,9 @@ const ReactMyComponentsBreadcrumbPage = () => {
         If you click on this breadcrumb links you will be redirected. Other
         breadcrumbs on this page does not have href prop.
       </Alert>
+      <Code>
+        <>{BreadcrumWithHrefCode}</>
+      </Code>
       <Typography variant="h4">Custom separator</Typography>
       <Typography>We can modify the separator</Typography>
       <div className="flex justify-center">
@@ -59,6 +74,9 @@ const ReactMyComponentsBreadcrumbPage = () => {
           <BreadcrumbLink>Breadcrumb</BreadcrumbLink>
         </Breadcrumb>
       </div>
+      <Code>
+        <>{BreadcrumWithCustomSeparatorCode}</>
+      </Code>
       <Typography>And also use a icon for it and edit its props</Typography>
       <div className="flex justify-center">
         <Breadcrumb separator={<RightIcon />}>
@@ -74,6 +92,10 @@ const ReactMyComponentsBreadcrumbPage = () => {
           <BreadcrumbLink>Breadcrumb</BreadcrumbLink>
         </Breadcrumb>
       </div>
+      <Code>
+        <>{BreadcrumWithCustomSeparatorIconCode}</>
+      </Code>
+
       <Typography variant="h4">Breadcrumbs with icons</Typography>
       <Typography>We can add the icon in the breadcrumb link</Typography>
       <div className="flex justify-center">
@@ -85,6 +107,9 @@ const ReactMyComponentsBreadcrumbPage = () => {
           <BreadcrumbLink>Breadcrumb</BreadcrumbLink>
         </Breadcrumb>
       </div>
+      <Code>
+        <>{BreadcrumbsWithIconsCode}</>
+      </Code>
       <Typography variant="h4">Customitzation</Typography>
       <Typography>
         Some params of the breadcrumb can be customized using style prop. Here
@@ -103,6 +128,9 @@ const ReactMyComponentsBreadcrumbPage = () => {
           <BreadcrumbLink>Breadcrumb</BreadcrumbLink>
         </Breadcrumb>
       </div>
+      <Code>
+        <>{BreadcrumbChangeColorCode}</>
+      </Code>
       <Typography>Add a background and edit text color</Typography>
       <div className="flex justify-center">
         <Breadcrumb
@@ -216,4 +244,4 @@ const ReactMyComponentsBreadcrumbPage = () => {
   );
 };
 
-export default ReactMyComponentsBreadcrumbPage;
+export default ReactMyComponentsBreadcrumbUsePage;

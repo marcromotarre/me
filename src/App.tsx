@@ -31,6 +31,7 @@ import ReactMyComponentsCardPage from "./pages/react/my-components/ReactMyCompon
 import JavascriptArraysPage from "./pages/javascript/array/JavascriptArraysPage";
 import ReactMyComponentsAccordionPage from "./pages/react/my-components/ReactMyComponentsAccordionPage";
 import ReactMyComponentsBreadcrumbPage from "./pages/react/my-components/ReactMyComponentsBreadcrumbPage";
+import ReactMyComponentsBreadcrumbUsePage from "./pages/react/my-components/breadcrumb/ReactMyComponentsBreadcrumbUsePage";
 
 const App = () => {
   return (
@@ -84,7 +85,7 @@ const App = () => {
             />
             <Route
               path="/react/my-components/breadcrumb"
-              element={<ReactMyComponentsBreadcrumbPage />}
+              element={<ReactMyComponentsBreadcrumbUsePage />}
             />
             <Route
               path="/react/my-components/card"
