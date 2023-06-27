@@ -1,6 +1,7 @@
 import { ReactElement, cloneElement } from "react";
 import { useNavigate } from "react-router-dom";
 import Typography from "../Typography/Typography";
+import Styles from "../../types/style";
 
 const BreadcrumbLink = ({
   children,
@@ -18,7 +19,7 @@ const BreadcrumbLink = ({
   return (
     <button
       onClick={onClick}
-      style={{ ...defaultStyles, ...style }}
+      style={style}
       className="flex items-center justify-center"
     >
       {icon &&
@@ -27,14 +28,10 @@ const BreadcrumbLink = ({
           size: 16,
           color: style.color,
         })}
-      <Typography style={{ fontWeight: style.fontWeight, color: style.color }}>
-        {children}
-      </Typography>
+      <Typography style={style}>{children}</Typography>
     </button>
   );
 };
-
-type Styles = { fontWeight?: string; color?: string };
 
 export type ComponentsProps = {
   children: string;
@@ -46,11 +43,6 @@ export type ComponentsProps = {
 
 BreadcrumbLink.defaultProps = {
   __TYPE: "BreadcrumbLink",
-};
-
-const defaultStyles: Styles = {
-  color: "black",
-  fontWeight: "300",
 };
 
 export default BreadcrumbLink;

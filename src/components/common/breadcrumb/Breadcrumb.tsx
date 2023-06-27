@@ -3,6 +3,7 @@ import BreadcrumbLink, {
   ComponentsProps as BreadcrumbLinkProps,
 } from "./BreadcrumbLink";
 import BreadcrumbSeparator from "./BreadcrumbSeparator";
+import Styles from "../../types/style";
 
 const Breadcrumb: React.FC<ComponentProps> = ({
   children,
@@ -30,8 +31,9 @@ const Breadcrumb: React.FC<ComponentProps> = ({
               <BreadcrumbLink
                 {...link.props}
                 style={{
+                  ...style,
+                  ...style.link,
                   ...link.props.style,
-                  ..._style,
                   fontWeight: index === links.length - 1 ? "500" : "",
                 }}
               >
@@ -39,7 +41,10 @@ const Breadcrumb: React.FC<ComponentProps> = ({
               </BreadcrumbLink>
             )}
             {index < links.length - 1 && (
-              <BreadcrumbSeparator separator={separator} />
+              <BreadcrumbSeparator
+                style={{ ...style, ...style.separator }}
+                separator={separator}
+              />
             )}
           </React.Fragment>
         );
@@ -48,17 +53,18 @@ const Breadcrumb: React.FC<ComponentProps> = ({
   );
 };
 
-const defaultStyles: Styles = {
-  backgroundColor: "transparent",
-};
+const defaultStyles: Styles = {};
+
+interface BreadcrumbStyles extends Styles {
+  separator?: Styles;
+  link?: Styles;
+}
 
 type ComponentProps = {
-  style?: Styles;
+  style?: BreadcrumbStyles;
   separator?: string | ReactElement;
   children?:
     | React.ReactElement<BreadcrumbLinkProps>
     | React.ReactElement<BreadcrumbLinkProps>[];
 };
 export default Breadcrumb;
-
-type Styles = { backgroundColor?: string; color?: string };

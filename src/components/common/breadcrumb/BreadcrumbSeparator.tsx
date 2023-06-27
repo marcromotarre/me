@@ -1,5 +1,6 @@
 import { ReactElement, cloneElement } from "react";
 import Typography from "../Typography/Typography";
+import Styles from "../../types/style";
 
 const BreadcrumbSeparator = ({ separator, style }: ComponentProps) => {
   return (
@@ -13,10 +14,6 @@ const BreadcrumbSeparator = ({ separator, style }: ComponentProps) => {
       )}
     </div>
   );
-};
-
-type Styles = {
-  color?: string;
 };
 
 type ComponentProps = { separator: string | ReactElement; style: Styles };
