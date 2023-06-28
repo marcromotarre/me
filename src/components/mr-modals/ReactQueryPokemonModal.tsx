@@ -25,6 +25,7 @@ const ReactQueryPokemonModal = ({
 }) => {
   const [offset, setOffset] = useState(0);
   const [reactQueryDevtools, setReactQueryDevtools] = useState(false);
+  const [showDevtools, setShowDevtools] = React.useState(false);
 
   const queryClient = useQueryClient();
 
@@ -87,6 +88,7 @@ const ReactQueryPokemonModal = ({
               <Button
                 onClick={() => {
                   setReactQueryDevtools(!reactQueryDevtools);
+                  window.toggleDevtools = () => setShowDevtools((old) => !old);
                 }}
                 startIcon={<ReactQueryIcon />}
               >
@@ -105,7 +107,7 @@ const ReactQueryPokemonModal = ({
         </Modal.Footer>
       </Modal>
       {reactQueryDevtools && <ReactQueryDevtools initialIsOpen={false} />}
-      {reactQueryDevtools && (
+      {showDevtools && (
         <React.Suspense fallback={null}>
           <ReactQueryDevtoolsProduction />
         </React.Suspense>
