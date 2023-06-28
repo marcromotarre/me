@@ -1,20 +1,21 @@
-import { beforeEach, describe, expect, test, vi } from "vitest";
+import { describe, expect, test, vi } from "vitest";
 import { fireEvent, render } from "@testing-library/react";
 
 import Breadcrumb from "../Breadcrumb";
 import BreadcrumbLink from "../BreadcrumbLink";
-import { BrowserRouter, useNavigate } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 import { RectangleIcon } from "../../icons";
 
 const navigateMock = vi.fn();
 vi.mock("react-router-dom", async () => {
   const actual = await vi.importActual("react-router-dom");
-  return {
+  const mock = {
     ...actual,
     useNavigate: () => {
       return navigateMock;
     },
   };
+  return mock;
 });
 
 describe("<Breadcrumb />", () => {
@@ -204,6 +205,24 @@ describe("<Breadcrumb />", () => {
     expect(breadcrumbSection1_2Link.getAttribute("style")).contains(
       "color: blue"
     );
+
+    breadcrumb.unmount();
+  });
+
+  test("should not navigate when click on BreadcrumbLink without href", async () => {
+    const breadcrumb = render(
+      <Breadcrumb>
+        <BreadcrumbLink>Section1</BreadcrumbLink>
+        <BreadcrumbLink href="/section/1/1_2">Section1</BreadcrumbLink>
+      </Breadcrumb>,
+      { wrapper: BrowserRouter }
+    );
+
+    const breadcrumbComponent = await breadcrumb.findByTestId("breadcrumb");
+    const section1 = breadcrumbComponent.children[0];
+    expect(navigateMock.mock.calls).toHaveLength(0);
+    fireEvent.click(section1);
+    expect(navigateMock.mock.calls).toHaveLength(0);
 
     breadcrumb.unmount();
   });
