@@ -6,8 +6,12 @@ import { JavascriptIcon, ReactIcon } from "../../components/common/icons";
 import Breadcrumb from "../../components/common/breadcrumb/Breadcrumb";
 import BreadcrumbLink from "../../components/common/breadcrumb/BreadcrumbLink";
 import TABLE_OF_CONTENTS_DATA, { getLinearList } from "../../data/LateralMenu";
+import ReactQueryIcon from "../../components/common/icons/mr-icons/ReactQueryIcon";
 
 const SECTIONS = {
+  "/react/react-query": (
+    <Title icon={<ReactQueryIcon size={30} />} title="React Query" />
+  ),
   "/react/my-components": (
     <Title icon={<ReactIcon size={30} />} title="React My Components" />
   ),

@@ -5,6 +5,8 @@ type Styles = {
   fontWeight?: string;
   fontSize?: string;
   display?: string;
+  height?: string;
+  width?: string;
 };
 
 export default Styles;

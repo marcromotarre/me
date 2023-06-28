@@ -32,6 +32,7 @@ import JavascriptArraysPage from "./pages/javascript/array/JavascriptArraysPage"
 import ReactMyComponentsAccordionPage from "./pages/react/my-components/ReactMyComponentsAccordionPage";
 import ReactMyComponentsBreadcrumbPage from "./pages/react/my-components/ReactMyComponentsBreadcrumbPage";
 import ReactMyComponentsBreadcrumbUsePage from "./pages/react/my-components/breadcrumb/ReactMyComponentsBreadcrumbUsePage";
+import ReactReactQueryPage from "./pages/react/react-query/ReactReactQueryPage";
 
 const App = () => {
   return (
@@ -127,6 +128,10 @@ const App = () => {
             <Route
               path="/react/patterns/conditional-rendering-design-pattern"
               element={<ReactPatternsConditionalRenderingDesignPage />}
+            />
+            <Route
+              path="/react/react-query"
+              element={<ReactReactQueryPage />}
             />
             <Route path="/redux/" element={<ReduxPage />} />
             <Route path="/git/" element={<GitPage />} />

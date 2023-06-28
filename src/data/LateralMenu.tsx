@@ -5,6 +5,7 @@ import {
   ReactIcon,
   TypescriptIcon,
 } from "../components/common/icons";
+import ReactQueryIcon from "../components/common/icons/mr-icons/ReactQueryIcon";
 
 export const getChildren = (
   sectionNames: Array<string>
@@ -170,6 +171,11 @@ const TABLE_OF_CONTENTS_DATA: Array<SectionType> = [
             name: "Conditional Rendering Design Pattern",
           },
         ],
+      },
+      {
+        path: "/react/react-query",
+        name: "React Query",
+        icon: <ReactQueryIcon color="red" />,
       },
       { path: "/react/interesting-questions", name: "Interesting Questions" },
     ],
