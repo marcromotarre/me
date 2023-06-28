@@ -1,6 +1,6 @@
-import Typography from "../../../components/common/typography/Typography";
 import Alert from "../../../components/common/alert/Alert";
 import Card from "../../../components/common/card/Card";
+import Typography from "../../../components/common/typography/Typography";
 
 const ReactMyComponentsTypographyPage = () => {
   return (
