@@ -35,7 +35,6 @@ const Button: React.FC<ComponentProps> = (props) => {
         {props.children && (
           <Typography
             className={buttonData.buttonText.className}
-            data-testid="button-text"
             variant="button"
             style={buttonData.buttonText.style}
           >
@@ -53,7 +52,7 @@ const Button: React.FC<ComponentProps> = (props) => {
 
 export default Button;
 
-type ComponentProps = {
+export type ComponentProps = {
   children?: string;
   variant?: "outlined" | "text" | "contained";
   shape?: "default" | "rect" | "rounded";
@@ -70,5 +69,5 @@ Button.defaultProps = {
   color: "default",
   secondaryColor: "white",
   size: "medium",
-  shape: "rounded",
+  shape: "default",
 };

@@ -12,16 +12,18 @@ const Typography = ({
   className = "",
   style = {},
 }: ComponentProps) => {
+  const element = paragraph
+    ? TYPOGRAPHY_DATA.paragraph.component
+    : component
+    ? TYPOGRAPHY_DATA[component].component
+    : TYPOGRAPHY_DATA[variant].component;
   return createElement(
-    paragraph
-      ? TYPOGRAPHY_DATA.paragraph.component
-      : component
-      ? TYPOGRAPHY_DATA[component].component
-      : TYPOGRAPHY_DATA[variant].component,
+    element,
     {
       className: `${className} ${TYPOGRAPHY_DATA[variant].className} ${
         gutterBottom ? GUTTER_BOTTOM : ""
       }`,
+      "data-testid": `typography-${element}`,
       style,
     },
     children

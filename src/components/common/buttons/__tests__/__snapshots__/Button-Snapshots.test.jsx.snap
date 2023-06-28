@@ -3,39 +3,36 @@
 exports[`renders correct color button 1`] = `
 <DocumentFragment>
   <button
-    class="flex h-fit w-max items-center justify-center rounded-md bg-transparent hover:bg-white hover:brightness-95 pb-2 pl-3 pr-3 pt-2"
+    class="flex h-fit w-max items-center justify-center bg-transparent hover:bg-white hover:brightness-95 p-3 rounded-md"
     data-testid="button"
     style="background-color: red;"
   >
     <div
-      style=""
+      class="flex items-center justify-center"
+      data-testid="button-content"
     >
-      <div
-        class="flex items-center justify-center"
-        data-testid="button-content"
+      <svg
+        class=""
+        data-testid="rectangle-icon"
+        fill="none"
+        height="20"
+        viewBox="0 0 72 72"
+        width="20"
+        xmlns="http://www.w3.org/2000/svg"
       >
-        <svg
-          class="mr-2"
-          data-testid="rectangle-icon"
-          fill="none"
-          height="20"
-          viewBox="0 0 72 72"
-          width="20"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <rect
-            fill="black"
-            height="72"
-            width="72"
-          />
-        </svg>
-        <p
-          class="m-0 p-0 text-center uppercase text-base"
-          data-testid="button-text"
-        >
-          Contained Button
-        </p>
-      </div>
+        <rect
+          fill="black"
+          height="72"
+          width="72"
+        />
+      </svg>
+      <span
+        class="ml-2 mr-2 sm:text-xs md:text-sm lg:text-sm uppercase font-medium "
+        data-testid="typography-span"
+        style="font-size: 0.875rem;"
+      >
+        Contained Button
+      </span>
     </div>
   </button>
 </DocumentFragment>
@@ -44,39 +41,36 @@ exports[`renders correct color button 1`] = `
 exports[`renders correct endIcon text button 1`] = `
 <DocumentFragment>
   <button
-    class="flex h-fit w-max items-center justify-center rounded-md bg-transparent hover:bg-white hover:brightness-95 pb-2 pl-3 pr-3 pt-2"
+    class="flex h-fit w-max items-center justify-center bg-transparent hover:bg-white hover:brightness-95 p-3 rounded-md"
     data-testid="button"
     style="background-color: rgb(96 165 250);"
   >
     <div
-      style="color: white;"
+      class="flex items-center justify-center"
+      data-testid="button-content"
     >
-      <div
-        class="flex items-center justify-center"
-        data-testid="button-content"
+      <span
+        class="ml-2 mr-2 sm:text-xs md:text-sm lg:text-sm uppercase font-medium "
+        data-testid="typography-span"
+        style="color: white; font-size: 0.875rem;"
       >
-        <p
-          class="m-0 p-0 text-center uppercase text-base"
-          data-testid="button-text"
-        >
-          TextButton
-        </p>
-        <svg
-          class="ml-2"
-          data-testid="rectangle-icon"
-          fill="none"
-          height="20"
-          viewBox="0 0 72 72"
-          width="20"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <rect
-            fill="white"
-            height="72"
-            width="72"
-          />
-        </svg>
-      </div>
+        TextButton
+      </span>
+      <svg
+        class=""
+        data-testid="rectangle-icon"
+        fill="none"
+        height="20"
+        viewBox="0 0 72 72"
+        width="20"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <rect
+          fill="white"
+          height="72"
+          width="72"
+        />
+      </svg>
     </div>
   </button>
 </DocumentFragment>
@@ -85,33 +79,29 @@ exports[`renders correct endIcon text button 1`] = `
 exports[`renders correct icon button 1`] = `
 <DocumentFragment>
   <button
-    class="flex h-fit w-max items-center justify-center rounded-md bg-transparent hover:bg-white hover:brightness-95 pb-2 pl-3 pr-3 pt-2"
+    class="flex h-fit w-max items-center justify-center bg-transparent hover:bg-white hover:brightness-95 p-3 rounded-md"
     data-testid="button"
     style="background-color: rgb(96 165 250);"
   >
     <div
-      style="color: white;"
+      class="flex items-center justify-center"
+      data-testid="button-content"
     >
-      <div
-        class="flex items-center justify-center"
-        data-testid="button-content"
+      <svg
+        class=""
+        data-testid="rectangle-icon"
+        fill="none"
+        height="20"
+        viewBox="0 0 72 72"
+        width="20"
+        xmlns="http://www.w3.org/2000/svg"
       >
-        <svg
-          class=""
-          data-testid="rectangle-icon"
-          fill="none"
-          height="20"
-          viewBox="0 0 72 72"
-          width="20"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <rect
-            fill="white"
-            height="72"
-            width="72"
-          />
-        </svg>
-      </div>
+        <rect
+          fill="white"
+          height="72"
+          width="72"
+        />
+      </svg>
     </div>
   </button>
 </DocumentFragment>
@@ -120,39 +110,36 @@ exports[`renders correct icon button 1`] = `
 exports[`renders correct large button 1`] = `
 <DocumentFragment>
   <button
-    class="flex h-fit w-max items-center justify-center rounded-md bg-transparent hover:bg-white hover:brightness-95 pb-2 pl-4 pr-4 pt-2"
+    class="flex h-fit w-max items-center justify-center bg-transparent hover:bg-white hover:brightness-95 p-4 rounded-md"
     data-testid="button"
     style="background-color: rgb(96 165 250);"
   >
     <div
-      style="color: white;"
+      class="flex items-center justify-center"
+      data-testid="button-content"
     >
-      <div
-        class="flex items-center justify-center"
-        data-testid="button-content"
+      <svg
+        class=""
+        data-testid="rectangle-icon"
+        fill="none"
+        height="25"
+        viewBox="0 0 72 72"
+        width="25"
+        xmlns="http://www.w3.org/2000/svg"
       >
-        <svg
-          class="mr-2"
-          data-testid="rectangle-icon"
-          fill="none"
-          height="25"
-          viewBox="0 0 72 72"
-          width="25"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <rect
-            fill="white"
-            height="72"
-            width="72"
-          />
-        </svg>
-        <p
-          class="m-0 p-0 text-center uppercase text-xl"
-          data-testid="button-text"
-        >
-          Large Button
-        </p>
-      </div>
+        <rect
+          fill="white"
+          height="72"
+          width="72"
+        />
+      </svg>
+      <span
+        class="ml-2 mr-2 sm:text-xs md:text-sm lg:text-sm uppercase font-medium "
+        data-testid="typography-span"
+        style="color: white; font-size: 1.25rem;"
+      >
+        Large Button
+      </span>
     </div>
   </button>
 </DocumentFragment>
@@ -161,39 +148,36 @@ exports[`renders correct large button 1`] = `
 exports[`renders correct medium button 1`] = `
 <DocumentFragment>
   <button
-    class="flex h-fit w-max items-center justify-center rounded-md bg-transparent hover:bg-white hover:brightness-95 pb-2 pl-3 pr-3 pt-2"
+    class="flex h-fit w-max items-center justify-center bg-transparent hover:bg-white hover:brightness-95 p-3 rounded-md"
     data-testid="button"
     style="background-color: rgb(96 165 250);"
   >
     <div
-      style="color: white;"
+      class="flex items-center justify-center"
+      data-testid="button-content"
     >
-      <div
-        class="flex items-center justify-center"
-        data-testid="button-content"
+      <svg
+        class=""
+        data-testid="rectangle-icon"
+        fill="none"
+        height="20"
+        viewBox="0 0 72 72"
+        width="20"
+        xmlns="http://www.w3.org/2000/svg"
       >
-        <svg
-          class="mr-2"
-          data-testid="rectangle-icon"
-          fill="none"
-          height="20"
-          viewBox="0 0 72 72"
-          width="20"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <rect
-            fill="white"
-            height="72"
-            width="72"
-          />
-        </svg>
-        <p
-          class="m-0 p-0 text-center uppercase text-base"
-          data-testid="button-text"
-        >
-          Medium Button
-        </p>
-      </div>
+        <rect
+          fill="white"
+          height="72"
+          width="72"
+        />
+      </svg>
+      <span
+        class="ml-2 mr-2 sm:text-xs md:text-sm lg:text-sm uppercase font-medium "
+        data-testid="typography-span"
+        style="color: white; font-size: 0.875rem;"
+      >
+        Medium Button
+      </span>
     </div>
   </button>
 </DocumentFragment>
@@ -202,39 +186,36 @@ exports[`renders correct medium button 1`] = `
 exports[`renders correct small button 1`] = `
 <DocumentFragment>
   <button
-    class="flex h-fit w-max items-center justify-center rounded-md bg-transparent hover:bg-white hover:brightness-95 pb-1 pl-2 pr-2 pt-1"
+    class="flex h-fit w-max items-center justify-center bg-transparent hover:bg-white hover:brightness-95 p-2 rounded-md"
     data-testid="button"
     style="background-color: rgb(96 165 250);"
   >
     <div
-      style="color: white;"
+      class="flex items-center justify-center"
+      data-testid="button-content"
     >
-      <div
-        class="flex items-center justify-center"
-        data-testid="button-content"
+      <svg
+        class=""
+        data-testid="rectangle-icon"
+        fill="none"
+        height="15"
+        viewBox="0 0 72 72"
+        width="15"
+        xmlns="http://www.w3.org/2000/svg"
       >
-        <svg
-          class="mr-2"
-          data-testid="rectangle-icon"
-          fill="none"
-          height="15"
-          viewBox="0 0 72 72"
-          width="15"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <rect
-            fill="white"
-            height="72"
-            width="72"
-          />
-        </svg>
-        <p
-          class="m-0 p-0 text-center uppercase text-sm"
-          data-testid="button-text"
-        >
-          Small Button
-        </p>
-      </div>
+        <rect
+          fill="white"
+          height="72"
+          width="72"
+        />
+      </svg>
+      <span
+        class="ml-2 mr-2 sm:text-xs md:text-sm lg:text-sm uppercase font-medium "
+        data-testid="typography-span"
+        style="color: white; font-size: 0.7rem;"
+      >
+        Small Button
+      </span>
     </div>
   </button>
 </DocumentFragment>
@@ -243,39 +224,36 @@ exports[`renders correct small button 1`] = `
 exports[`renders correct startIcon text button 1`] = `
 <DocumentFragment>
   <button
-    class="flex h-fit w-max items-center justify-center rounded-md bg-transparent hover:bg-white hover:brightness-95 pb-2 pl-3 pr-3 pt-2"
+    class="flex h-fit w-max items-center justify-center bg-transparent hover:bg-white hover:brightness-95 p-3 rounded-md"
     data-testid="button"
     style="background-color: rgb(96 165 250);"
   >
     <div
-      style="color: white;"
+      class="flex items-center justify-center"
+      data-testid="button-content"
     >
-      <div
-        class="flex items-center justify-center"
-        data-testid="button-content"
+      <svg
+        class=""
+        data-testid="rectangle-icon"
+        fill="none"
+        height="20"
+        viewBox="0 0 72 72"
+        width="20"
+        xmlns="http://www.w3.org/2000/svg"
       >
-        <svg
-          class="mr-2"
-          data-testid="rectangle-icon"
-          fill="none"
-          height="20"
-          viewBox="0 0 72 72"
-          width="20"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <rect
-            fill="white"
-            height="72"
-            width="72"
-          />
-        </svg>
-        <p
-          class="m-0 p-0 text-center uppercase text-base"
-          data-testid="button-text"
-        >
-          TextButton
-        </p>
-      </div>
+        <rect
+          fill="white"
+          height="72"
+          width="72"
+        />
+      </svg>
+      <span
+        class="ml-2 mr-2 sm:text-xs md:text-sm lg:text-sm uppercase font-medium "
+        data-testid="typography-span"
+        style="color: white; font-size: 0.875rem;"
+      >
+        TextButton
+      </span>
     </div>
   </button>
 </DocumentFragment>
@@ -284,24 +262,21 @@ exports[`renders correct startIcon text button 1`] = `
 exports[`renders correct text button 1`] = `
 <DocumentFragment>
   <button
-    class="flex h-fit w-max items-center justify-center rounded-md bg-transparent hover:bg-white hover:brightness-95 pb-2 pl-3 pr-3 pt-2"
+    class="flex h-fit w-max items-center justify-center bg-transparent hover:bg-white hover:brightness-95 p-3 rounded-md"
     data-testid="button"
     style="background-color: rgb(96 165 250);"
   >
     <div
-      style="color: white;"
+      class="flex items-center justify-center"
+      data-testid="button-content"
     >
-      <div
-        class="flex items-center justify-center"
-        data-testid="button-content"
+      <span
+        class="ml-2 mr-2 sm:text-xs md:text-sm lg:text-sm uppercase font-medium "
+        data-testid="typography-span"
+        style="color: white; font-size: 0.875rem;"
       >
-        <p
-          class="m-0 p-0 text-center uppercase text-base"
-          data-testid="button-text"
-        >
-          TextButton
-        </p>
-      </div>
+        TextButton
+      </span>
     </div>
   </button>
 </DocumentFragment>
@@ -310,39 +285,36 @@ exports[`renders correct text button 1`] = `
 exports[`renders correct text contained button 1`] = `
 <DocumentFragment>
   <button
-    class="flex h-fit w-max items-center justify-center rounded-md bg-transparent hover:bg-white hover:brightness-95 pb-2 pl-3 pr-3 pt-2"
+    class="flex h-fit w-max items-center justify-center bg-transparent hover:bg-white hover:brightness-95 p-3 rounded-md"
     data-testid="button"
     style="background-color: rgb(96 165 250);"
   >
     <div
-      style="color: white;"
+      class="flex items-center justify-center"
+      data-testid="button-content"
     >
-      <div
-        class="flex items-center justify-center"
-        data-testid="button-content"
+      <svg
+        class=""
+        data-testid="rectangle-icon"
+        fill="none"
+        height="20"
+        viewBox="0 0 72 72"
+        width="20"
+        xmlns="http://www.w3.org/2000/svg"
       >
-        <svg
-          class="mr-2"
-          data-testid="rectangle-icon"
-          fill="none"
-          height="20"
-          viewBox="0 0 72 72"
-          width="20"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <rect
-            fill="white"
-            height="72"
-            width="72"
-          />
-        </svg>
-        <p
-          class="m-0 p-0 text-center uppercase text-base"
-          data-testid="button-text"
-        >
-          Contained Button
-        </p>
-      </div>
+        <rect
+          fill="white"
+          height="72"
+          width="72"
+        />
+      </svg>
+      <span
+        class="ml-2 mr-2 sm:text-xs md:text-sm lg:text-sm uppercase font-medium "
+        data-testid="typography-span"
+        style="color: white; font-size: 0.875rem;"
+      >
+        Contained Button
+      </span>
     </div>
   </button>
 </DocumentFragment>
@@ -351,39 +323,36 @@ exports[`renders correct text contained button 1`] = `
 exports[`renders correct text outlined button 1`] = `
 <DocumentFragment>
   <button
-    class="flex h-fit w-max items-center justify-center rounded-md bg-transparent hover:bg-white hover:brightness-95 pb-2 pl-3 pr-3 pt-2"
+    class="flex h-fit w-max items-center justify-center bg-transparent hover:bg-white hover:brightness-95 p-3 rounded-md"
     data-testid="button"
     style="background-color: transparent;"
   >
     <div
-      style="color: rgb(96 165 250);"
+      class="flex items-center justify-center"
+      data-testid="button-content"
     >
-      <div
-        class="flex items-center justify-center"
-        data-testid="button-content"
+      <svg
+        class=""
+        data-testid="rectangle-icon"
+        fill="none"
+        height="20"
+        viewBox="0 0 72 72"
+        width="20"
+        xmlns="http://www.w3.org/2000/svg"
       >
-        <svg
-          class="mr-2"
-          data-testid="rectangle-icon"
-          fill="none"
-          height="20"
-          viewBox="0 0 72 72"
-          width="20"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <rect
-            fill="rgb(96 165 250)"
-            height="72"
-            width="72"
-          />
-        </svg>
-        <p
-          class="m-0 p-0 text-center uppercase text-base"
-          data-testid="button-text"
-        >
-          Contained Button
-        </p>
-      </div>
+        <rect
+          fill="rgb(96 165 250)"
+          height="72"
+          width="72"
+        />
+      </svg>
+      <span
+        class="ml-2 mr-2 sm:text-xs md:text-sm lg:text-sm uppercase font-medium "
+        data-testid="typography-span"
+        style="color: rgb(96 165 250); font-size: 0.875rem;"
+      >
+        Contained Button
+      </span>
     </div>
   </button>
 </DocumentFragment>
@@ -392,39 +361,36 @@ exports[`renders correct text outlined button 1`] = `
 exports[`renders correct text variant button 1`] = `
 <DocumentFragment>
   <button
-    class="flex h-fit w-max items-center justify-center rounded-md bg-transparent hover:bg-white hover:brightness-95 pb-2 pl-3 pr-3 pt-2"
+    class="flex h-fit w-max items-center justify-center bg-transparent hover:bg-white hover:brightness-95 p-3 rounded-md"
     data-testid="button"
     style="background-color: transparent;"
   >
     <div
-      style="color: rgb(96 165 250);"
+      class="flex items-center justify-center"
+      data-testid="button-content"
     >
-      <div
-        class="flex items-center justify-center"
-        data-testid="button-content"
+      <svg
+        class=""
+        data-testid="rectangle-icon"
+        fill="none"
+        height="20"
+        viewBox="0 0 72 72"
+        width="20"
+        xmlns="http://www.w3.org/2000/svg"
       >
-        <svg
-          class="mr-2"
-          data-testid="rectangle-icon"
-          fill="none"
-          height="20"
-          viewBox="0 0 72 72"
-          width="20"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <rect
-            fill="rgb(96 165 250)"
-            height="72"
-            width="72"
-          />
-        </svg>
-        <p
-          class="m-0 p-0 text-center uppercase text-base"
-          data-testid="button-text"
-        >
-          Large Button
-        </p>
-      </div>
+        <rect
+          fill="rgb(96 165 250)"
+          height="72"
+          width="72"
+        />
+      </svg>
+      <span
+        class="ml-2 mr-2 sm:text-xs md:text-sm lg:text-sm uppercase font-medium "
+        data-testid="typography-span"
+        style="color: rgb(96 165 250); font-size: 0.875rem;"
+      >
+        Large Button
+      </span>
     </div>
   </button>
 </DocumentFragment>

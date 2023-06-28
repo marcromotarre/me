@@ -1,34 +1,12 @@
-const buttonBorder = "1px solid ${buttonColor}";
-const buttonClassName = "";
-/*
-`flex w-max items-center justify-center rounded-md bg-transparent hover:bg-white hover:brightness-95 ${getPropsBySize(
-    'pb-1 pl-2 pr-2 pt-1',
-    'pb-2 pl-3 pr-3 pt-2',
-    'pb-2 pl-4 pr-4 pt-2'
-  )}`*/
-
-const textClassName = "";
-/*
-`m-0 p-0 text-center uppercase ${getPropsBySize(
-                "text-sm",
-                "text-base",
-                "text-xl"
-              )}`
-              */
-
 export const ButtonCode = `
 import { ReactElement, cloneElement, useState } from "react";
-const Button = ({
-  children,
-  variant = contained,
-  startIcon,
-  endIcon,
-  color = colors.default,
-  secondaryColor = "white",
-  size = medium,
-  onClick = () => {},
-}: ComponentProps) => {
+import Typography from "../typography/Typography";
+import BUTTON_DATA from "./ButtonData";
+
+const Button: React.FC<ComponentProps> = (props) => {
   const [isHovering, setIsHovering] = useState<boolean>(false);
+
+  const buttonData = BUTTON_DATA({ ...props, isHovering });
 
   const handleMouseEnter = () => {
     setIsHovering(true);
@@ -38,82 +16,37 @@ const Button = ({
     setIsHovering(false);
   };
 
-  const buttonColor: string = colors[color] ? colors[color] : color;
-
-  const getPropsByVariant = (
-    textProp: string,
-    containedProp: string,
-    outlinedProp: string
-  ): string => {
-    return variant === text
-      ? textProp
-      : variant === outlined
-      ? outlinedProp
-      : containedProp;
-  };
-
-  const getPropsBySize = (
-    smallProp: string,
-    mediumProp: string,
-    largeProp: string
-  ): string => {
-    return size === small ? smallProp : size === large ? largeProp : mediumProp;
-  };
-
   return (
     <button
       data-testid="button"
-      onClick={onClick}
-      style={{
-        backgroundColor: getPropsByVariant(
-          isHovering ? "white" : "transparent",
-          buttonColor,
-          isHovering ? "white" : "transparent"
-        ),
-        border: getPropsByVariant("", "", ${buttonBorder}),
-      }}
+      onClick={props.onClick}
+      style={buttonData.button.style}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
-      className={${buttonClassName}}
+      className={buttonData.button.className}
     >
       <div
-        style={{
-          color: getPropsByVariant(buttonColor, secondaryColor, buttonColor),
-        }}
+        className={buttonData.buttonContent.className}
+        data-testid="button-content"
       >
-        <div
-          className="flex items-center justify-center"
-          data-testid="button-content"
-        >
-          {startIcon &&
-            cloneElement(startIcon, {
-              size: getPropsBySize("15", "20", "25"),
-              color: getPropsByVariant(
-                buttonColor,
-                secondaryColor,
-                buttonColor
-              ),
-              className: children ? "mr-2" : "",
-            })}
-          {children && (
-            <p
-              data-testid="button-text"
-              className={${textClassName}}
-            >
-              {children}
-            </p>
-          )}
-          {endIcon &&
-            cloneElement(endIcon, {
-              size: 20,
-              color: getPropsByVariant(
-                buttonColor,
-                secondaryColor,
-                buttonColor
-              ),
-              className: children ? "ml-2" : "",
-            })}
-        </div>
+        {props.startIcon &&
+          cloneElement(props.startIcon, {
+            ...buttonData.buttonStartIcon.iconProps,
+          })}
+        {props.children && (
+          <Typography
+            className={buttonData.buttonText.className}
+            data-testid="button-text"
+            variant="button"
+            style={buttonData.buttonText.style}
+          >
+            {props.children}
+          </Typography>
+        )}
+        {props.endIcon &&
+          cloneElement(props.endIcon, {
+            ...buttonData.buttonEndIcon.iconProps,
+          })}
       </div>
     </button>
   );
@@ -121,9 +54,10 @@ const Button = ({
 
 export default Button;
 
-type ComponentProps = {
+export type ComponentProps = {
   children?: string;
-  variant?: "contained" | "outlined" | "text";
+  variant?: "outlined" | "text" | "contained";
+  shape?: "default" | "rect" | "rounded";
   startIcon?: ReactElement;
   endIcon?: ReactElement;
   color?: "error" | "default" | "success" | string;
@@ -132,20 +66,11 @@ type ComponentProps = {
   onClick?: React.MouseEventHandler;
 };
 
-const contained = "contained";
-const outlined = "outlined";
-const text = "text";
-
-const small = "small";
-const medium = "medium";
-const large = "large";
-
-const colors: Colors = {
-  default: "rgb(96 165 250)",
-  success: "#2e7d32",
-  error: "#d32f2f",
+Button.defaultProps = {
+  variant: "contained",
+  color: "default",
+  secondaryColor: "white",
+  size: "medium",
+  shape: "default",
 };
-
-type Colors = { [k: string]: string };
-
 `;

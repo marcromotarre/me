@@ -134,6 +134,77 @@ const ReactMyComponentsButtonUsePage = () => {
         </Code>
       </div>
 
+      <p className="text-xl">Button Shape</p>
+      <p className="font-light">{`I've created a property called variant to change easily the look & feel of the button`}</p>
+      <div className="display grid grid-cols-[max-content_auto] gap-x-3">
+        <Button shape="default" variant="contained">
+          shape
+        </Button>
+        <Code noHeader>
+          <>{`<Button shape="default" variant="contained">variant</Button>`}</>
+        </Code>
+      </div>
+      <div className="display grid grid-cols-[max-content_auto] gap-x-3">
+        <Button shape="rect" variant="contained">
+          shape
+        </Button>
+        <Code noHeader>
+          <>{`<Button shape="rect" variant="contained">variant</Button>`}</>
+        </Code>
+      </div>
+      <div className="display grid grid-cols-[max-content_auto] gap-x-3">
+        <Button shape="rounded" variant="contained">
+          shape
+        </Button>
+        <Code noHeader>
+          <>{`<Button shape="rounded" variant="contained">variant</Button>`}</>
+        </Code>
+      </div>
+      <p className="font-light">{`And of course we can use Icons and variants at the same time`}</p>
+      <div className="display grid grid-cols-[max-content_auto] gap-x-3">
+        <Button shape="default" variant="outlined" startIcon={<ReactIcon />}>
+          variant
+        </Button>
+        <Code noHeader>
+          <>{`<Button shape="default" variant="outlined" startIcon={<ReactIcon />}>variant</Button>`}</>
+        </Code>
+      </div>
+      <div className="display grid grid-cols-[max-content_auto] gap-x-3">
+        <Button shape="rounded" variant="outlined" startIcon={<ReactIcon />}>
+          variant
+        </Button>
+        <Code noHeader>
+          <>{`<Button shape="rounded" variant="outlined" startIcon={<ReactIcon />}>variant</Button>`}</>
+        </Code>
+      </div>
+      <div className="display grid grid-cols-[max-content_auto] gap-x-3">
+        <Button shape="rect" variant="outlined" startIcon={<ReactIcon />}>
+          variant
+        </Button>
+        <Code noHeader>
+          <>{`<Button shape="rect" variant="outlined" startIcon={<ReactIcon />}>variant</Button>`}</>
+        </Code>
+      </div>
+      <p className="font-light">{`Or just the icon`}</p>
+      <div className="display grid grid-cols-[max-content_auto] gap-x-3">
+        <Button shape="rounded" variant="text" startIcon={<ReactIcon />} />
+        <Code noHeader>
+          <>{`<Button shape="rounded" variant="text" startIcon={<ReactIcon />} />`}</>
+        </Code>
+      </div>
+      <div className="display grid grid-cols-[max-content_auto] gap-x-3">
+        <Button shape="rounded" variant="contained" startIcon={<ReactIcon />} />
+        <Code noHeader>
+          <>{`<Button shape="rounded" variant="contained" startIcon={<ReactIcon />} />`}</>
+        </Code>
+      </div>
+      <div className="display grid grid-cols-[max-content_auto] gap-x-3">
+        <Button shape="rounded" variant="outlined" startIcon={<ReactIcon />} />
+        <Code noHeader>
+          <>{`<Button shape="rounded" variant="outlined" startIcon={<ReactIcon />} />`}</>
+        </Code>
+      </div>
+
       <p className="text-xl">Button Size</p>
       <p className="font-light">{`I've created 3 different sizes for the buttons (small, medium & large)`}</p>
 

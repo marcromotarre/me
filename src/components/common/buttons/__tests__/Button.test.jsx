@@ -3,6 +3,11 @@ import { fireEvent, render } from "@testing-library/react";
 
 import Button from "../Button";
 import { RectangleIcon } from "../../icons";
+import {
+  TEXT_SIZE_LARGE,
+  TEXT_SIZE_MEDIUM,
+  TEXT_SIZE_SMALL,
+} from "../ButtonData";
 
 test("should render the component", () => {
   const button = render(<Button>Text Button</Button>);
@@ -47,14 +52,14 @@ test("Button is hoverable", () => {
 
 test("Button text", async () => {
   const button = render(<Button variant="text">Text Button</Button>);
-  const buttonText = await button.findByTestId("button-text");
+  const buttonText = await button.findByTestId("typography-span");
   expect(buttonText.innerText).toBe("Text Button");
   button.unmount();
 });
 
 test("Button without text", () => {
   const button = render(<Button startIcon={<RectangleIcon />} />);
-  expect(button.queryByTestId("button-text")).toBeFalsy();
+  expect(button.queryByTestId("typography-span")).toBeFalsy();
   button.unmount();
 });
 
@@ -126,8 +131,8 @@ test("Button small size", async () => {
       Icon Text Button
     </Button>
   );
-  const buttonText = await button.findByTestId("button-text");
-  expect(buttonText.getAttribute("class")).includes("text-sm");
+  const buttonText = await button.findByTestId("typography-span");
+  expect(buttonText.getAttribute("style")).includes(TEXT_SIZE_SMALL);
   const buttonContent = await button.findByTestId("button-content");
   const buttonIcon = buttonContent.children[0];
   expect(buttonIcon.getAttribute("width")).equals("15");
@@ -140,8 +145,8 @@ test("Button medium size", async () => {
       Icon Text Button
     </Button>
   );
-  const buttonText = await button.findByTestId("button-text");
-  expect(buttonText.getAttribute("class")).includes("text-base");
+  const buttonText = await button.findByTestId("typography-span");
+  expect(buttonText.getAttribute("style")).includes(TEXT_SIZE_MEDIUM);
   const buttonContent = await button.findByTestId("button-content");
   const buttonIcon = buttonContent.children[0];
   expect(buttonIcon.getAttribute("width")).equals("20");
@@ -154,21 +159,22 @@ test("Button large size", async () => {
       Icon Text Button
     </Button>
   );
-  const buttonText = await button.findByTestId("button-text");
-  expect(buttonText.getAttribute("class")).includes("text-xl");
+  const buttonText = await button.findByTestId("typography-span");
+  expect(buttonText.getAttribute("style")).includes(TEXT_SIZE_LARGE);
   const buttonContent = await button.findByTestId("button-content");
   const buttonIcon = buttonContent.children[0];
   expect(buttonIcon.getAttribute("width")).equals("25");
   button.unmount();
 });
 
-test("Button colored", () => {
+test("Button colored", async () => {
   const button = render(
     <Button startIcon={<RectangleIcon />} color="error" secondaryColor="yellow">
       Icon Text Button
     </Button>
   );
-  const buttonHTML = button.getByRole("button");
+  const buttonHTML = await button.findByTestId("button");
+
   expect(buttonHTML.getAttribute("style")).equals("background-color: #d32f2f;");
   button.unmount();
 });
