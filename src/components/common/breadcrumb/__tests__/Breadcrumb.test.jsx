@@ -30,6 +30,21 @@ describe("<Breadcrumb />", () => {
     breadcrumb.unmount();
   });
 
+  test("Breadcrumb with only one BreadcrumbLink", async () => {
+    const breadcrumb = render(
+      <Breadcrumb>
+        <BreadcrumbLink>Section1</BreadcrumbLink>
+      </Breadcrumb>,
+      { wrapper: BrowserRouter }
+    );
+    const breadcrumbComponent = await breadcrumb.findByTestId("breadcrumb");
+    expect(breadcrumbComponent.children.length).equals(1);
+
+    expect(breadcrumbComponent.children[0].innerText).equals("Section1");
+
+    breadcrumb.unmount();
+  });
+
   test("Breadcrumb contains BreadcrumbLinks & Breadcrumbs separators", async () => {
     const breadcrumb = render(
       <Breadcrumb>

@@ -13,7 +13,6 @@ const BreadcrumbLink = ({
 
   const onClick = () => {
     if (href) {
-      console.log("dabooom");
       navigate(href);
     }
   };
