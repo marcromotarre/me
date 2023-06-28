@@ -1,6 +1,6 @@
 import Modal from "../common/modal/Modal";
 import { PokeballIcon, ReactQueryIcon, RightIcon } from "../common/icons";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Pokemon from "../Pokemon";
 import Card from "../common/card/Card";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
@@ -9,6 +9,14 @@ import Button from "../common/buttons/Button";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
 const LIMIT = 3;
+
+const ReactQueryDevtoolsProduction = React.lazy(() =>
+  import("@tanstack/react-query-devtools/build/lib/index.prod.js").then(
+    (d) => ({
+      default: d.ReactQueryDevtools,
+    })
+  )
+);
 
 const ReactQueryPokemonModal = ({
   onClose = () => {},
@@ -97,6 +105,11 @@ const ReactQueryPokemonModal = ({
         </Modal.Footer>
       </Modal>
       {reactQueryDevtools && <ReactQueryDevtools initialIsOpen={false} />}
+      {reactQueryDevtools && (
+        <React.Suspense fallback={null}>
+          <ReactQueryDevtoolsProduction />
+        </React.Suspense>
+      )}
     </>
   );
 };
