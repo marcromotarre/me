@@ -13,7 +13,6 @@ const Breadcrumb: React.FC<ComponentProps> = ({
   const links = [...(Array.isArray(children) ? children : [children])].filter(
     (child) => child?.props.__TYPE === "BreadcrumbLink"
   );
-
   const _style = { ...defaultStyles, ...style };
 
   return (
@@ -22,6 +21,7 @@ const Breadcrumb: React.FC<ComponentProps> = ({
         display: "flex",
         ..._style,
       }}
+      data-testid="breadcrumb"
       className="w-fit rounded-lg pb-2 pl-4 pr-4 pt-2 "
     >
       {links.map((link, index: number) => {

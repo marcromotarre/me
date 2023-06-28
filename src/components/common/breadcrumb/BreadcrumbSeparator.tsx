@@ -4,7 +4,10 @@ import Styles from "../../types/style";
 
 const BreadcrumbSeparator = ({ separator, style }: ComponentProps) => {
   return (
-    <div className="ml-2 mr-2 flex items-center justify-center">
+    <div
+      data-testid="breadcrumb-separator"
+      className="ml-2 mr-2 flex items-center justify-center"
+    >
       {typeof separator === "string" ? (
         <Typography style={{ ...defaultStyles, ...style }}>
           {separator}

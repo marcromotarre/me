@@ -13,11 +13,13 @@ const BreadcrumbLink = ({
 
   const onClick = () => {
     if (href) {
+      console.log("dabooom");
       navigate(href);
     }
   };
   return (
     <button
+      data-testid="breadcrumb-link"
       onClick={onClick}
       style={style}
       className="flex items-center justify-center"

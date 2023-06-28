@@ -16,6 +16,7 @@ exports[`renders correct color button 1`] = `
       >
         <svg
           class="mr-2"
+          data-testid="rectangle-icon"
           fill="none"
           height="20"
           viewBox="0 0 72 72"
@@ -62,6 +63,7 @@ exports[`renders correct endIcon text button 1`] = `
         </p>
         <svg
           class="ml-2"
+          data-testid="rectangle-icon"
           fill="none"
           height="20"
           viewBox="0 0 72 72"
@@ -96,6 +98,7 @@ exports[`renders correct icon button 1`] = `
       >
         <svg
           class=""
+          data-testid="rectangle-icon"
           fill="none"
           height="20"
           viewBox="0 0 72 72"
@@ -130,6 +133,7 @@ exports[`renders correct large button 1`] = `
       >
         <svg
           class="mr-2"
+          data-testid="rectangle-icon"
           fill="none"
           height="25"
           viewBox="0 0 72 72"
@@ -170,6 +174,7 @@ exports[`renders correct medium button 1`] = `
       >
         <svg
           class="mr-2"
+          data-testid="rectangle-icon"
           fill="none"
           height="20"
           viewBox="0 0 72 72"
@@ -210,6 +215,7 @@ exports[`renders correct small button 1`] = `
       >
         <svg
           class="mr-2"
+          data-testid="rectangle-icon"
           fill="none"
           height="15"
           viewBox="0 0 72 72"
@@ -250,6 +256,7 @@ exports[`renders correct startIcon text button 1`] = `
       >
         <svg
           class="mr-2"
+          data-testid="rectangle-icon"
           fill="none"
           height="20"
           viewBox="0 0 72 72"
@@ -316,6 +323,7 @@ exports[`renders correct text contained button 1`] = `
       >
         <svg
           class="mr-2"
+          data-testid="rectangle-icon"
           fill="none"
           height="20"
           viewBox="0 0 72 72"
@@ -356,6 +364,7 @@ exports[`renders correct text outlined button 1`] = `
       >
         <svg
           class="mr-2"
+          data-testid="rectangle-icon"
           fill="none"
           height="20"
           viewBox="0 0 72 72"
@@ -396,6 +405,7 @@ exports[`renders correct text variant button 1`] = `
       >
         <svg
           class="mr-2"
+          data-testid="rectangle-icon"
           fill="none"
           height="20"
           viewBox="0 0 72 72"

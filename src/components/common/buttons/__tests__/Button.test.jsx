@@ -30,7 +30,7 @@ test("Button is clickable", () => {
   button.unmount();
 });
 
-test("Button is hoverable", async () => {
+test("Button is hoverable", () => {
   const button = render(<Button variant="text">Text Button</Button>);
   const buttonHTML = button.getByRole("button");
   expect(buttonHTML.getAttribute("style")).equals(
