@@ -1,6 +1,6 @@
 import { ReactElement, cloneElement } from "react";
 import { useNavigate } from "react-router-dom";
-import Typography from "../Typography/Typography";
+import Typography from "../typography/Typography";
 import Styles from "../../types/style";
 
 const BreadcrumbLink = ({

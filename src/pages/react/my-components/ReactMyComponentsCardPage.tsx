@@ -1,4 +1,4 @@
-import Typography from "../../../components/common/Typography/Typography";
+import Typography from "../../../components/common/typography/Typography";
 import Card from "../../../components/common/card/Card";
 
 const ReactMyComponentsCardPage = () => {

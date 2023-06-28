@@ -1,4 +1,4 @@
-import Typography from "../../../components/common/Typography/Typography";
+import Typography from "../../../components/common/typography/Typography";
 
 const JavascriptArraysPage = () => {
   return (

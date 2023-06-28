@@ -1,7 +1,7 @@
 import { ReactElement, createElement } from "react";
+import Styles from "../../types/style";
 import TYPOGRAPHY_DATA from "./TypographyData";
 import { FontType } from "./types/TypographyType";
-import Styles from "../../types/style";
 
 const Typography = ({
   variant = "body1",
@@ -9,6 +9,7 @@ const Typography = ({
   paragraph,
   gutterBottom,
   component,
+  className = "",
   style = {},
 }: ComponentProps) => {
   return createElement(
@@ -18,7 +19,7 @@ const Typography = ({
       ? TYPOGRAPHY_DATA[component].component
       : TYPOGRAPHY_DATA[variant].component,
     {
-      className: `${TYPOGRAPHY_DATA[variant].className} ${
+      className: `${className} ${TYPOGRAPHY_DATA[variant].className} ${
         gutterBottom ? GUTTER_BOTTOM : ""
       }`,
       style,
@@ -33,6 +34,7 @@ const GUTTER_BOTTOM = "mb-3";
 
 type ComponentProps = {
   component?: FontType;
+  className?: string;
   variant?: FontType;
   children: ReactElement | string;
   paragraph?: boolean;

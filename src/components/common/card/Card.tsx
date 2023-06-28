@@ -1,4 +1,5 @@
 import { ReactElement } from "react";
+import Styles from "../../types/style";
 
 const Card = ({ children, type = "type1", style = {} }: ComponentProps) => {
   return (
@@ -11,8 +12,8 @@ const Card = ({ children, type = "type1", style = {} }: ComponentProps) => {
 export default Card;
 
 type ComponentProps = {
-  children: ReactElement;
-  style?: object;
+  children: ReactElement | ReactElement[];
+  style?: Styles;
   type?: "type1" | "type2" | "type3";
 };
 

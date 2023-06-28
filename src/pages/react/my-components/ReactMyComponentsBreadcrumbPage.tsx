@@ -1,4 +1,4 @@
-import Typography from "../../../components/common/Typography/Typography";
+import Typography from "../../../components/common/typography/Typography";
 import Alert from "../../../components/common/alert/Alert";
 import Breadcrumb from "../../../components/common/breadcrumb/Breadcrumb";
 import BreadcrumbLink from "../../../components/common/breadcrumb/BreadcrumbLink";

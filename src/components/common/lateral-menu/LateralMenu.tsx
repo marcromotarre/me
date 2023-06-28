@@ -3,7 +3,7 @@ import pages from "../../../data/LateralMenu";
 import Accordion from "../accordion/Accordion";
 import AccordionSummary from "../accordion/AccordionSummary";
 import AccordionDetails from "../accordion/AccordionDetails";
-import Typography from "../Typography/Typography";
+import Typography from "../typography/Typography";
 import { UpIcon } from "../icons";
 import { cloneElement } from "react";
 import { relative } from "path";

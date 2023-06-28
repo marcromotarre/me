@@ -1,5 +1,5 @@
 import { ReactElement, cloneElement } from "react";
-import Typography from "../Typography/Typography";
+import Typography from "../typography/Typography";
 import Styles from "../../types/style";
 
 const BreadcrumbSeparator = ({ separator, style }: ComponentProps) => {

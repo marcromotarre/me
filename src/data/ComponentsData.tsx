@@ -1,5 +1,10 @@
 export default [
   {
+    name: "<Typography />",
+    backgoundColor: "bg-denim",
+    url: "/react/my-components/typography",
+  },
+  {
     name: "<Breadcrumb />",
     backgoundColor: "bg-denim",
     url: "/react/my-components/breadcrumb",

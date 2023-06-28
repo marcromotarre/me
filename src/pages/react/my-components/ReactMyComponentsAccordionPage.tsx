@@ -1,4 +1,4 @@
-import Typography from "../../../components/common/Typography/Typography";
+import Typography from "../../../components/common/typography/Typography";
 import Accordion from "../../../components/common/accordion/Accordion";
 import AccordionDetails from "../../../components/common/accordion/AccordionDetails";
 import AccordionSummary from "../../../components/common/accordion/AccordionSummary";
