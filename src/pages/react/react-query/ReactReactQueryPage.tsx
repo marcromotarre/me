@@ -2,9 +2,12 @@ import { useState } from "react";
 import Button from "../../../components/common/buttons/Button";
 import ReactQueryIcon from "../../../components/common/icons/mr-icons/ReactQueryIcon";
 import Typography from "../../../components/common/typography/Typography";
+import { PokeballIcon } from "../../../components/common/icons";
+import ReactQueryPokemonModal from "../../../components/mr-modals/ReactQueryPokemonModal";
 
 const ReactReactQueryPage = () => {
   const [isAnimationPlaying, setIsAnimationPlaying] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(true);
   const animate = isAnimationPlaying ? "animate-spin" : "";
   return (
     <>
@@ -55,8 +58,21 @@ const ReactReactQueryPage = () => {
         </Button>
       </div>
       <Typography>
-        Ok now let&apos;s see the import thing about this library
+        Ok now let&apos;s see the important thing about this library. Click the
+        botton bellow to start the React Query Experience
       </Typography>
+      <div className="flex justify-center">
+        <Button
+          onClick={() => setIsModalOpen(true)}
+          shape="rounded"
+          variant="outlined"
+          size="large"
+          startIcon={<PokeballIcon />}
+        ></Button>
+      </div>
+      {isModalOpen && (
+        <ReactQueryPokemonModal onClose={() => setIsModalOpen(false)} />
+      )}
     </>
   );
 };

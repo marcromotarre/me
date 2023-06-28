@@ -23,4 +23,5 @@ export { default as CopyIcon } from "./mr-icons/CopyIcon";
 export { default as UpIcon } from "./mr-icons/UpIcon";
 export { default as RightIcon } from "./mr-icons/RightIcon";
 export { default as ReactComponentIcon } from "./mr-icons/ReactComponentIcon";
-export { default as ReactQuerytIcon } from "./mr-icons/ReactQueryIcon";
+export { default as ReactQueryIcon } from "./mr-icons/ReactQueryIcon";
+export { default as PokeballIcon } from "./mr-icons/PokeballIcon";

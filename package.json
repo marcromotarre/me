@@ -16,6 +16,8 @@
   "author": "Marc Romo",
   "license": "ISC",
   "devDependencies": {
+    "@tanstack/react-query": "^4.29.19",
+    "@tanstack/react-query-devtools": "^4.29.19",
     "@testing-library/react": "^14.0.0",
     "@types/node": "^20.2.5",
     "@types/react": "^18.2.8",

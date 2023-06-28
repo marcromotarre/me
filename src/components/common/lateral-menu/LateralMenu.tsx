@@ -38,7 +38,7 @@ const PageButton = ({
         <AccordionDetails>
           {page.children &&
             page.children.map((subpage: Page, index) => (
-              <div>
+              <div key={index}>
                 <PageButton
                   key={`${page.name}_${page.path}_${index}`}
                   page={subpage}
