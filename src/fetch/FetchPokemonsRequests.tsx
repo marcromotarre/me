@@ -7,7 +7,7 @@ type PokemonDDBB = { name: string; sprites: { front_shiny: string } };
 
 const delay = (ms: number) => new Promise((res) => setTimeout(res, ms));
 
-export const getPokemonsData = async ({
+export const getPokemonsRequests = async ({
   offset = 0,
   limit = 20,
   url,
@@ -19,11 +19,11 @@ export const getPokemonsData = async ({
   waiting?: number;
 }) => {
   return delay(waiting).then(() => {
-    return getPokemonsAfterWaiting({ offset, limit, url });
+    return getPokemonsRequestsAfterWaiting({ offset, limit, url });
   }, []);
 };
 
-const getPokemonsAfterWaiting = async ({
+const getPokemonsRequestsAfterWaiting = async ({
   offset,
   limit,
   url,
@@ -32,20 +32,8 @@ const getPokemonsAfterWaiting = async ({
   limit: number;
   url?: string;
 }) => {
-  const pokemons = [];
   const { results } = await api.get<PokemonsDDBB>(
     url ? url : `${POKEMONS_URL}?offset=${offset}&limit=${limit}`
   );
-
-  for (let index = 0; index < results.length; index++) {
-    const url = results[index].url;
-    const pokemonResponse = await api.get<PokemonDDBB>(url);
-    pokemons.push({
-      name: pokemonResponse.name,
-      sprite: pokemonResponse.sprites.front_shiny,
-      url,
-    });
-  }
-
-  return pokemons;
+  return results;
 };

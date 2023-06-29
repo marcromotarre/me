@@ -7,7 +7,7 @@ import ReactQueryPokemonModal from "../../../components/mr-modals/ReactQueryPoke
 
 const ReactReactQueryPage = () => {
   const [isAnimationPlaying, setIsAnimationPlaying] = useState(false);
-  const [isModalOpen, setIsModalOpen] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const animate = isAnimationPlaying ? "animate-spin" : "";
   return (
     <>
