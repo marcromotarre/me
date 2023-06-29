@@ -6,7 +6,7 @@ export default function usePokemons() {
   const [pokemons, setPokemons] = useState<PokemonsType>([]);
 
   useEffect(() => {
-    getPokemonsData()
+    getPokemonsData({})
       .then((response) => setPokemons(response))
       .catch(console.error);
   }, []);

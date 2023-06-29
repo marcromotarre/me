@@ -7,7 +7,6 @@ import {
   PokemonCode,
   PokemonsCode,
 } from "../../../data/codes/react/patterns/ContainerPresentationalCode";
-import Pokemon from "../../../components/Pokemon";
 import Pokemons from "../../../components/Pokemons";
 import Alert from "../../../components/common/alert/Alert";
 
@@ -103,7 +102,7 @@ function PokemonsContainerComponent() {
   const [data, setData] = useState<PokemonsType | null>(null);
 
   useEffect(() => {
-    getPokemonsData()
+    getPokemonsData({})
       .then((pokemons) => setData(pokemons))
       .catch(console.error);
   }, []);
