@@ -9,7 +9,7 @@ import Typography from "../../../../components/common/typography/Typography";
 const JavascriptBasicsTypesPage = () => {
   return (
     <>
-      <Typography variant="h3">Primitype Types</Typography>
+      <Typography variant="h4">Primitype Types</Typography>
       <Typography>Let&aps;s talk about the primitive types.</Typography>
       <Alert severity="error">
         This statement is FALSE: In Javascript all are Objects.
@@ -38,20 +38,20 @@ const JavascriptBasicsTypesPage = () => {
 
       <Typography variant="h6">symbol</Typography>
 
-      <Typography variant="h5">Not considered primitive types</Typography>
+      <Typography variant="h4">Not considered primitive types</Typography>
       <Typography variant="h6">undeclared</Typography>
       <Typography variant="h6">null</Typography>
       <Typography variant="h6">function</Typography>
       <Typography variant="h6">array</Typography>
       <Typography variant="h6">bigint</Typography>
 
-      <Typography variant="h5">Which of these are objects?</Typography>
+      <Typography variant="h4">Which of these are objects?</Typography>
       <Alert severity="info">Objects: objects, arrays, functions</Alert>
       <Alert severity="warning">
         No Objects: undefined, string, number, boolean, object, symbol, null,
         bigint
       </Alert>
-      <Typography variant="h5">typeof Operator</Typography>
+      <Typography variant="h4">typeof Operator</Typography>
       <Alert severity="info">
         The typeof operator always returns a string with the value type
         information.
@@ -97,7 +97,7 @@ typeof v;               // "object"    hmmm?`}</>
         To know if a value is an array you can use Array.isArray([1, 2, 3])
       </Alert>
 
-      <Typography variant="h5">
+      <Typography variant="h4">
         undefined vs. undeclared vs. uninitialized
       </Typography>
       <Typography>
@@ -115,7 +115,7 @@ typeof v;               // "object"    hmmm?`}</>
         uninitialized you are not allowed to touch it in any way, shape or form,
         or you will get an error. The error you get is the TDZ error.
       </Typography>
-      <Typography variant="h5">NaN & isNaN</Typography>
+      <Typography variant="h4">NaN & isNaN</Typography>
       <Typography>
         NaN is suposed to be an acronym for not a number. In reality indicated
         an invalid number.
@@ -177,7 +177,7 @@ Number.isNaN("my son's age");   // false`}</>
         a NaN
       </Typography>
 
-      <Typography variant="h5">Negative Zero</Typography>
+      <Typography variant="h4">Negative Zero</Typography>
       <Code noHeader>
         <>{`
 var trendRate = -0;    
@@ -213,7 +213,7 @@ sign(-0)          // -1
 sign(0)           // 1`}</>
       </Code>
 
-      <Typography variant="h5">Fundamental Objects</Typography>
+      <Typography variant="h4">Fundamental Objects</Typography>
       <Typography>When we should use new?</Typography>
       <Alert severity="success">
         {`Use new: Object(), Array(), Function(), Date(), RegExp(), Error()`}
@@ -229,7 +229,7 @@ yesterday.toUTCString();
 
 var myGPA = String(transcript.gpa)`}</>
       </Code>
-      <Typography variant="h5">Exercise:</Typography>
+      <Typography variant="h4">Exercise:</Typography>
       <Code noHeader>
         <>{`
 # Polyfill for 'Object.is(..)'
