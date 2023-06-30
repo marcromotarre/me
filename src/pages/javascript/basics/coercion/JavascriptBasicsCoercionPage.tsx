@@ -1,5 +1,9 @@
 import Alert from "../../../../components/common/alert/Alert";
 import Code from "../../../../components/common/code/Code";
+import QuestionAnswer, {
+  Answer,
+  Question,
+} from "../../../../components/common/question-answer/QuestionAnswer";
 import Typography from "../../../../components/common/typography/Typography";
 import {
   CoercionArrayJoinCode,
@@ -502,6 +506,188 @@ Number(false);  // 0
 (true) > 1;
 1 > 1;  // false`}</>
       </Code>
+      <Typography variant="h4">Intentional Coercion</Typography>
+      <Typography>
+        So there are corner cases, we know that that is the reality, there were
+        corner cases. We do not deal with corner cases in any language but least
+        of all, JavaScript, by simply avoiding it. You do not avoid the whole
+        mechanism just to get around a couple of corner cases. You have to adopt
+        a coding style that makes your types and the values that are in those
+        types plain and obvious, that is the only effective way to do this.
+      </Typography>
+      <Alert severity="info">
+        You do not deal with these type conversion corner cases by avoiding
+        coercions. Instead you have to adopt a coding style that makes value
+        types plain and obvious.
+      </Alert>
+      <Typography>
+        Some people goes so far as to used whole type systems, and we will get
+        into that in the TypeScript section. I do not think you have to go that
+        far but you can adopt a coding style which makes the kinds of types that
+        you are doing much more obvious.
+      </Typography>
+      <Typography>
+        I make the claim that a quality JavaScript program is going to have to
+        embrace coercion. You have to make sure that the types involved in every
+        operation are clear. And by the way that means that you should not be
+        designing all these polymorphic functions that can take any sort of
+        value and do 15 different things based upon the value.
+      </Typography>
+      <Typography>
+        You are asking for coercion problems when you do that and then papering
+        over them, but I used the triple, I used the triple equals. Why not just
+        design a function that only takes numbers and then make another function
+        that only takes strings? Or make a function that takes numbers and
+        strings, and it is very clear it can only be those two types, and I know
+        what corner cases I have to worry about between numbers and strings.
+      </Typography>
+      <Alert severity="info">
+        A quality JS program embraces coercions, making sure types involved in
+        every operation are clear. Thus, corner cases are safely managed
+      </Alert>
+      <Typography>
+        We can choose to be more obvious about how we manage our types, how much
+        we overload, how polymorphic we make our code. We can opt in to more
+        problems or opt out of problems as a result. Biggest takeaway that I
+        want you to get here is that these are fact of your programs and it is
+        within your purview to decide how much or how little you're gonna be
+        affected by those facts.
+      </Typography>
+      <Typography>
+        That is not to suggest that the only solution to our problem is that
+        everything have to rigidly, everything is completely statically typed.
+        We have to just basically go write Java or C Plus Plus so that we get
+        some kind of like sound type system, that is a reaction to this problem,
+        it is not the the reaction I think that is necessary.
+      </Typography>
+      <Typography>
+        So the message I am preaching here is you can learn these systems, use
+        them appropriately and make them obvious in your code. I do not think
+        that this typing systems are weaknesses, I actually think this is one of
+        JavaScript&aps;s strongest qualities. It is an unsung hero, I think it
+        is one of the reasons why JavaScript is the ubiquitous language that it
+        is today because it has been so palatable to so many different use
+        cases.
+      </Typography>
+      <Typography>
+        The first truly multi-paradigm language and a big reason why it has been
+        able to survive multi-paradigm is because of its type system. And that
+        is completely opposite from what every one of my peers and everything
+        else that you have ever heard. Everybody else has always told you this
+        is the worst part of JavaScript and I am gonna put my foot down and say
+        it is one of the best parts of JavaScript.
+      </Typography>
+
+      <Typography variant="h4">Implicit Coercion</Typography>
+      <Alert severity="error">Implicit != Magic</Alert>
+      <Alert severity="error">Implicit != Bad</Alert>
+      <Alert severity="success">Implicit == Abstraction</Alert>
+      <Typography variant="h4">Exercise</Typography>
+      <Code noHeader>
+        <>{`
+
+# Working With Coercion
+
+In this exercise, you will define some validation functions that check user inputs (such as from DOM elements). You'll need to properly handle the coercions of the various value types.
+
+## Instructions
+
+1. Define an 'isValidName(..)' validator that takes one parameter, 'name'. The validator returns 'true' if all the following match the parameter ('false' otherwise):
+
+	- must be a string
+	- must be non-empty
+	- must contain non-whitespace of at least 3 characters
+
+2. Define an 'hoursAttended(..)' validator that takes two parameters, 'attended' and 'length'. The validator returns 'true' if all the following match the two parameters ('false' otherwise):
+
+	- either parameter may only be a string or number
+	- both parameters should be treated as numbers
+	- both numbers must be 0 or higher
+	- both numbers must be whole numbers
+	- 'attended' must be less than or equal to 'length'
+
+`}</>
+      </Code>
+
+      <Code noHeader>
+        <>{`
+// tests:
+console.log(isValidName("Frank") === true);
+console.log(hoursAttended(6,10) === true);
+console.log(hoursAttended(6,"10") === true);
+console.log(hoursAttended("6",10) === true);
+console.log(hoursAttended("6","10") === true);
+
+console.log(isValidName(false) === false);
+console.log(isValidName(null) === false);
+console.log(isValidName(undefined) === false);
+console.log(isValidName("") === false);
+console.log(isValidName("  \t\n") === false);
+console.log(isValidName("X") === false);
+console.log(hoursAttended("",6) === false);
+console.log(hoursAttended(6,"") === false);
+console.log(hoursAttended("","") === false);
+console.log(hoursAttended("foo",6) === false);
+console.log(hoursAttended(6,"foo") === false);
+console.log(hoursAttended("foo","bar") === false);
+console.log(hoursAttended(null,null) === false);
+console.log(hoursAttended(null,undefined) === false);
+console.log(hoursAttended(undefined,null) === false);
+console.log(hoursAttended(undefined,undefined) === false);
+console.log(hoursAttended(false,false) === false);
+console.log(hoursAttended(false,true) === false);
+console.log(hoursAttended(true,false) === false);
+console.log(hoursAttended(true,true) === false);
+console.log(hoursAttended(10,6) === false);
+console.log(hoursAttended(10,"6") === false);
+console.log(hoursAttended("10",6) === false);
+console.log(hoursAttended("10","6") === false);
+console.log(hoursAttended(6,10.1) === false);
+console.log(hoursAttended(6.1,10) === false);
+console.log(hoursAttended(6,"10.1") === false);
+console.log(hoursAttended("6.1",10) === false);
+console.log(hoursAttended("6.1","10.1") === false);`}</>
+      </Code>
+
+      <QuestionAnswer>
+        <Question>Solution</Question>
+        <Answer>
+          <Code noHeader>
+            <>{`
+function isValidName(name) {
+  if(
+    typeof name == "string" && 
+    name.trim().length >= 3
+  ) {
+    return true;
+  } 
+  return false;
+}
+
+function hoursAttended(attended, length) {
+  if(typeof attended == "string" && attended.trim() != "") {
+    attended = Number(attended);
+  }
+  if(typeof length == "string" && length.trim() != "") {
+    length = Number(length);
+  }
+  if(
+    typeof attended == "number" && 
+    typeof length == "number" && 
+    typeof attended > 0 && 
+    typeof length > 0 && 
+    Number.isInteger(attended) &&  
+    Number.isInteger(length) &&
+    attended <= length
+  ) {
+    return true
+  }
+  return false;
+}
+`}</>
+          </Code>
+        </Answer>
+      </QuestionAnswer>
     </>
   );
 };
