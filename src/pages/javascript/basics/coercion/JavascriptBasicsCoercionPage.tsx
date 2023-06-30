@@ -426,6 +426,82 @@ Boolean(undefined)   // false
 Boolean(null)   // false
 Boolean({})   // true`}</>
       </Code>
+      <Typography variant="h4">Boxing</Typography>
+      <Typography>
+        This DOM elements value is always a string. So how do we access that
+        .length? Well, it turns out that is called boxing. It is a form of
+        implicit coercion. It is not called out in the same way in the abstract
+        operations. But I think it absolutely in spirit is an implicit coercion.
+      </Typography>
+      <Code noHeader>
+        <>{`
+if(studentInputElem.value.length > 50) {
+  console.log("Strudent's name is too long!");
+}`}</>
+      </Code>
+      <Typography variant="h4">Corner Cases of Coercion</Typography>
+      <Typography>
+        Because all languages have type conversions, that means all languages
+        have corner cases, including JavaScript. It is impossible to design a
+        system that will not have corner cases. JavaScript has some corner
+        cases. Rather than making wap videos about them, we should learn those
+        corner cases and learn how to effectively manage and work around them.
+      </Typography>
+
+      <Typography>Lets see some examples of these corner cases:</Typography>
+      <Code noHeader>
+        <>{`
+Number( "" );     // 0     OOPS!
+Number( " \n" );     // 0     OOPS!
+Number( null );     // 0     OOPS!
+Number( undefined );     // NaN
+Number([])   // 0 OOPS!
+Number([1,2,3])   // NaN
+Number([null])   // 0 !OOPS
+Number([undefined])   // 0 !OOPS
+Number({})   // NaN`}</>
+      </Code>
+
+      <Code noHeader>
+        <>{`
+String( -0 );     // "0"     OOPS!
+String( null );     // "null"  
+String( undefined );     // "undefined"  
+
+String( [null] );     // ""   OOPS!
+String( [undefined] );     // ""  OOPS!`}</>
+      </Code>
+
+      <Code noHeader>
+        <>{`
+studentsInput.value = "";
+Number(studentsInput.value);   // 0
+
+studentsInput.value = "    \t\n"
+Number(studentsInput.value);   // 0`}</>
+      </Code>
+
+      <Code noHeader>
+        <>{`
+Number(true);   // 1
+Number(false);  // 0
+
+1 < 2;   // true
+2 < 3    // true
+1 < 2 < 3   // true (but...)
+
+(1 < 2) < 3;
+(true) < 3;
+1 < 3; // true (hmm...)
+
+3 > 2  // true
+2 > 1 // true
+3 > 2 > 1  // false  OOPS!
+
+(3 > 2) > 1;
+(true) > 1;
+1 > 1;  // false`}</>
+      </Code>
     </>
   );
 };
