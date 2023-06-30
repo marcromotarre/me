@@ -7,6 +7,8 @@ type Styles = {
   display?: string;
   height?: string;
   width?: string;
+  padding?: string;
+  margin?: string;
 };
 
 export default Styles;

@@ -187,6 +187,24 @@ const TABLE_OF_CONTENTS_DATA: Array<SectionType> = [
     name: "Javascript",
     icon: <JavascriptIcon />,
     children: [
+      {
+        path: "/javascript/basics",
+        name: "Basics",
+        children: [
+          { path: "/javascript/basics/types", name: "Types" },
+          { path: "/javascript/basics/coercion", name: "Coercion" },
+          {
+            path: "/javascript/basics/philosofy-of-coercion",
+            name: "Philosofy of Coercion",
+          },
+          { path: "/javascript/basics/equality", name: "Equality" },
+          { path: "/javascript/basics/static-typing", name: "Static Typing" },
+          { path: "/javascript/basics/scope", name: "Scope" },
+          { path: "/javascript/basics/closure", name: "Closure" },
+          { path: "/javascript/basics/objects", name: "Objects" },
+          { path: "/javascript/basics/prototype", name: "Prototype" },
+        ],
+      },
       { path: "/javascript/arrays", name: "Arrays" },
       {
         path: "/javascript/patterns",

@@ -12,6 +12,9 @@ const SECTIONS = {
   "/react/react-query": (
     <Title icon={<ReactQueryIcon size={30} />} title="React Query" />
   ),
+  "/react/interesting-questions": (
+    <Title icon={<ReactIcon size={30} />} title="React Interesting Questions" />
+  ),
   "/react/my-components": (
     <Title icon={<ReactIcon size={30} />} title="React My Components" />
   ),

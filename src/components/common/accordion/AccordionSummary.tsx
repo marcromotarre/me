@@ -1,4 +1,5 @@
 import { ReactElement, cloneElement } from "react";
+import Styles from "../../types/style";
 
 const AccordionSummary = ({
   expandIcon,
@@ -16,6 +17,8 @@ const AccordionSummary = ({
 
 type ComponentProps = {
   expandIcon?: ReactElement;
+  children?: ReactElement;
+  style: Styles;
 };
 
 export default AccordionSummary;

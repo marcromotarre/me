@@ -41,6 +41,18 @@ import ReactMyComponentsAccordionPage from "./pages/react/my-components/ReactMyC
 import ReactMyComponentsBreadcrumbPage from "./pages/react/my-components/ReactMyComponentsBreadcrumbPage";
 import ReactMyComponentsBreadcrumbUsePage from "./pages/react/my-components/breadcrumb/ReactMyComponentsBreadcrumbUsePage";
 import ReactReactQueryPage from "./pages/react/react-query/ReactReactQueryPage";
+import ReactInterestingQuestions from "./pages/react/interesting-questions/ReactInterestingQuestions";
+import JavascriptInterestingQuestions from "./pages/javascript/interesting-questions/JavascriptInterestingQuestions";
+import JavascriptBasicsTypesPage from "./pages/javascript/basics/types/JavascriptBasicsTypesPage";
+import JavascriptBasicsPage from "./pages/javascript/basics/JavascriptBasicsPage";
+import JavascriptBasicsCoercionPage from "./pages/javascript/basics/coercion/JavascriptBasicsCoercionPage";
+import JavascriptBasicsPhilosofyOfCoercionPage from "./pages/javascript/basics/philosofy-of-coercion/JavascriptBasicsPhilosofyOfCoercionPage";
+import JavascriptBasicsEqualityPage from "./pages/javascript/basics/equality/JavascriptBasicsEqualityPage";
+import JavascriptBasicsStaticTypingTypesPage from "./pages/javascript/basics/static-typing/JavascriptBasicsStaticTypingTypesPage";
+import JavascriptBasicsScopePage from "./pages/javascript/basics/scope/JavascriptBasicsScopePage";
+import JavascriptBasicsClosurePage from "./pages/javascript/basics/closure/JavascriptBasicsClosurePage";
+import JavascriptBasicsPrototypePage from "./pages/javascript/basics/prototype/JavascriptBasicsPrototypePage";
+import JavascriptBasicsObjectsPage from "./pages/javascript/basics/objects/JavascriptBasicsObjectsPage";
 
 const App = () => {
   const queryClient = new QueryClient();
@@ -53,6 +65,50 @@ const App = () => {
             <Route path="/" element={<PortfolioPage />} />
             <Route element={<Layout />}>
               <Route path="/javascript" element={<JavascriptPage />} />
+              <Route
+                path="/javascript/basics"
+                element={<JavascriptBasicsPage />}
+              />
+              <Route
+                path="/javascript/basics/types"
+                element={<JavascriptBasicsTypesPage />}
+              />
+              <Route
+                path="/javascript/basics/coercion"
+                element={<JavascriptBasicsCoercionPage />}
+              />
+              <Route
+                path="/javascript/basics/philosofy-of-coercion"
+                element={<JavascriptBasicsPhilosofyOfCoercionPage />}
+              />
+              <Route
+                path="/javascript/basics/equality"
+                element={<JavascriptBasicsEqualityPage />}
+              />
+              <Route
+                path="/javascript/basics/static-typing"
+                element={<JavascriptBasicsStaticTypingTypesPage />}
+              />
+              <Route
+                path="/javascript/basics/scope"
+                element={<JavascriptBasicsScopePage />}
+              />
+              <Route
+                path="/javascript/basics/closure"
+                element={<JavascriptBasicsClosurePage />}
+              />
+              <Route
+                path="/javascript/basics/objects"
+                element={<JavascriptBasicsObjectsPage />}
+              />
+              <Route
+                path="/javascript/basics/prototype"
+                element={<JavascriptBasicsPrototypePage />}
+              />
+              <Route
+                path="/javascript/interesting-questions"
+                element={<JavascriptInterestingQuestions />}
+              />
               <Route
                 path="/javascript/arrays"
                 element={<JavascriptArraysPage />}
@@ -143,6 +199,10 @@ const App = () => {
               <Route
                 path="/react/react-query"
                 element={<ReactReactQueryPage />}
+              />
+              <Route
+                path="/react/interesting-questions"
+                element={<ReactInterestingQuestions />}
               />
               <Route path="/redux/" element={<ReduxPage />} />
               <Route path="/git/" element={<GitPage />} />
