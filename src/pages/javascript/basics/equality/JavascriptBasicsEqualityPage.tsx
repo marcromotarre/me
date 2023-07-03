@@ -7,6 +7,8 @@ import {
   AbstractEqualityWorkshopEnrollmentExampleCode,
 } from "./code/JavascriptBasicsEqualityCode";
 
+import SpecStrictEqualityComparison from "../../../../images/javascript-spec/7_2_15_strict_equality_comparison.png";
+
 const JavascriptBasicsEqualityPage = () => {
   return (
     <>
@@ -61,7 +63,7 @@ const JavascriptBasicsEqualityPage = () => {
       <Card>
         <img
           alt="strict equality comparison"
-          src="../../../images/javascript-spec/7_2_15_strict_equality_comparison.png"
+          src={SpecStrictEqualityComparison}
         ></img>
       </Card>
     </>
