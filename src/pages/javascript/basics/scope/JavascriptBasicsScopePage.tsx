@@ -109,6 +109,17 @@ otherClass(); // Welcome!
 teacher; // "Suzy"
 topic;  // "React"   some of the bad part of Javascript`}</>
       </Code>
+
+      <Alert severity="info">
+        In JavaScript, the term &ldquo;shadow&ldquo; typically refers to the
+        concept of shadowing or variable shadowing. Variable shadowing occurs
+        when a variable declared within a particular scope has the same name as
+        a variable declared in an outer scope. When a variable is shadowed, the
+        inner variable takes precedence over the outer variable, effectively
+        hiding it within the inner scope. This means that references to the
+        variable within the inner scope will refer to the inner variable rather
+        than the outer one.
+      </Alert>
       <Typography>
         When you create a variable its override in the on top buckets
       </Typography>
@@ -154,6 +165,68 @@ ask("??????") // Reference Error
         undeclared means never formally declared in any scope that we have
         accessed to.
       </Typography>
+      <Typography variant="h4">Function Expressions</Typography>
+      <Code noHeader>
+        <>{`
+function teacher() { /* .. */ }
+
+var myTeacher = function anotherTeacher() {
+  console.log(anotherTeacher)
+};
+
+console.log(teacher);
+console.log(myTeacher);
+console.log(anotherTeacher)  // ReferenceError
+`}</>
+      </Code>
+      <Typography variant="h6">
+        Named Function Expressions vs Anonimous Function Expressions
+      </Typography>
+      <Code noHeader>
+        <>{`
+// anonymous function expression
+var clickHandler = function () {
+  // ..
+}
+
+// named function expression
+var keyHandler = function keyHandler() {
+  // ..
+};`}</>
+      </Code>
+      <Typography>
+        You should always use Named Function Expressions. If you cannot come
+        with a name maybe this function is too complex and need to be break in
+        multiple subfunctions. This name is not write in stone age. So it will
+        vary during the refactors. If you do not come with a name at the very
+        beginning maybe you can call it TODO in order to rename it in the
+        future.
+      </Typography>
+      <ol className="grid list-[type1] gap-y-2 pl-9">
+        <li>
+          <Typography>
+            Reliable function self-reference (recursion, etc)
+          </Typography>
+        </li>
+        <li>
+          <Typography>More debuggable stack traces</Typography>
+        </li>
+        <li>
+          <Typography>More self-documenting code</Typography>
+        </li>
+      </ol>
+      <Typography variant="h6">Arrow Functions</Typography>
+      <Code noHeader>
+        <>{`
+// arrow function
+var ids = people.map(person => person.id);
+
+// named function expression
+var ids = people.map(function getId(person) {
+  return person.id
+});`}</>
+      </Code>
+      <Alert severity="info">Arrow functions are anonymous</Alert>
     </>
   );
 };
