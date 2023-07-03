@@ -17,6 +17,10 @@ const JavascriptBasicsTypesPage = () => {
       <Typography>There are other types than the object type.</Typography>
       <Typography variant="h6">undefined</Typography>
       <Typography>
+        The Undefined type has exactly one value, called undefined. Any variable
+        that has not been assigned a value has the value undefined.
+      </Typography>
+      <Typography>
         The undefined type means that the variable does not currently have a
         value. A variable can be set to a value, and in the future be set to
         undefined again.
@@ -30,6 +34,10 @@ const JavascriptBasicsTypesPage = () => {
       <Typography variant="h6">string</Typography>
       <Typography variant="h6">number</Typography>
       <Typography variant="h6">boolean</Typography>
+      <Typography>
+        The Boolean type represents a logical entity having two values, called
+        true and false.
+      </Typography>
       <Typography variant="h6">objects</Typography>
       <Typography>
         Yes the object is a type. And it has a lot of subtypes and something can
@@ -37,10 +45,22 @@ const JavascriptBasicsTypesPage = () => {
       </Typography>
 
       <Typography variant="h6">symbol</Typography>
+      <Typography>
+        The Symbol type is the set of all non-String values that may be used as
+        the key of an Object property (6.1.7).
+      </Typography>
+      <Typography>
+        Each possible Symbol value is unique and immutable.
+      </Typography>
+      <Typography>
+        Each Symbol value immutably holds an associated value called
+        [[Description]] that is either undefined or a String value.
+      </Typography>
 
       <Typography variant="h4">Not considered primitive types</Typography>
       <Typography variant="h6">undeclared</Typography>
       <Typography variant="h6">null</Typography>
+      <Typography>The Null type has exactly one value, called null.</Typography>
       <Typography variant="h6">function</Typography>
       <Typography variant="h6">array</Typography>
       <Typography variant="h6">bigint</Typography>

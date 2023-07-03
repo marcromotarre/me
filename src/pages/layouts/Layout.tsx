@@ -36,6 +36,12 @@ const SECTIONS = {
       title="Javascript Basics: Coercion"
     />
   ),
+  "/javascript/basics/static-typing": (
+    <Title
+      icon={<JavascriptIcon size={30} />}
+      title="Javascript: Static Typing"
+    />
+  ),
   "/javascript/basics/equality": (
     <Title
       icon={<JavascriptIcon size={30} />}
