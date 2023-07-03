@@ -249,6 +249,29 @@ var studentCount: number = 16 - studentName;
         pretending === saves you from needing to know types, is that it tends to
         systemically perpetuate bugs.
       </Typography>
+      <Typography>
+        You simply cannot write quality JS programs without knowing the types
+        involved in your operations.
+      </Typography>
+      <Typography>
+        Alternately, many choose to adopt a different &ldquo;static types&ldquo;
+        system layered on top, while certainly helpful in some respects, this is
+        &ldquo;avoidance&ldquo; of a different sort
+      </Typography>
+      <Typography>
+        Apparently, JS&apos;s type system in inferior so it must be replaced,
+        rather than learned and leveraged. Many claim that JS&apos;s type system
+        is too difficult for newer devs to learn, and that static types are
+        (somehow) more learnable.
+      </Typography>
+      <Typography>
+        My claim: the better approach is to embrace and learn JS&apos;s type
+        system, and to adopt a coding style which makes types as obvious as
+        possible. By doing so, you will make your code more readable and more
+        robust, for experienced and new developers alike. As an option to aid in
+        that effort, Kyle Simons created Typl, which embraces and unlocks the
+        best parts of JS&apos;s types and coercion.
+      </Typography>
     </>
   );
 };
