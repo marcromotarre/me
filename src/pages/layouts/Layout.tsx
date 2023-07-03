@@ -48,6 +48,12 @@ const SECTIONS = {
       title="Javascript Basics: Equality"
     />
   ),
+  "/javascript/basics/scope": (
+    <Title
+      icon={<JavascriptIcon size={30} />}
+      title="Javascript Basics: Scope"
+    />
+  ),
   "/javascript/basics": (
     <Title icon={<JavascriptIcon size={30} />} title="Javascript Basics" />
   ),
