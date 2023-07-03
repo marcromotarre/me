@@ -78,10 +78,6 @@ const App = () => {
                 element={<JavascriptBasicsCoercionPage />}
               />
               <Route
-                path="/javascript/basics/philosofy-of-coercion"
-                element={<JavascriptBasicsPhilosofyOfCoercionPage />}
-              />
-              <Route
                 path="/javascript/basics/equality"
                 element={<JavascriptBasicsEqualityPage />}
               />

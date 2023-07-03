@@ -23,16 +23,23 @@ const SECTIONS = {
     <Title icon={<ReactIcon size={30} />} title="React Patterns" />
   ),
   "/react": <Title icon={<ReactIcon size={30} />} title="React" />,
+
+  "/javascript/basics/types": (
+    <Title
+      icon={<JavascriptIcon size={30} />}
+      title="Javascript Basics: Types"
+    />
+  ),
   "/javascript/basics/coercion": (
     <Title
       icon={<JavascriptIcon size={30} />}
       title="Javascript Basics: Coercion"
     />
   ),
-  "/javascript/basics/types": (
+  "/javascript/basics/equality": (
     <Title
       icon={<JavascriptIcon size={30} />}
-      title="Javascript Basics: Types"
+      title="Javascript Basics: Equality"
     />
   ),
   "/javascript/basics": (

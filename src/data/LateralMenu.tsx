@@ -193,10 +193,6 @@ const TABLE_OF_CONTENTS_DATA: Array<SectionType> = [
         children: [
           { path: "/javascript/basics/types", name: "Types" },
           { path: "/javascript/basics/coercion", name: "Coercion" },
-          {
-            path: "/javascript/basics/philosofy-of-coercion",
-            name: "Philosofy of Coercion",
-          },
           { path: "/javascript/basics/equality", name: "Equality" },
           { path: "/javascript/basics/static-typing", name: "Static Typing" },
           { path: "/javascript/basics/scope", name: "Scope" },

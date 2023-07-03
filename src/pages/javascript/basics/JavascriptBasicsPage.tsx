@@ -5,10 +5,6 @@ const JavascriptBasicsPage = () => {
   const sections = [
     { name: "types", path: "/javascript/basics/types" },
     { name: "coercion", path: "/javascript/basics/coercion" },
-    {
-      name: "philosofy-of-coercion",
-      path: "/javascript/basics/philosofy-of-coercion",
-    },
     { name: "equality", path: "/javascript/basics/equality" },
     { name: "static-typing", path: "/javascript/basics/static-typing" },
     { name: "scope", path: "/javascript/basics/scope" },
