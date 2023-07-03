@@ -2,7 +2,11 @@ import { Outlet, useLocation } from "react-router-dom";
 import Header from "../../components/Header";
 import LateralMenu from "../../components/common/lateral-menu/LateralMenu";
 import Title from "../../components/common/Title";
-import { JavascriptIcon, ReactIcon } from "../../components/common/icons";
+import {
+  JavascriptIcon,
+  ReactIcon,
+  TypescriptIcon,
+} from "../../components/common/icons";
 import Breadcrumb from "../../components/common/breadcrumb/Breadcrumb";
 import BreadcrumbLink from "../../components/common/breadcrumb/BreadcrumbLink";
 import TABLE_OF_CONTENTS_DATA, { getLinearList } from "../../data/LateralMenu";
@@ -64,8 +68,9 @@ const SECTIONS = {
     <Title icon={<JavascriptIcon size={30} />} title="Javascript" />
   ),
   "/typescript": (
-    <Title icon={<JavascriptIcon size={30} />} title="Typescript" />
+    <Title icon={<TypescriptIcon size={30} />} title="Typescript" />
   ),
+  "/": <Title title="Default" />,
 };
 
 const InformationLayout = () => {
@@ -106,15 +111,17 @@ const InformationLayout = () => {
                   backgroundColor: "#E7EBF0",
                 }}
               >
-                {breadcrumbs.map((section, index) => (
-                  <BreadcrumbLink
-                    key={index}
-                    icon={section.icon}
-                    href={section.path}
-                  >
-                    {section.name}
-                  </BreadcrumbLink>
-                ))}
+                {[{ path: "/", icon: <ReactIcon /> }, ...breadcrumbs].map(
+                  (section, index) => (
+                    <BreadcrumbLink
+                      key={index}
+                      icon={section.icon}
+                      href={section.path}
+                    >
+                      {section.name}
+                    </BreadcrumbLink>
+                  )
+                )}
               </Breadcrumb>
             }
           </div>

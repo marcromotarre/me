@@ -56,8 +56,12 @@ export const getLinearList = (
 
 const TABLE_OF_CONTENTS_DATA: Array<SectionType> = [
   {
-    path: "/project-setup",
-    name: "Project Setup",
+    path: "/",
+    name: "",
+  },
+  {
+    path: "/me",
+    name: "Me",
   },
   {
     path: "/package-managers",
@@ -74,22 +78,8 @@ const TABLE_OF_CONTENTS_DATA: Array<SectionType> = [
     ],
   },
   {
-    path: "/build",
-    name: "Build",
-    children: [
-      {
-        path: "/build/webpack",
-        name: "Webpack",
-      },
-      {
-        path: "/build/parcel",
-        name: "Parcel",
-      },
-      {
-        path: "/build/vite",
-        name: "Vite",
-      },
-    ],
+    path: "/project-setup",
+    name: "Project Setup",
   },
   {
     path: "/react",

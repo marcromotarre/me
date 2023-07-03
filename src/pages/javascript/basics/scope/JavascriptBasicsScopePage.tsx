@@ -3,6 +3,12 @@ import Code from "../../../../components/common/code/Code";
 import Typography from "../../../../components/common/typography/Typography";
 
 const JavascriptBasicsScopePage = () => {
+  var a = 32;
+  function cd() {
+    var a = 53;
+    console.log(a);
+  }
+  console.log(a);
   return (
     <>
       <Alert severity="info">Scope: where we look at for things.</Alert>
@@ -227,6 +233,105 @@ var ids = people.map(function getId(person) {
 });`}</>
       </Code>
       <Alert severity="info">Arrow functions are anonymous</Alert>
+      <Typography variant="h4">Function Scoping</Typography>
+      <Code noHeader>
+        <>{`
+var teacher = "Marc";
+
+function anotherTeacher() {
+  var teacher = "Suzy";
+  console.log(teacher);
+}
+
+anotherTeacher() // Suzy
+console.log(teacher) // Marc`}</>
+      </Code>
+
+      <Typography variant="h4">
+        IIFE (Immediately Invoking Function Expression)
+      </Typography>
+      <Typography>
+        IIFE is used when we define a function that will only be called one.
+        single time.
+      </Typography>
+      <Code noHeader>
+        <>{`
+var teacher = "Marc";
+
+function anotherTeacher() {
+  var teacher = "Suzy";
+  console.log(teacher);
+}
+
+( anotherTeacher )() // Suzy this is the same as the Function Scoping example
+console.log(teacher) // Marc`}</>
+      </Code>
+
+      <Code noHeader>
+        <>{`
+var teacher = "Marc";
+
+( function anotherTeacher() {
+  var teacher = "Suzy";
+  console.log(teacher);
+} )() // Suzy <-> this is IIFE
+
+console.log(teacher) // Marc`}</>
+      </Code>
+      <Typography>
+        Those parenthesis are turning the function declaration into a function
+        expression
+      </Typography>
+      <Code noHeader>
+        <>{`
+var teacher = "Marc";
+
+// this IIFE is anonymous :(
+( function (teacher) {
+  console.log(teacher); // Suzy
+} )("Suzy");
+
+console.log(teacher) // Marc`}</>
+      </Code>
+      <Typography>Another use of the IIFE Patter is the next one</Typography>
+      <Code noHeader>
+        <>{`
+var teacher;
+try {
+  teacher = fetchTeacher();
+} catch(err) {
+  return "Marc";
+}`}</>
+      </Code>
+
+      <Code noHeader>
+        <>{`
+var teacher = (function getTeacher() {
+  try {
+    return fetchTeacher();
+  }catch (err) {
+    return "Marc";
+  }
+});
+`}</>
+      </Code>
+
+      <Typography variant="h4">Block Scoping</Typography>
+      <Typography>
+        In this case in the block you need to use the let instead of var.
+        Because as it is not another scope it will override the var value .
+      </Typography>
+      <Code noHeader>
+        <>{`
+var teacher = "Marc";
+
+{
+  let teacher = "Suzy";
+  console.log(teacher); // Suzy
+}
+
+console.log(teacher); // Marc `}</>
+      </Code>
     </>
   );
 };

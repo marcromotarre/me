@@ -25,17 +25,17 @@ const BreadcrumbLink = ({
     >
       {icon &&
         cloneElement(icon, {
-          className: "mr-2",
+          className: `${children ? "mr-2" : ""}`,
           size: 16,
           color: style.color,
         })}
-      <Typography style={style}>{children}</Typography>
+      {children && <Typography style={style}>{children}</Typography>}
     </button>
   );
 };
 
 export type ComponentsProps = {
-  children: string;
+  children?: string;
   href?: string;
   icon?: ReactElement;
   style?: Styles;

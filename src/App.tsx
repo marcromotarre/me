@@ -53,6 +53,10 @@ import JavascriptBasicsScopePage from "./pages/javascript/basics/scope/Javascrip
 import JavascriptBasicsClosurePage from "./pages/javascript/basics/closure/JavascriptBasicsClosurePage";
 import JavascriptBasicsPrototypePage from "./pages/javascript/basics/prototype/JavascriptBasicsPrototypePage";
 import JavascriptBasicsObjectsPage from "./pages/javascript/basics/objects/JavascriptBasicsObjectsPage";
+import ProjectSetupPage from "./pages/project-setup/ProjectSetupPage";
+import MePage from "./pages/me/MePage";
+import TableOfContentsPage from "./pages/TableOfContentsPage";
+import TypescriptPage from "./pages/typescript/TypescriptPage";
 
 const App = () => {
   const queryClient = new QueryClient();
@@ -62,8 +66,10 @@ const App = () => {
       <BrowserRouter>
         <Provider store={store}>
           <Routes>
-            <Route path="/" element={<PortfolioPage />} />
             <Route element={<Layout />}>
+              <Route path="/" element={<TableOfContentsPage />} />
+              <Route path="/me" element={<MePage />} />
+              <Route path="/project-setup" element={<ProjectSetupPage />} />
               <Route path="/javascript" element={<JavascriptPage />} />
               <Route
                 path="/javascript/basics"
@@ -200,6 +206,8 @@ const App = () => {
                 path="/react/interesting-questions"
                 element={<ReactInterestingQuestions />}
               />
+              <Route path="/typescript" element={<TypescriptPage />} />
+
               <Route path="/redux/" element={<ReduxPage />} />
               <Route path="/git/" element={<GitPage />} />
             </Route>
