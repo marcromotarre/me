@@ -9,7 +9,6 @@ export default function MePage() {
   const sectionsColumn2 = sections.filter(({ col }) => col === 2);
   return (
     <>
-      return (
       <div className="m-0 p-0 ">
         <div className="grid grid-cols-[auto_min(90%,1300px)_auto]">
           <div className="bg-main" />

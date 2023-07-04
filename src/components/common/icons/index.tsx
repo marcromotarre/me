@@ -25,3 +25,4 @@ export { default as RightIcon } from "./mr-icons/RightIcon";
 export { default as ReactComponentIcon } from "./mr-icons/ReactComponentIcon";
 export { default as ReactQueryIcon } from "./mr-icons/ReactQueryIcon";
 export { default as PokeballIcon } from "./mr-icons/PokeballIcon";
+export { default as PointIcon } from "./mr-icons/PointIcon";

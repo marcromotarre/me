@@ -241,7 +241,7 @@ var studentCount: number = 16 - studentName;
       </Typography>
       <Typography>
         However the prevailing response seems to be: avoid as much of this
-        system as possible, and use === to &ldquo;protect&ldquo; from needing to
+        system as possible, and use === to &ldquo;protect&rdquo; from needing to
         worry about types.
       </Typography>
       <Typography>
@@ -254,9 +254,9 @@ var studentCount: number = 16 - studentName;
         involved in your operations.
       </Typography>
       <Typography>
-        Alternately, many choose to adopt a different &ldquo;static types&ldquo;
+        Alternately, many choose to adopt a different &ldquo;static types&rdquo;
         system layered on top, while certainly helpful in some respects, this is
-        &ldquo;avoidance&ldquo; of a different sort
+        &ldquo;avoidance&rdquo; of a different sort
       </Typography>
       <Typography>
         Apparently, JS&apos;s type system in inferior so it must be replaced,

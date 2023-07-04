@@ -31,6 +31,5 @@ export type ComponentProps = {
   inColor?: string;
   size?: number;
   className?: string;
-  "data-testid"?: string;
 };
 export default ReactIcon;

@@ -1,13 +1,6 @@
 import { createRoot } from "react-dom/client";
-import {
-  useQuery,
-  useMutation,
-  useQueryClient,
-  QueryClient,
-  QueryClientProvider,
-} from "@tanstack/react-query";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
-import PortfolioPage from "./pages/PortfolioPage";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import JavascriptPage from "./pages/javascript/JavascriptPage";
 import { Provider } from "react-redux";
@@ -38,7 +31,6 @@ import ReactMyComponentsTypographyPage from "./pages/react/my-components/ReactMy
 import ReactMyComponentsCardPage from "./pages/react/my-components/ReactMyComponentsCardPage";
 import JavascriptArraysPage from "./pages/javascript/array/JavascriptArraysPage";
 import ReactMyComponentsAccordionPage from "./pages/react/my-components/ReactMyComponentsAccordionPage";
-import ReactMyComponentsBreadcrumbPage from "./pages/react/my-components/ReactMyComponentsBreadcrumbPage";
 import ReactMyComponentsBreadcrumbUsePage from "./pages/react/my-components/breadcrumb/ReactMyComponentsBreadcrumbUsePage";
 import ReactReactQueryPage from "./pages/react/react-query/ReactReactQueryPage";
 import ReactInterestingQuestions from "./pages/react/interesting-questions/ReactInterestingQuestions";
@@ -46,7 +38,6 @@ import JavascriptInterestingQuestions from "./pages/javascript/interesting-quest
 import JavascriptBasicsTypesPage from "./pages/javascript/basics/types/JavascriptBasicsTypesPage";
 import JavascriptBasicsPage from "./pages/javascript/basics/JavascriptBasicsPage";
 import JavascriptBasicsCoercionPage from "./pages/javascript/basics/coercion/JavascriptBasicsCoercionPage";
-import JavascriptBasicsPhilosofyOfCoercionPage from "./pages/javascript/basics/philosofy-of-coercion/JavascriptBasicsPhilosofyOfCoercionPage";
 import JavascriptBasicsEqualityPage from "./pages/javascript/basics/equality/JavascriptBasicsEqualityPage";
 import JavascriptBasicsStaticTypingTypesPage from "./pages/javascript/basics/static-typing/JavascriptBasicsStaticTypingTypesPage";
 import JavascriptBasicsScopePage from "./pages/javascript/basics/scope/JavascriptBasicsScopePage";
@@ -57,6 +48,8 @@ import ProjectSetupPage from "./pages/project-setup/ProjectSetupPage";
 import MePage from "./pages/me/MePage";
 import TableOfContentsPage from "./pages/TableOfContentsPage";
 import TypescriptPage from "./pages/typescript/TypescriptPage";
+import PackageManagersPage from "./pages/package-managers/PackageManagersPage";
+import PackageManagersYarnPage from "./pages/package-managers/PackageManagersYarnPage";
 
 const App = () => {
   const queryClient = new QueryClient();
@@ -69,6 +62,18 @@ const App = () => {
             <Route element={<Layout />}>
               <Route path="/" element={<TableOfContentsPage />} />
               <Route path="/me" element={<MePage />} />
+              <Route
+                path="/package-managers"
+                element={<PackageManagersPage />}
+              />
+              <Route
+                path="/package-managers/yarn"
+                element={<PackageManagersYarnPage />}
+              />
+              <Route
+                path="/package-managers/npm"
+                element={<PackageManagersYarnPage />}
+              />
               <Route path="/project-setup" element={<ProjectSetupPage />} />
               <Route path="/javascript" element={<JavascriptPage />} />
               <Route

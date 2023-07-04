@@ -1,9 +1,9 @@
 import { Outlet, useLocation } from "react-router-dom";
-import Header from "../../components/Header";
 import LateralMenu from "../../components/common/lateral-menu/LateralMenu";
 import Title from "../../components/common/Title";
 import {
   JavascriptIcon,
+  PointIcon,
   ReactIcon,
   TypescriptIcon,
 } from "../../components/common/icons";
@@ -58,6 +58,24 @@ const SECTIONS = {
       title="Javascript Basics: Scope"
     />
   ),
+  "/javascript/basics/closure": (
+    <Title
+      icon={<JavascriptIcon size={30} />}
+      title="Javascript Basics: Closure"
+    />
+  ),
+  "/javascript/basics/objects": (
+    <Title
+      icon={<JavascriptIcon size={30} />}
+      title="Javascript Basics: Objects"
+    />
+  ),
+  "/javascript/basics/prototype": (
+    <Title
+      icon={<JavascriptIcon size={30} />}
+      title="Javascript Basics: Prototype"
+    />
+  ),
   "/javascript/basics": (
     <Title icon={<JavascriptIcon size={30} />} title="Javascript Basics" />
   ),
@@ -70,6 +88,7 @@ const SECTIONS = {
   "/typescript": (
     <Title icon={<TypescriptIcon size={30} />} title="Typescript" />
   ),
+  "/me": <Title title="Me" />,
   "/": <Title title="Default" />,
 };
 
@@ -78,8 +97,7 @@ const InformationLayout = () => {
   const sectionId = Object.keys(SECTIONS).find((sectionId) =>
     location.pathname.startsWith(sectionId)
   );
-  const sections = location.pathname.split("/");
-  sections.shift();
+  const sections = location.pathname.split("/").filter((a) => a !== "");
   sections.map((section, index) => {
     return "/" + sections.filter((_, i) => i <= index).join("/");
   });
@@ -100,7 +118,7 @@ const InformationLayout = () => {
         </div>
         <div className="h-[100%] overflow-x-hidden overflow-y-scroll sm:p-4 md:p-8 lg:p-8">
           <div className="mb-4 flex sm:items-center sm:justify-center md:items-center md:justify-center lg:items-center lg:justify-start">
-            {
+            {sections.length > 0 && (
               <Breadcrumb
                 separator="/"
                 style={{
@@ -108,7 +126,7 @@ const InformationLayout = () => {
                   backgroundColor: "#E7EBF0",
                 }}
               >
-                {[{ path: "/", icon: <ReactIcon /> }, ...breadcrumbs].map(
+                {[{ path: "/", icon: <PointIcon /> }, ...breadcrumbs].map(
                   (section, index) => (
                     <BreadcrumbLink
                       key={index}
@@ -120,7 +138,7 @@ const InformationLayout = () => {
                   )
                 )}
               </Breadcrumb>
-            }
+            )}
           </div>
           <div className="grid grid-cols-1 gap-y-4">
             {SECTIONS[sectionId]}

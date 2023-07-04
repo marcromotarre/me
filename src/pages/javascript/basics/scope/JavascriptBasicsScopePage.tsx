@@ -117,7 +117,7 @@ topic;  // "React"   some of the bad part of Javascript`}</>
       </Code>
 
       <Alert severity="info">
-        In JavaScript, the term &ldquo;shadow&ldquo; typically refers to the
+        In JavaScript, the term &ldquo;shadow&rdquo; typically refers to the
         concept of shadowing or variable shadowing. Variable shadowing occurs
         when a variable declared within a particular scope has the same name as
         a variable declared in an outer scope. When a variable is shadowed, the
@@ -332,6 +332,164 @@ var teacher = "Marc";
 
 console.log(teacher); // Marc `}</>
       </Code>
+      <Typography variant="h4">Explicit let Block</Typography>
+      <Typography>
+        If you only want to use a let variable in a few lines you should create
+        a block for it. You will only be able to use it in its scope. And also
+        be able to declare it again outside that scope
+      </Typography>
+      <Code noHeader>
+        <>{`
+function formatString(str) {
+  { let prefix, rest;
+    prefix = str.slice( 0, 3 );
+    rest = str.slice( 3 );
+    str = prefix.toUpperCase() + rest;
+  }
+
+061
+}`}</>
+      </Code>
+      <Typography variant="h4">Const</Typography>
+      <Typography>
+        we think of the word constant. What we are thinking to ourselves is, a
+        thing that does not change. But that&apos;s not what a programmer means
+        by const, or at least that&apos;s not what a programming language
+        designer means by const. A programming language designer means a
+        variable that can&apos;t be reassigned, and those are two entirely
+        different things.
+      </Typography>
+      <Code noHeader>
+        <>{`
+var teacher = "Suzy";
+teacher = "Marc"; // OK
+
+const myTeacher = teacher;
+myTeacher = "Suzy"; // TypeError
+
+const teacher = ["Kyle", "Suzy"];
+teachers[1] = "Brian"; // Allowed!`}</>
+      </Code>
+      <Typography>I would only use const for primitive values.</Typography>
+      <Typography variant="h4">Hoisting</Typography>
+      <Code noHeader>
+        <>{`
+student; // ??
+teacher; // ??
+var student = "you";
+var teacher = "Marc";`}</>
+      </Code>
+      <Typography>This is what really happens here:</Typography>
+      <Code noHeader>
+        <>{`
+
+// javascript is declaring the vars for this scope here
+// so the previous code is transformed into this
+
+var student;
+var teacher;
+
+student; // undefined
+teacher; // undefined
+student = "you";
+teacher = "Marc";`}</>
+      </Code>
+
+      <Typography>With functions happens the same:</Typography>
+      <Code noHeader>
+        <>{`
+teacher(); // ??
+otherTeacher(); // ??
+
+function teacher() {
+  return "Marc";
+}
+
+var otherTeacher = function() {
+  return "Suzy";
+};`}</>
+      </Code>
+      <Typography>And this is what it does:</Typography>
+
+      <Code noHeader>
+        <>{`
+function teacher() {
+  return "Marc";
+}
+var otherTeacher;
+
+teacher(); // Marc
+otherTeacher(); // TypeError
+
+otherTeacher = function() {
+  return "Suzy";
+};`}</>
+      </Code>
+
+      <Typography>Lets see a couple of more examples:</Typography>
+      <Code noHeader>
+        <>{`
+ var teacher = "Marc";
+ otherTeacher();
+ 
+ function otherTeacher() {
+    // will be undefined because it is declaring a var teacher in this function scope
+     console.log(teacher);  
+     // if we remove the next line the console log will print "Marc"
+     var teacher = "Suzy";
+ }`}</>
+      </Code>
+      <Code noHeader>
+        <>{`
+// var hoisting?
+// usually bad :/
+teacher = "Marc";
+var teacher;
+
+// function hoisting?
+// IMO actually pretty useful
+getTeacher(); // Marc
+
+function getTeacher() {
+  return teacher;
+}`}</>
+      </Code>
+      <Typography variant="h4">Let does not hoist</Typography>
+      <Typography>
+        This statement is false. let and const hoist but they do it in a
+        different way
+      </Typography>
+      <Code noHeader>
+        <>{`
+{
+  teacher = "Marc"; // TDZ error!
+  let teacher;
+}
+
+var teacher = "Kyle"
+
+{
+  // if let does not hoist this console log should print "Kyle"
+  console.log(teacher) // TDZ error!
+  let teacher = "Suzy";
+}`}</>
+      </Code>
+      <Typography>
+        From the spec we can fine this definition in 13.3.1 Let and Const
+        Declarations
+      </Typography>
+      <Alert severity="info">
+        let and const declarations define variables that are scoped to the
+        running execution context&apos;s LexicalEnvironment. The variables are
+        created when their containing Lexical Environment is instantiated but
+        may not be accessed in any way until the variable&apos;s LexicalBinding
+        is evaluated. A variable defined by a LexicalBinding with an Initializer
+        is assigned the value of its Initializer&apos;s AssignmentExpression
+        when the LexicalBinding is evaluated, not when the variable is created.
+        If a LexicalBinding in a let declaration does not have an Initializer
+        the variable is assigned the value undefined when the LexicalBinding is
+        evaluated.
+      </Alert>
     </>
   );
 };
