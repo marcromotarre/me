@@ -50,6 +50,10 @@ import TableOfContentsPage from "./pages/TableOfContentsPage";
 import TypescriptPage from "./pages/typescript/TypescriptPage";
 import PackageManagersPage from "./pages/package-managers/PackageManagersPage";
 import PackageManagersYarnPage from "./pages/package-managers/PackageManagersYarnPage";
+import ProjectSetupBundlers from "./pages/project-setup/bundlers/ProjectSetupBundlers";
+import ProjectSetupBundlersWebpack from "./pages/project-setup/bundlers/webpack/ProjectSetupBundlersWebpack";
+import ProjectSetupBundlersParcel from "./pages/project-setup/bundlers/parcel/ProjectSetupBundlersParcel";
+import ProjectSetupBundlersVite from "./pages/project-setup/bundlers/vite/ProjectSetupBundlersVite";
 
 const App = () => {
   const queryClient = new QueryClient();
@@ -75,6 +79,22 @@ const App = () => {
                 element={<PackageManagersYarnPage />}
               />
               <Route path="/project-setup" element={<ProjectSetupPage />} />
+              <Route
+                path="/project-setup/bundlers"
+                element={<ProjectSetupBundlers />}
+              />
+              <Route
+                path="/project-setup/bundlers/webpack"
+                element={<ProjectSetupBundlersWebpack />}
+              />
+              <Route
+                path="/project-setup/bundlers/parcel"
+                element={<ProjectSetupBundlersParcel />}
+              />
+              <Route
+                path="/project-setup/bundlers/vite"
+                element={<ProjectSetupBundlersVite />}
+              />
               <Route path="/javascript" element={<JavascriptPage />} />
               <Route
                 path="/javascript/basics"

@@ -9,8 +9,9 @@ import {
 } from "../../components/common/icons";
 import Breadcrumb from "../../components/common/breadcrumb/Breadcrumb";
 import BreadcrumbLink from "../../components/common/breadcrumb/BreadcrumbLink";
-import TABLE_OF_CONTENTS_DATA, { getLinearList } from "../../data/LateralMenu";
 import ReactQueryIcon from "../../components/common/icons/mr-icons/ReactQueryIcon";
+import TableOfContents from "../../data/table-of-contents/sections/TableOfContents";
+import { getLinearList } from "../../utils/menu";
 
 const SECTIONS = {
   "/react/react-query": (
@@ -102,7 +103,7 @@ const InformationLayout = () => {
     return "/" + sections.filter((_, i) => i <= index).join("/");
   });
 
-  const linearList = getLinearList(TABLE_OF_CONTENTS_DATA);
+  const linearList = getLinearList(TableOfContents);
   const breadcrumbs = sections
     .map((_, index) => {
       return "/" + sections.filter((_, i) => i <= index).join("/");

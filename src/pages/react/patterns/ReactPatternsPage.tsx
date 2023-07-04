@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import Button from "../../../components/common/buttons/Button";
-import LateralMenu, { getChildren } from "../../../data/LateralMenu";
+import { getChildren } from "../../../utils/menu";
 
 const ReactPatternsPage = () => {
   const navigate = useNavigate();
