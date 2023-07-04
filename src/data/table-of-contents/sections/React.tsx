@@ -38,6 +38,7 @@ export default {
         { path: "/react/my-components/modal", name: "Modal" },
         { path: "/react/my-components/code", name: "Code" },
         { path: "/react/my-components/icon", name: "Icon" },
+        { path: "/react/my-components/list", name: "List" },
       ],
     },
     {

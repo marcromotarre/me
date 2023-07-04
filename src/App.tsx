@@ -54,6 +54,7 @@ import ProjectSetupBundlers from "./pages/project-setup/bundlers/ProjectSetupBun
 import ProjectSetupBundlersWebpack from "./pages/project-setup/bundlers/webpack/ProjectSetupBundlersWebpack";
 import ProjectSetupBundlersParcel from "./pages/project-setup/bundlers/parcel/ProjectSetupBundlersParcel";
 import ProjectSetupBundlersVite from "./pages/project-setup/bundlers/vite/ProjectSetupBundlersVite";
+import ReactMyComponentsListPage from "./pages/react/my-components/list/ReactMyComponentsListPage";
 
 const App = () => {
   const queryClient = new QueryClient();
@@ -181,6 +182,10 @@ const App = () => {
               <Route
                 path="/react/my-components/breadcrumb"
                 element={<ReactMyComponentsBreadcrumbUsePage />}
+              />
+              <Route
+                path="/react/my-components/list"
+                element={<ReactMyComponentsListPage />}
               />
               <Route
                 path="/react/my-components/card"
