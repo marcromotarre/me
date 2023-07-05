@@ -55,6 +55,15 @@ import ProjectSetupBundlersWebpack from "./pages/project-setup/bundlers/webpack/
 import ProjectSetupBundlersParcel from "./pages/project-setup/bundlers/parcel/ProjectSetupBundlersParcel";
 import ProjectSetupBundlersVite from "./pages/project-setup/bundlers/vite/ProjectSetupBundlersVite";
 import ReactMyComponentsListPage from "./pages/react/my-components/list/ReactMyComponentsListPage";
+import TypescriptVariablesAndValuesPage from "./pages/typescript/variables-and-values/TypescriptVariablesAndValuesPage";
+import TypescriptTypingFunctionsPage from "./pages/typescript/typing-functions/TypescriptTypingFunctionsPage";
+import TypescriptIndexSignaturesPage from "./pages/typescript/index-signatures/TypescriptIndexSignaturesPage";
+import TypescriptArraysPage from "./pages/typescript/arrays/TypescriptArraysPage";
+import TypescriptTuplesPage from "./pages/typescript/tuples/TypescriptTuplesPage";
+import TypescriptStructuralVsNominalTypesPage from "./pages/typescript/structural-vs-nominal-types/TypescriptStructuralVsNominalTypesPage";
+import TypescriptUnionTypesPage from "./pages/typescript/union-types/TypescriptUnionTypesPage";
+import TypescriptIntersectionTypesPage from "./pages/typescript/intersection-types/TypescriptIntersectionTypesPage";
+import TypescriptTypeAliasesAndInterfacesPage from "./pages/typescript/type-aliases-and-interfaces/TypescriptTypeAliasesAndInterfacesPage";
 
 const App = () => {
   const queryClient = new QueryClient();
@@ -237,6 +246,43 @@ const App = () => {
                 element={<ReactInterestingQuestions />}
               />
               <Route path="/typescript" element={<TypescriptPage />} />
+              <Route
+                path="/typescript/variables-and-values"
+                element={<TypescriptVariablesAndValuesPage />}
+              />
+              <Route
+                path="/typescript/typing-functions"
+                element={<TypescriptTypingFunctionsPage />}
+              />
+              <Route
+                path="/typescript/index-signatures"
+                element={<TypescriptIndexSignaturesPage />}
+              />
+              <Route
+                path="/typescript/arrays"
+                element={<TypescriptArraysPage />}
+              />
+              <Route
+                path="/typescript/tuples"
+                element={<TypescriptTuplesPage />}
+              />
+              <Route
+                path="/typescript/structural-vs-nominal-types"
+                element={<TypescriptStructuralVsNominalTypesPage />}
+              />
+
+              <Route
+                path="/typescript/union-types"
+                element={<TypescriptUnionTypesPage />}
+              />
+              <Route
+                path="/typescript/intersection-types"
+                element={<TypescriptIntersectionTypesPage />}
+              />
+              <Route
+                path="/typescript/type-aliases-and-interfaces"
+                element={<TypescriptTypeAliasesAndInterfacesPage />}
+              />
 
               <Route path="/redux/" element={<ReduxPage />} />
               <Route path="/git/" element={<GitPage />} />

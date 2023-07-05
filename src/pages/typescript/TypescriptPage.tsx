@@ -3,30 +3,14 @@ import Code from "../../components/common/code/Code";
 import Typography from "../../components/common/typography/Typography";
 
 export default function TypescriptPage() {
-  function flipCoin(): "heads" | "tails" {
-    if (Math.random() > 0.5) return "heads";
-    return "tails";
-  }
-  function maybeGetUserInfo():
-    | ["error", Error]
-    | ["success", { name: string; email: string }] {
-    if (flipCoin() == "heads") {
-      return ["success", { name: "Marc Romo", email: "marc@example.com" }];
-    } else {
-      return ["error", new Error("The coin landed on TAILS :(")];
-    }
-  }
+  type UserContactInfo = {
+    name: string;
+    email: string;
+  };
 
-  const outcome = maybeGetUserInfo();
-
-  const [type, data] = outcome;
-  if (data instanceof Error) {
-    // now you can access to Error props (cause, message, name, stack) using (data.)
-  } else {
-    // here you can access to email and name :)
+  function printUserContactInfo(info: UserContactInfo) {
+    console.log(info.name + " " + info.email);
   }
-  console.log(data.name);
-  console.log(outcome);
   return (
     <>
       <Typography>
@@ -507,7 +491,7 @@ const [type, data] = outome;`}</>
         another scenario. This is what is called discriminated union. And what
         makes discriminated union is that we have some sort of key to use with
         the type guard that lets us in a broader sense switch between many
-        different possibilities
+        different possibilities.
       </Typography>
       <Code noHeader>
         <>{`
@@ -519,6 +503,79 @@ const [type, data] = outome;`}</>
     // In this branch of your code outcome[1] is user info
     outocome
   }`}</>
+      </Code>
+      <Typography>
+        If there where 57 posibilites as long as each of these posibilitas had a
+        key we could make a nice case switch that would handle each one of those
+        cases. Typescript cooperates with you in that cases.
+      </Typography>
+
+      <Typography variant="h4">Intersection Types</Typography>
+      <Typography>
+        Let me say before starting this section that Union Types are much more
+        common. So you will find them more often .
+      </Typography>
+      <Code noHeader>
+        <>{`
+function makeWeek(): { date: Date } & { end: Date } {
+  const ONE_WEEK = 604800000;
+  const start = new Date();
+  const end = new Date(start.valueOf() + ONE_WEEK);
+  return { date: start, end };
+}
+  
+const thisWeek = makeWeek();
+thisWeek.date.toISOString();
+thisWeek.end.toISOStrin();`}</>
+      </Code>
+      <Typography variant="h4">Type Aliases & Interfaces</Typography>
+      <Typography>
+        TypeScript provides two mechanisms for centrally defining types and
+        giving them useful and meaningful names: interfaces dn type aliases. We
+        will study both concepts in depth, and explain when it makes sense to
+        use each type.
+      </Typography>
+      <Typography variant="h6">Type Aliases</Typography>
+      <Typography>
+        Think back to the &#123; name: string; email: string &#125; syntax used
+        up until this point for type annotations. This syntax will get
+        increasingly complicated as more properties are added to this type.
+        Furthermore, if we pass objects of this type around through various
+        functions and variables, we will end up with a lot of types that need to
+        be manually updated whenever we need to make any changes!
+      </Typography>
+      <Typography>
+        Type aliases help to address this, by allowing us to:
+      </Typography>
+      <ol className="grid list-[disc] gap-y-2 pl-9">
+        <li>
+          <Typography>define a more meaningful name for this type</Typography>
+        </li>
+        <li>
+          <Typography>
+            declare the particulars of the type in a single place
+          </Typography>
+        </li>
+        <li>
+          <Typography>
+            import and export this type from modules, the same as if it were an
+            exported value
+          </Typography>
+        </li>
+      </ol>
+      <Typography>
+        As we see in previous section this is the way you create a Type Alias
+      </Typography>
+      <Code noHeader>
+        <>{`
+type UserContactInfo = {
+  name: string;
+  email: string;
+};
+  
+function printUserContactInfo(info: UserContactInfo) {
+  console.log(info.name + " " + info.email);
+}`}</>
       </Code>
     </>
   );
