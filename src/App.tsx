@@ -65,6 +65,7 @@ import TypescriptUnionTypesPage from "./pages/typescript/union-types/TypescriptU
 import TypescriptIntersectionTypesPage from "./pages/typescript/intersection-types/TypescriptIntersectionTypesPage";
 import TypescriptTypeAliasesAndInterfacesPage from "./pages/typescript/type-aliases-and-interfaces/TypescriptTypeAliasesAndInterfacesPage";
 import TypescriptWithReact from "./pages/typescript/typescript-with-react/TypescriptWithReact";
+import TypescriptFunctionsAndFunctionsOverloadsPage from "./pages/typescript/functions-and-functions-overloads/TypescriptFunctionsAndFunctionsOverloadsPage";
 
 const App = () => {
   const queryClient = new QueryClient();
@@ -284,6 +285,12 @@ const App = () => {
                 path="/typescript/type-aliases-and-interfaces"
                 element={<TypescriptTypeAliasesAndInterfacesPage />}
               />
+
+              <Route
+                path="/typescript/functions-and-functions-overloads"
+                element={<TypescriptFunctionsAndFunctionsOverloadsPage />}
+              />
+              <Route></Route>
 
               <Route
                 path="/typescript/typescript-with-react"

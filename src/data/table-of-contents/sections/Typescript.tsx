@@ -21,6 +21,11 @@ export default {
       name: "Type Aliases & Interfaces",
     },
     {
+      path: "/typescript/functions-and-functions-overloads",
+      name: "Functions and Functions Overloads",
+    },
+
+    {
       path: "/typescript/typescript-with-react",
       name: "Typescript With React",
     },
