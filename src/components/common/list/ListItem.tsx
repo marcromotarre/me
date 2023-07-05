@@ -5,11 +5,13 @@ import Typography from "../typography/Typography";
 export default function ListItem({ children, style = {} }: ComponentProps) {
   return (
     <li style={style}>
-      {typeof children == "string" ? (
-        <Typography>{children}</Typography>
-      ) : (
-        { children }
-      )}
+      <>
+        {typeof children == "string" ? (
+          <Typography>{children}</Typography>
+        ) : (
+          <div style={{ width: "100%" }}>{children}</div>
+        )}
+      </>
     </li>
   );
 }

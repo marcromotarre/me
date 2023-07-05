@@ -34,7 +34,7 @@ export default function List({
     listItems?: React.ReactElement<ListItemProps>[]
   ) {
     return (
-      <ul className="grid list-[type1] gap-y-2 pl-9">
+      <ul className={`grid ${ListStyleTypes[styleType]} gap-y-2`}>
         {listItems && renderListItems(listItems)}
       </ul>
     );
