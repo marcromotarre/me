@@ -64,6 +64,7 @@ import TypescriptStructuralVsNominalTypesPage from "./pages/typescript/structura
 import TypescriptUnionTypesPage from "./pages/typescript/union-types/TypescriptUnionTypesPage";
 import TypescriptIntersectionTypesPage from "./pages/typescript/intersection-types/TypescriptIntersectionTypesPage";
 import TypescriptTypeAliasesAndInterfacesPage from "./pages/typescript/type-aliases-and-interfaces/TypescriptTypeAliasesAndInterfacesPage";
+import TypescriptWithReact from "./pages/typescript/typescript-with-react/TypescriptWithReact";
 
 const App = () => {
   const queryClient = new QueryClient();
@@ -282,6 +283,11 @@ const App = () => {
               <Route
                 path="/typescript/type-aliases-and-interfaces"
                 element={<TypescriptTypeAliasesAndInterfacesPage />}
+              />
+
+              <Route
+                path="/typescript/typescript-with-react"
+                element={<TypescriptWithReact />}
               />
 
               <Route path="/redux/" element={<ReduxPage />} />
