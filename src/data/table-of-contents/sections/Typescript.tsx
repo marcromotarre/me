@@ -22,7 +22,7 @@ export default {
     },
     {
       path: "/typescript/functions-and-functions-overloads",
-      name: "Functions and Functions Overloads",
+      name: "Functions in Depth",
     },
 
     {

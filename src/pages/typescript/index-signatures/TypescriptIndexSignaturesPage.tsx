@@ -14,19 +14,19 @@ export default function TypescriptIndexSignaturesPage() {
 type Phones = { [key: string]: Phone | undefined };
 
 const phones: Phones = {
-// Property 'number' is missing in type '{}' but required in type 'Phone'.ts(2741)
-emptyPhone: {}, // ERROR
-wrongPhoneType: {
-// Type 'number' is not assignable to type 'string'.ts(2322)
-phoneNumber: 987654321, // ERROR
-},
-aRandomKey: { // CORRECT PHONE
-phoneNumber: "number-for-random-key",
-},
-anotherRandomKey: { // CORRECT PHONE
-phoneNumber: "number-for-another-random-key",
-country: "country-for-another-random-key",
-},
+  // Property 'number' is missing in type '{}' but required in type 'Phone'.ts(2741)
+  emptyPhone: {}, // ERROR
+  wrongPhoneType: {
+    // Type 'number' is not assignable to type 'string'.ts(2322)
+    phoneNumber: 987654321, // ERROR
+  },
+  aRandomKey: { // CORRECT PHONE
+    phoneNumber: "number-for-random-key",
+  },
+  anotherRandomKey: { // CORRECT PHONE
+    phoneNumber: "number-for-another-random-key",
+    country: "country-for-another-random-key",
+  },
 };`}</>
       </Code>
     </>
