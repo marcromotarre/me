@@ -3,51 +3,30 @@ import Code from "../../components/common/code/Code";
 import Typography from "../../components/common/typography/Typography";
 
 export default function TypescriptPage() {
-  class Car {
-    make: string;
-    year: number;
-    isElectric: boolean;
-
-    constructor(make: string, year: number, isElectric: boolean) {
-      this.make = make;
-      this.year = year;
-      this.isElectric = isElectric;
+  function flipCoin(): "heads" | "tails" {
+    if (Math.random() > 0.5) return "heads";
+    return "tails";
+  }
+  function maybeGetUserInfo():
+    | ["error", Error]
+    | ["success", { name: string; email: string }] {
+    if (flipCoin() == "heads") {
+      return ["success", { name: "Marc Romo", email: "marc@example.com" }];
+    } else {
+      return ["error", new Error("The coin landed on TAILS :(")];
     }
   }
 
-  class Truck {
-    make: string;
-    model: string;
-    year: number;
-    towingCapacity: number;
+  const outcome = maybeGetUserInfo();
 
-    constructor(
-      make: string,
-      model: string,
-      year: number,
-      towingCapacity: number
-    ) {
-      this.make = make;
-      this.model = model;
-      this.year = year;
-      this.towingCapacity = towingCapacity;
-    }
+  const [type, data] = outcome;
+  if (data instanceof Error) {
+    // now you can access to Error props (cause, message, name, stack) using (data.)
+  } else {
+    // here you can access to email and name :)
   }
-
-  const vehicle = {
-    make: "Honda",
-    model: "Accord",
-    year: 2017,
-  };
-
-  function printCar(car: { make: string; model: string; year: number }) {
-    console.log(car.make + " " + car.model + " " + String(car.year));
-  }
-
-  printCar(new Car("Nissan", 2021, true));
-  printCar(new Truck("Mercedes", "Anhiquilator", 2002, 6000));
-  printCar(vehicle);
-
+  console.log(data.name);
+  console.log(outcome);
   return (
     <>
       <Typography>
@@ -443,7 +422,104 @@ printCar(vehicle); // Honda Accord 2017`}</>
         definition. In the context of Typescript it is common for those who say
         &ldquo;strong&rlquo; to really &ldquo;static&rlquo;
       </Typography>
+
       <Typography variant="h4">Union Types</Typography>
+      <Typography>
+        We have seen some examples of Union Types already in the Typescript
+        section. To specify a union type we use the case |
+      </Typography>
+      <Typography>
+        In the next example we are saying that the return value of the function
+        flipCoin is a string, But not any string it must have the value
+        &ldquo;heads&rdquo; or &ldquo;tails&rdquo;
+      </Typography>
+      <Code noHeader>
+        <>{`
+function flipCoin() : "heads" | "tails" {
+  if(Math.random() > 0.5) return "heads";
+  return "tails";
+}`}</>
+      </Code>
+      <Typography>Another example:</Typography>
+      <Code noHeader>
+        <>{`
+function maybeGetUserInfo():
+  | ["error", Error]
+  | ["success", { name: string; email: string }] {
+    if (flipCoin() == "heads") {
+      return ["success", { name: "Marc Romo", email: "marcromotarre@gmail.com" }];
+    } else {
+      return ["error", new Error("The coin landed on TAILS :(")];
+    }
+}
+
+const outcome = maybeGetUserInfo();
+
+const [type, data] = outome;`}</>
+      </Code>
+      <Typography>
+        If you write this code on a ts file and position mouse on outcome var
+        you will see the type. And now the magic of Typescript. Lets assign
+        first array value to type var and second one to data. See the types of
+        these variables.
+      </Typography>
+      <Typography>
+        It will say to you that type is &ldquo;error&rdquo; or
+        &ldquo;succes&rdquo;. And data is Error or &#123; name: string; email:
+        string &#125;
+      </Typography>
+      <Alert severity="info">
+        When a value has a type that includes a union, we are only able to use
+        the &ldquo;common behaviour&rdquo; that is guaranteed to be there.
+      </Alert>
+      <Typography>
+        In the case of data we can access to name because the object of success
+        contains name and the Error class also contains name.
+      </Typography>
+      <Typography variant="h6">Narrowing with type guards</Typography>
+      <Typography>
+        Ultinately we need to &ldquo;separate&rdquo; the two potenctial
+        possibilities for our value, or we won&apos;t be able to get very far.
+        We can do this with type guards
+      </Typography>
+      <Alert severity="info">
+        Type guards are expressions, which when used with control flow
+        statement, allow us to have a more specific type for a particular value.
+      </Alert>
+      <Typography>
+        I like to think of these as &ldquo;glue&rdquo; between the compile time
+        type-checking and runtime execution of your code. We will work woth one
+        that should already be familiar with to start: instanceof.
+      </Typography>
+      <Code noHeader>
+        <>{`
+  const [type, data] = outcome;
+  if (data instanceof Error) {
+    // now you can access to Error props (cause, message, name, stack) using (data.)
+  } else {
+    // here you can access to email and name :)
+  }`}</>
+      </Code>
+      <Typography variant="h6">Discriminated Unions</Typography>
+      <Typography>
+        With conditionals checking what is in the first position of the array we
+        know what will be in the second. There is one scenario and there is
+        another scenario. This is what is called discriminated union. And what
+        makes discriminated union is that we have some sort of key to use with
+        the type guard that lets us in a broader sense switch between many
+        different possibilities
+      </Typography>
+      <Code noHeader>
+        <>{`
+  const [type, data] = outcome;
+  if (outcome[0] === "error") {
+    // In this branch of your code outcome[1] is an Error
+    outocome
+  } else {
+    // In this branch of your code outcome[1] is user info
+    outocome
+  }`}</>
+      </Code>
     </>
   );
 }
