@@ -113,6 +113,18 @@ const SECTIONS = {
   "/typescript/generics": (
     <Title icon={<TypescriptIcon size={30} />} title="Typescript: Generics" />
   ),
+  "/typescript/code-infrastructure": (
+    <Title
+      icon={<TypescriptIcon size={30} />}
+      title="Typescript: Code Infrastructre"
+    />
+  ),
+  "/typescript/conditional-types": (
+    <Title
+      icon={<TypescriptIcon size={30} />}
+      title="Typescript: Conditional Types"
+    />
+  ),
   "/typescript/typescript-with-react": (
     <Title icon={<TypescriptIcon size={30} />} title="Typescript with React" />
   ),

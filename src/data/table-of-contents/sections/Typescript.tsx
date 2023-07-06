@@ -32,7 +32,14 @@ export default {
       path: "/typescript/generics",
       name: "Generics",
     },
-
+    {
+      path: "/typescript/code-infrastructure",
+      name: "Code Infrastructure",
+    },
+    {
+      path: "/typescript/conditional-types",
+      name: "Conditional Types",
+    },
     {
       path: "/typescript/typescript-with-react",
       name: "Typescript With React",

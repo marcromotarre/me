@@ -68,6 +68,8 @@ import TypescriptWithReact from "./pages/typescript/typescript-with-react/Typesc
 import TypescriptFunctionsAndFunctionsOverloadsPage from "./pages/typescript/functions-in-depth/TypescriptFunctionsinDepthPage";
 import TypescriptTypesAndValuesInDepthPage from "./pages/typescript/types-and-values-in-depth/TypescriptTypesAndValuesInDepthPage";
 import TypescriptGenericsPage from "./pages/typescript/generics/TypescriptGenericsPage";
+import TypescriptCodeInfrastructurePage from "./pages/typescript/code-infrastructure/TypescriptCodeInfrastructurePage";
+import TypescriptConditionalTypesPage from "./pages/typescript/conditional-types/TypescriptConditionalTypesPage";
 
 const App = () => {
   const queryClient = new QueryClient();
@@ -299,6 +301,14 @@ const App = () => {
               <Route
                 path="/typescript/generics"
                 element={<TypescriptGenericsPage />}
+              />
+              <Route
+                path="/typescript/code-infrastructure"
+                element={<TypescriptCodeInfrastructurePage />}
+              />
+              <Route
+                path="/typescript/conditional-types"
+                element={<TypescriptConditionalTypesPage />}
               />
 
               <Route
