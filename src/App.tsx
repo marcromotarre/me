@@ -66,6 +66,8 @@ import TypescriptIntersectionTypesPage from "./pages/typescript/intersection-typ
 import TypescriptTypeAliasesAndInterfacesPage from "./pages/typescript/type-aliases-and-interfaces/TypescriptTypeAliasesAndInterfacesPage";
 import TypescriptWithReact from "./pages/typescript/typescript-with-react/TypescriptWithReact";
 import TypescriptFunctionsAndFunctionsOverloadsPage from "./pages/typescript/functions-in-depth/TypescriptFunctionsinDepthPage";
+import TypescriptTypesAndValuesInDepthPage from "./pages/typescript/types-and-values-in-depth/TypescriptTypesAndValuesInDepthPage";
+import TypescriptGenericsPage from "./pages/typescript/generics/TypescriptGenericsPage";
 
 const App = () => {
   const queryClient = new QueryClient();
@@ -287,10 +289,17 @@ const App = () => {
               />
 
               <Route
-                path="/typescript/functions-and-functions-overloads"
+                path="/typescript/functions-in-depth"
                 element={<TypescriptFunctionsAndFunctionsOverloadsPage />}
               />
-              <Route></Route>
+              <Route
+                path="/typescript/types-and-values-in-depth"
+                element={<TypescriptTypesAndValuesInDepthPage />}
+              />
+              <Route
+                path="/typescript/generics"
+                element={<TypescriptGenericsPage />}
+              />
 
               <Route
                 path="/typescript/typescript-with-react"

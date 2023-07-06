@@ -86,6 +86,24 @@ const SECTIONS = {
   "/javascript": (
     <Title icon={<JavascriptIcon size={30} />} title="Javascript" />
   ),
+  "/typescript/arrays": (
+    <Title icon={<TypescriptIcon size={30} />} title="Typescript: Arrays" />
+  ),
+  "/typescript/tuples": (
+    <Title icon={<TypescriptIcon size={30} />} title="Typescript: Tuples" />
+  ),
+  "/typescript/types-and-values": (
+    <Title
+      icon={<TypescriptIcon size={30} />}
+      title="Typescript: Types and Values"
+    />
+  ),
+  "/typescript/generics": (
+    <Title icon={<TypescriptIcon size={30} />} title="Typescript: Generics" />
+  ),
+  "/typescript/typescript-with-react": (
+    <Title icon={<TypescriptIcon size={30} />} title="Typescript with React" />
+  ),
   "/typescript": (
     <Title icon={<TypescriptIcon size={30} />} title="Typescript" />
   ),

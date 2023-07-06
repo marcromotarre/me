@@ -21,8 +21,16 @@ export default {
       name: "Type Aliases & Interfaces",
     },
     {
-      path: "/typescript/functions-and-functions-overloads",
+      path: "/typescript/functions-in-depth",
       name: "Functions in Depth",
+    },
+    {
+      path: "/typescript/types-and-values-in-depth",
+      name: "Types & Values in Depth",
+    },
+    {
+      path: "/typescript/generics",
+      name: "Generics",
     },
 
     {

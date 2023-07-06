@@ -5,7 +5,6 @@ import Typography from "../../../components/common/typography/Typography";
 export default function TypescriptTuplesPage() {
   return (
     <>
-      <Typography variant="h4">Tuples</Typography>
       <Code noHeader>
         <>{`
 const numPair: [number, number] = [4, 5];`}</>

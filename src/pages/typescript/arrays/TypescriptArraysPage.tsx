@@ -4,7 +4,6 @@ import Typography from "../../../components/common/typography/Typography";
 export default function TypescriptArraysPage() {
   return (
     <>
-      <Typography variant="h4">Arrays</Typography>
       <Typography>You can type arrays in different ways:</Typography>
       <Code noHeader>
         <>{`
