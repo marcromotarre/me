@@ -2,6 +2,41 @@ import Code from "../../../components/common/code/Code";
 import Typography from "../../../components/common/typography/Typography";
 
 export default function TypescriptGenericsPage() {
+  interface HasId {
+    id: string;
+    [k: string]: any;
+  }
+
+  interface Dict<T> {
+    [k: string]: T;
+  }
+
+  function listToDict(list: HasId[]): Dict<HasId> {
+    const dict: Dict<HasId> = {};
+    list.forEach((item) => {
+      dict[item.id] = item;
+    });
+    return dict;
+  }
+
+  interface Person {
+    id: string;
+    name: string;
+  }
+
+  interface PersonWithoutID {
+    name: string;
+  }
+
+  const persons: Person[] = [{ id: "0", name: "Marc" }];
+  const personsWithNoId: PersonWithoutID[] = [{ name: "Marc" }];
+
+  let dictOfPersons = listToDict(persons);
+
+  // Argument of type 'PersonWithoutID[]' is not assignable to parameter of type 'HasId[]'.
+  //Property 'id' is missing in type 'PersonWithoutID' but required in type 'HasId'
+  let dictOfPersonsWithoutId = listToDict(personsWithNoId);
+
   return (
     <>
       <Typography>
@@ -131,7 +166,88 @@ wrapInArray(new RegExp("/s/"))
 `}</>
       </Code>
 
-      <Typography variant="h4">Dictiona</Typography>
+      <Typography variant="h4">Generic constraints</Typography>
+      <Typography>
+        Now that we have covered the basic use of Generics, let&apos;s layer on
+        two more concepts: how scoping work with type params, and how we can
+        describe type params that have more specific requirement than any.
+      </Typography>
+      <Typography>
+        Generic constraints allow us to describe the minimum requirement for a
+        type param, such that we can achieve a high degree of flexibility, while
+        still being able to safely assume some minimal structure and behavior.
+      </Typography>
+      <Typography>
+        To explain that lets take the previous example of generics about
+        listToDict:
+      </Typography>
+
+      <Code noHeader>
+        <>{`
+function listToDict<T>(
+  list: T[],
+  idGen: (arg: T) => string
+): { [k: string]: T } {
+  return {}
+}`}</>
+      </Code>
+      <Typography>
+        In this situation, we ask the caller of listToDict to provide us with a
+        means of obtaining an id, but let&apos;s imagine that every type we wish
+        to use this with has an id: string property, and we should just use that
+        as a key.
+      </Typography>
+      <Typography>
+        Now we are going to create an example where we must to provide an id to
+        each object of the list, and that id will be used to create the
+        dictionary
+      </Typography>
+
+      <Code noHeader>
+        <>{`
+interface HasId {
+  id: string;
+  [k: string]: any;
+}
+
+interface Dict<T> {
+  [k: string]: T;
+}
+
+function listToDict(list: HasId[]): Dict<HasId> {
+  const dict: Dict<HasId> = {};
+  list.forEach((item) => {
+    dict[item.id] = item;
+  });
+  return dict;
+}`}</>
+      </Code>
+      <Typography>
+        As we can see now the listToDict only receives one arguments that is an
+        array of objects, Each of this objects must have id prop and also can
+        have any other prop.
+      </Typography>
+
+      <Code noHeader>
+        <>{`
+interface Person {
+  id: string;
+  name: string;
+}
+
+interface PersonWithoutID {
+  name: string;
+}
+
+const persons: Person[] = [{ id: "0", name: "Marc" }];
+const personsWithNoId: PersonWithoutID[] = [{ name: "Marc" }];
+
+let dictOfPersons = listToDict(persons); // WORKS FINE
+
+// Argument of type 'PersonWithoutID[]' is not assignable to parameter of type 'HasId[]'.
+    //Property 'id' is missing in type 'PersonWithoutID' but required in type 'HasId'
+let dictOfPersonsWithoutId = listToDict(personsWithNoId); // ERROR`}</>
+      </Code>
     </>
   );
 }
