@@ -92,6 +92,18 @@ const SECTIONS = {
   "/typescript/tuples": (
     <Title icon={<TypescriptIcon size={30} />} title="Typescript: Tuples" />
   ),
+  "/typescript/union-types": (
+    <Title
+      icon={<TypescriptIcon size={30} />}
+      title="Typescript: Union Types"
+    />
+  ),
+  "/typescript/intersection-types": (
+    <Title
+      icon={<TypescriptIcon size={30} />}
+      title="Typescript: Intersection Types"
+    />
+  ),
   "/typescript/types-and-values": (
     <Title
       icon={<TypescriptIcon size={30} />}

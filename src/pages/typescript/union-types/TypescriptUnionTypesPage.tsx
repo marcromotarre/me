@@ -5,7 +5,6 @@ import Typography from "../../../components/common/typography/Typography";
 export default function TypescriptUnionTypesPage() {
   return (
     <>
-      <Typography variant="h4">Union Types</Typography>
       <Typography>
         We have seen some examples of Union Types already in the Typescript
         section. To specify a union type we use the case |
@@ -18,8 +17,8 @@ export default function TypescriptUnionTypesPage() {
       <Code noHeader>
         <>{`
 function flipCoin() : "heads" | "tails" {
-if(Math.random() > 0.5) return "heads";
-return "tails";
+  if(Math.random() > 0.5) return "heads";
+  return "tails";
 }`}</>
       </Code>
       <Typography>Another example:</Typography>
@@ -58,7 +57,7 @@ const [type, data] = outome;`}</>
         In the case of data we can access to name because the object of success
         contains name and the Error class also contains name.
       </Typography>
-      <Typography variant="h6">Narrowing with type guards</Typography>
+      <Typography variant="h4">Narrowing with type guards</Typography>
       <Typography>
         Ultinately we need to &ldquo;separate&rdquo; the two potenctial
         possibilities for our value, or we won&apos;t be able to get very far.
@@ -77,12 +76,12 @@ const [type, data] = outome;`}</>
         <>{`
 const [type, data] = outcome;
 if (data instanceof Error) {
-// now you can access to Error props (cause, message, name, stack) using (data.)
+  // now you can access to Error props (cause, message, name, stack) using (data.)
 } else {
-// here you can access to email and name :)
+  // here you can access to email and name :)
 }`}</>
       </Code>
-      <Typography variant="h6">Discriminated Unions</Typography>
+      <Typography variant="h4">Discriminated Unions</Typography>
       <Typography>
         With conditionals checking what is in the first position of the array we
         know what will be in the second. There is one scenario and there is
@@ -95,11 +94,11 @@ if (data instanceof Error) {
         <>{`
 const [type, data] = outcome;
 if (outcome[0] === "error") {
-// In this branch of your code outcome[1] is an Error
-outocome
+  // In this branch of your code outcome[1] is an Error
+  outocome
 } else {
-// In this branch of your code outcome[1] is user info
-outocome
+  // In this branch of your code outcome[1] is user info
+  outocome
 }`}</>
       </Code>
       <Typography>
