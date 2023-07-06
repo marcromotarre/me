@@ -70,6 +70,10 @@ import TypescriptTypesAndValuesInDepthPage from "./pages/typescript/types-and-va
 import TypescriptGenericsPage from "./pages/typescript/generics/TypescriptGenericsPage";
 import TypescriptCodeInfrastructurePage from "./pages/typescript/code-infrastructure/TypescriptCodeInfrastructurePage";
 import TypescriptConditionalTypesPage from "./pages/typescript/conditional-types/TypescriptConditionalTypesPage";
+import TypescriptExercisesPage from "./pages/typescript/exercises/TypescriptExercisesPage";
+import TypescriptExercisesTypeTransformationsPage from "./pages/typescript/exercises/type-transformations/TypescriptExercisesTypeTransformationsPage";
+import TypescriptExercisesGenericsPage from "./pages/typescript/exercises/generics/TypescriptExercisesGenericsPage";
+import TypescriptExercisesAdvancesPatternsPage from "./pages/typescript/exercises/advanced-patterns/TypescriptExercisesAdvancesPatternsPage";
 
 const App = () => {
   const queryClient = new QueryClient();
@@ -314,6 +318,22 @@ const App = () => {
               <Route
                 path="/typescript/typescript-with-react"
                 element={<TypescriptWithReact />}
+              />
+              <Route
+                path="/typescript/exercises"
+                element={<TypescriptExercisesPage />}
+              />
+              <Route
+                path="/typescript/exercises/type-transformations"
+                element={<TypescriptExercisesTypeTransformationsPage />}
+              />
+              <Route
+                path="/typescript/exercises/generics"
+                element={<TypescriptExercisesGenericsPage />}
+              />
+              <Route
+                path="/typescript/exercises/advanced-patterns"
+                element={<TypescriptExercisesAdvancesPatternsPage />}
               />
 
               <Route path="/redux/" element={<ReduxPage />} />

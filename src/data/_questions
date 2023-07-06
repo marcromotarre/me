@@ -21,6 +21,21 @@ react patterns
 
 mustache
 
+fetch data
+    // react query
+
+// state managers
+    // redux
+    // zustand
+    // recoil
+
+    // js
+        // high order function
+        // scope
+        // closures
+
+
+
 
 webpack 
     plugins

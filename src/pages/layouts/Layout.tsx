@@ -128,6 +128,15 @@ const SECTIONS = {
   "/typescript/typescript-with-react": (
     <Title icon={<TypescriptIcon size={30} />} title="Typescript with React" />
   ),
+  "/typescript/exercises/type-transformations": (
+    <Title
+      icon={<TypescriptIcon size={30} />}
+      title="Typescript Exercises: Type Transformations"
+    />
+  ),
+  "/typescript/exercises": (
+    <Title icon={<TypescriptIcon size={30} />} title="Typescript Exercises" />
+  ),
   "/typescript": (
     <Title icon={<TypescriptIcon size={30} />} title="Typescript" />
   ),

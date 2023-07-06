@@ -44,5 +44,23 @@ export default {
       path: "/typescript/typescript-with-react",
       name: "Typescript With React",
     },
+    {
+      path: "/typescript/exercises",
+      name: "Exercises",
+      children: [
+        {
+          path: "/typescript/exercises/type-transformations",
+          name: "Type Transformations",
+        },
+        {
+          path: "/typescript/exercises/generics",
+          name: "Generics",
+        },
+        {
+          path: "/typescript/exercises/advanced-patterns",
+          name: "Advanced Patterns",
+        },
+      ],
+    },
   ],
 };
