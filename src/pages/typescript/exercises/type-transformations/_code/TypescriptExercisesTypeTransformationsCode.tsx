@@ -64,14 +64,6 @@ const getUser = () => {
 type ReturnValue = ReturnType<typeof getUser>;`;
 
 export const EXERCISE_3_AWAITED_SOLUTION = `
-const getUser = () => {
-    return Promise.resolve({
-        id: "123",
-        name: "John",
-        email: "john@example.com",
-    });
-};
-
 type ReturnValue = Awaited<ReturnType<typeof getUser>>;`;
 
 export const EXERCISE_4_GET_OBJECT_KEYS = `
@@ -91,19 +83,6 @@ const testingFrameworks = {
 type TestingFramework = unknown;`;
 
 export const EXERCISE_4_GET_OBJECT_KEYS_SOLUTION = `
-const testingFrameworks = {
-  vitest: {
-    label: "Vitest",
-  },
-  jest: {
-    label: "Jest",
-  },
-  mocha: {
-    label: "Mocha",
-  },
-};
-
-// SOLUTION
 type TestingFramework = keyof typeof testingFrameworks;`;
 
 export const EXERCISE_5_TERMINOLOGY = `
@@ -149,19 +128,6 @@ export const EXERCISE_5_TERMINOLOGY_SOLUTION = `
  * differentiate between members of the union. In this case, type
  * is the discriminator.
  */
-type A =
-  | {
-      type: "a";
-      a: string;
-    }
-  | {
-      type: "b";
-      b: string;
-    }
-  | {
-      type: "c";
-      c: string;
-    };
 
 /**
  * B is a union, but not a discriminated union.
@@ -170,11 +136,135 @@ type B = "a" | "b" | "c";
 
 /**
  * C is an enum.
- */
-enum C {
-  A = "a",
-  B = "b",
-  C = "c",
-}
+ */`;
 
-export {};`;
+export const EXERCISE_6_EXTRACT_FROM_DISCRIMINATED_UNION = `
+ export type Event =
+  | {
+      type: "click";
+      event: MouseEvent;
+    }
+  | {
+      type: "focus";
+      event: FocusEvent;
+    }
+  | {
+      type: "keydown";
+      event: KeyboardEvent;
+    };
+
+type ClickEvent = unknown;`;
+
+export const EXERCISE_6_EXTRACT_FROM_DISCRIMINATED_UNION_SULUTION = `
+type ClickEvent = Extract<Event, { type: "click" }>;`;
+
+export const EXERCISE_7_EXCLUDE_FROM_DISCRIMINATED_UNION = `
+export type Event =
+  | {
+      type: "click";
+      event: MouseEvent;
+    }
+  | {
+      type: "focus";
+      event: FocusEvent;
+    }
+  | {
+      type: "keydown";
+      event: KeyboardEvent;
+    };
+
+type NonKeyDownEvents = unknown;`;
+
+export const EXERCISE_7_EXCLUDE_FROM_DISCRIMINATED_UNION_SOLUCTION = `
+type NonKeyDownEvents = Exclude<Event, { type: "keydown" }>;`;
+
+export const EXERCISE_8_INDEXED_ACCESS = `
+export const fakeDataDefaults = {
+    String: "Default string",
+    Int: 1,
+    Float: 1.14,
+    Boolean: true,
+    ID: "id",
+  };
+  
+  export type StringType = unknown;
+  export type IntType = unknown;
+  export type FloatType = unknown;
+  export type BooleanType = unknown;
+  export type IDType = unknown;`;
+
+export const EXERCISE_8_INDEXED_ACCESS_SOLUTION = `
+type FakeDataDefaults = typeof fakeDataDefaults;
+
+export type StringType = FakeDataDefaults["String"];
+export type IntType = FakeDataDefaults["Int"];
+export type FloatType = FakeDataDefaults["Float"];
+export type BooleanType = FakeDataDefaults["Boolean"];
+export type IDType = FakeDataDefaults["ID"];`;
+
+export const EXERCISE_9_DISCRIMINATED_UNION_TO_DISCRIMINATOR = `
+`;
+
+export const EXERCISE_9_DISCRIMINATED_UNION_TO_DISCRIMINATOR_SOLUTION = `
+`;
+
+export const EXERCISE_10_AS_CONST = `
+`;
+
+export const EXERCISE_10_AS_CONST_SOLUTION = `
+`;
+
+export const EXERCISE_11_INDEXED_ACCESS_WITH_UNIONS = `
+`;
+
+export const EXERCISE_11_INDEXED_ACCESS_WITH_UNIONS_SOLUTION = `
+`;
+
+export const EXERCISE_12_GET_OBJECT_VALUES = `
+`;
+
+export const EXERCISE_12_GET_OBJECT_VALUES_SOLUTION = `
+`;
+
+export const EXERCISE_13_GET_ARRAY_VALUE = `
+`;
+
+export const EXERCISE_13_GET_ARRAY_VALUE_SOLUTION = `
+`;
+
+// 3 TEMPLATE LITERALS
+export const EXERCISE_14_TEMPLATE_LITERAL_WITH_STRING = `
+`;
+
+export const EXERCISE_14_TEMPLATE_LITERAL_WITH_STRING_SOLUTION = `
+`;
+
+export const EXERCISE_15_EXTRACT_WITH_TEMPLATE_LITERALS = `
+`;
+
+export const EXERCISE_15_EXTRACT_WITH_TEMPLATE_LITERALS_SOLUTION = `
+`;
+
+export const EXERCISE_16_UNIONS_IN_TEMPLATE_LITERALS = `
+`;
+
+export const EXERCISE_16_UNIONS_IN_TEMPLATE_LITERALS_SOLUTION = `
+`;
+
+export const EXERCISE_17_SPLITTING_STRINGS = `
+`;
+
+export const EXERCISE_17_SPLITTING_STRINGS_SOLUTION = `
+`;
+
+export const EXERCISE_18_TEMPLATE_LITERALS_IN_OBJECT_KEYS = `
+`;
+
+export const EXERCISE_18_TEMPLATE_LITERALS_IN_OBJECT_KEYS_SOLUTION = `
+`;
+
+export const EXERCISE_19_UPPERCASE_OBJECT = `
+`;
+
+export const EXERCISE_19_UPPERCASE_OBJECT_SOLUTION = `
+`;
