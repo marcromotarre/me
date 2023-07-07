@@ -170,8 +170,8 @@ const InformationLayout = () => {
         </div>
         <div className="h-[100%] overflow-x-hidden overflow-y-scroll sm:p-4 md:p-8 lg:p-8">
           <div className="mb-4 flex sm:items-center sm:justify-center md:items-center md:justify-center lg:items-center lg:justify-start">
-            {sections.length > 0 && (
-              <Breadcrumb
+            {/*{sections.length > 0 &&
+               <Breadcrumb
                 separator="/"
                 style={{
                   color: "black",
@@ -189,8 +189,7 @@ const InformationLayout = () => {
                     </BreadcrumbLink>
                   )
                 )}
-              </Breadcrumb>
-            )}
+                  </Breadcrumb>}}*/}
           </div>
           <div className="grid grid-cols-1 gap-y-4">
             {SECTIONS[sectionId]}

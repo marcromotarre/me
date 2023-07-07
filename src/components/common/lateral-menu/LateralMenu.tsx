@@ -6,7 +6,7 @@ import Typography from "../typography/Typography";
 import { UpIcon } from "../icons";
 import { cloneElement } from "react";
 import TableOfContents from "../../../data/table-of-contents/sections/TableOfContents";
-import { SectionType } from "../../../types/tableOfContentsSection";
+import { SectionType } from "../../../types/tableOfContents";
 
 const SectionButton = ({
   section,
@@ -27,7 +27,7 @@ const SectionButton = ({
             className="flex w-[100%] items-center justify-start"
             onClick={(e) => {
               e.stopPropagation();
-              navigate(section.path);
+              navigate(section.page.path);
             }}
           >
             {section.icon &&
@@ -40,10 +40,10 @@ const SectionButton = ({
             section.children.map((subSection: SectionType, index: number) => (
               <div key={index}>
                 <SectionButton
-                  key={`${section.name}_${section.path}_${index}`}
+                  key={`${section.name}_${section.page.path}_${index}`}
                   section={subSection}
                   level={level + 1}
-                  pathname={pathname}
+                  pathname={section.page.path}
                 />
               </div>
             ))}
@@ -59,7 +59,7 @@ const LateralMenu = () => {
     <div className="grid grid-cols-1 justify-start">
       {TableOfContents.map((section: SectionType) => (
         <SectionButton
-          key={section.path}
+          key={section.page.path}
           section={section}
           pathname={location.pathname}
         />

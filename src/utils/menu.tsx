@@ -1,5 +1,5 @@
 import TableOfContents from "../data/table-of-contents/sections/TableOfContents";
-import { SectionType } from "../types/tableOfContentsSection";
+import { SectionType } from "../types/tableOfContents";
 
 export const getChildren = (
   sectionNames: Array<string>

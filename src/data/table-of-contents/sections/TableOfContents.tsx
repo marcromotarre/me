@@ -7,9 +7,9 @@ import TypescriptSection from "./Typescript";
 
 export default [
   MeSection,
-  ProjectSetupSection,
+  /*ProjectSetupSection,
   PackageManagersSection,
   ReactSection,
-  JavascriptSection,
+  JavascriptSection,*/
   TypescriptSection,
 ];

@@ -74,17 +74,22 @@ import TypescriptExercisesPage from "./pages/typescript/exercises/TypescriptExer
 import TypescriptExercisesTypeTransformationsPage from "./pages/typescript/exercises/type-transformations/TypescriptExercisesTypeTransformationsPage";
 import TypescriptExercisesGenericsPage from "./pages/typescript/exercises/generics/TypescriptExercisesGenericsPage";
 import TypescriptExercisesAdvancesPatternsPage from "./pages/typescript/exercises/advanced-patterns/TypescriptExercisesAdvancesPatternsPage";
+import { generateAllRoutes } from "./utils/tableOfContentsUtils";
+import TABLE_OF_CONTENTS from "./data/table-of-contents/TableOfContents";
 
 const App = () => {
   const queryClient = new QueryClient();
+  const tableOfContentsRoutes = generateAllRoutes(TABLE_OF_CONTENTS);
 
+  console.log(tableOfContentsRoutes);
   return (
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
         <Provider store={store}>
           <Routes>
             <Route element={<Layout />}>
-              <Route path="/" element={<TableOfContentsPage />} />
+              {tableOfContentsRoutes}
+              {/*<Route path="/" element={<TableOfContentsPage />} />
               <Route path="/me" element={<MePage />} />
               <Route
                 path="/package-managers"
@@ -337,7 +342,7 @@ const App = () => {
               />
 
               <Route path="/redux/" element={<ReduxPage />} />
-              <Route path="/git/" element={<GitPage />} />
+              <Route path="/git/" element={<GitPage />} />*/}
             </Route>
           </Routes>
         </Provider>
