@@ -25,7 +25,7 @@ export function getAllPages(
       pages.push(section.page);
       if (section.children) {
         {
-          subpages = getAllPages(section.children);
+          subpages = getAllPages(section.children, pages);
         }
       }
     }
@@ -56,8 +56,10 @@ export function getAllSectionsWithPage(
 export function generateAllRoutes(
   sections: TableOfContents | SectionType
 ): ReactElement {
+  console.log("sections", sections);
+
   const pages = getAllPages(sections);
-  console.log(pages);
+  console.log("pages", pages);
   return (
     <>
       {pages.map((page: Page) => (

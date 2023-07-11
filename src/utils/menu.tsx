@@ -1,4 +1,4 @@
-import TableOfContents from "../data/table-of-contents/sections/TableOfContents";
+import TableOfContents from "../data/table-of-contents/TableOfContents";
 import { SectionType } from "../types/tableOfContents";
 
 export const getChildren = (

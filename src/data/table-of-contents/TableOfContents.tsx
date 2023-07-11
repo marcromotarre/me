@@ -8,9 +8,9 @@ import TypescriptSection from "./sections/Typescript";
 
 export default [
   MeSection,
-  ProjectSetupSection,
+  //ProjectSetupSection,
   PackageManagersSection,
   ReactSection,
-  //JavascriptSection,
+  JavascriptSection,
   TypescriptSection,
 ] as TableOfContents;

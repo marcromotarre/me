@@ -10,7 +10,9 @@ import ReactMyComponentsModal from "../../../pages/ReactMyComponentsModal";
 import ReactMyComponents from "../../../pages/ReactMyComponentsPage";
 import ReactPage from "../../../pages/react/ReactPage";
 import ReactInterestingQuestions from "../../../pages/react/interesting-questions/ReactInterestingQuestions";
+import ReactMyComponentsAccordionPage from "../../../pages/react/my-components/ReactMyComponentsAccordionPage";
 import ReactMyComponentsAlertPage from "../../../pages/react/my-components/ReactMyComponentsAlertPage";
+import ReactMyComponentsBreadcrumbPage from "../../../pages/react/my-components/ReactMyComponentsBreadcrumbPage";
 import ReactMyComponentsCardPage from "../../../pages/react/my-components/ReactMyComponentsCardPage";
 import ReactMyComponentsTypographyPage from "../../../pages/react/my-components/ReactMyComponentsTypographyPage";
 import ReactMyComponentsListPage from "../../../pages/react/my-components/list/ReactMyComponentsListPage";
@@ -32,18 +34,6 @@ export default {
   },
   icon: <ReactIcon />,
   children: [
-    /*{
-      name: "State Managers",
-      page: {
-        pageComponent: <ReactPage />,
-        path: "/react/state-managers",
-        pageTitle: "React: State Managers",
-      },
-      children: [
-        { path: "/react/state-managers/redux", name: "Redux" },
-        { path: "/react/state-managers/recoil", name: "Recoil" },
-      ],
-    },*/
     {
       name: "My Components",
       page: {
@@ -103,21 +93,19 @@ export default {
           },
         },
         {
-          path: "/react/my-components/accordion",
           name: "Accordion",
           page: {
-            pageComponent: <ReactMyComponentsAlertPage />,
-            path: "/react/my-components/alert",
-            pageTitle: "React My Components: Alert",
+            pageComponent: <ReactMyComponentsAccordionPage />,
+            path: "/react/my-components/accordion",
+            pageTitle: "React My Components: Accordion",
           },
         },
         {
-          path: "/react/my-components/breadcrumb",
           name: "Breadcrumb",
           page: {
-            pageComponent: <ReactMyComponentsAlertPage />,
-            path: "/react/my-components/alert",
-            pageTitle: "React My Components: Alert",
+            pageComponent: <ReactMyComponentsBreadcrumbPage />,
+            path: "/react/my-components/breadcrumb",
+            pageTitle: "React My Components: Breadcrumb",
           },
         },
         {

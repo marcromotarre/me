@@ -75,12 +75,11 @@ import TypescriptExercisesTypeTransformationsPage from "./pages/typescript/exerc
 import TypescriptExercisesGenericsPage from "./pages/typescript/exercises/generics/TypescriptExercisesGenericsPage";
 import TypescriptExercisesAdvancesPatternsPage from "./pages/typescript/exercises/advanced-patterns/TypescriptExercisesAdvancesPatternsPage";
 import { generateAllRoutes } from "./utils/tableOfContentsUtils";
-import TABLE_OF_CONTENTS from "./data/table-of-contents/TableOfContents";
+import TableOfContents from "./data/table-of-contents/TableOfContents";
 
 const App = () => {
   const queryClient = new QueryClient();
-  const tableOfContentsRoutes = generateAllRoutes(TABLE_OF_CONTENTS);
-
+  const tableOfContentsRoutes = generateAllRoutes(TableOfContents);
   console.log(tableOfContentsRoutes);
   return (
     <QueryClientProvider client={queryClient}>

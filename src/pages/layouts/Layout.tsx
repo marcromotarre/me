@@ -10,8 +10,8 @@ import {
 import Breadcrumb from "../../components/common/breadcrumb/Breadcrumb";
 import BreadcrumbLink from "../../components/common/breadcrumb/BreadcrumbLink";
 import ReactQueryIcon from "../../components/common/icons/mr-icons/ReactQueryIcon";
-import TableOfContents from "../../data/table-of-contents/sections/TableOfContents";
 import { getLinearList } from "../../utils/menu";
+import TableOfContents from "../../data/table-of-contents/TableOfContents";
 
 const SECTIONS = {
   "/react/react-query": (

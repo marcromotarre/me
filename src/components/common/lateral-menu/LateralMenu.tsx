@@ -5,7 +5,6 @@ import AccordionDetails from "../accordion/AccordionDetails";
 import Typography from "../typography/Typography";
 import { UpIcon } from "../icons";
 import { cloneElement } from "react";
-import TableOfContents from "../../../data/table-of-contents/sections/TableOfContents";
 import {
   SectionType,
   SectionTypeWithPage,
@@ -14,6 +13,7 @@ import {
   getAllPages,
   getAllSectionsWithPage,
 } from "../../../utils/tableOfContentsUtils";
+import TableOfContents from "../../../data/table-of-contents/TableOfContents";
 
 /*const SectionButton = ({
   section,
@@ -163,6 +163,7 @@ const Section = ({
 const LateralMenu = () => {
   const location = useLocation();
   const sectionsWithPage = getAllSectionsWithPage(TableOfContents);
+  console.log("TableOfContents", TableOfContents);
   return (
     <div className="grid grid-cols-1 justify-start">
       {sectionsWithPage.map((section) => (
