@@ -12,10 +12,10 @@ import BreadcrumbLink from "../../components/common/breadcrumb/BreadcrumbLink";
 import ReactQueryIcon from "../../components/common/icons/mr-icons/ReactQueryIcon";
 import { getLinearList } from "../../utils/menu";
 import TableOfContents from "../../data/table-of-contents/TableOfContents";
-import {
-  getAllPages,
-  getAllSectionsWithPage,
-} from "../../utils/tableOfContentsUtils";
+import { getAllSectionsWithPage } from "../../utils/tableOfContentsUtils";
+import Contents from "../../components/SectionContents";
+import { current } from "@reduxjs/toolkit";
+import { SectionType } from "../../types/tableOfContents";
 
 const SECTIONS = {
   "/react/react-query": (
@@ -153,7 +153,10 @@ const InformationLayout = () => {
   const sectionId = Object.keys(SECTIONS).find((sectionId) =>
     location.pathname.startsWith(sectionId)
   );
-  const sections = location.pathname.split("/").filter((a) => a !== "");
+
+  const paths = location.pathname.split("/");
+  const sections = paths.filter((a) => a !== "");
+
   const sectionsPath = sections.map((section, index) => {
     return "/" + sections.filter((_, i) => i <= index).join("/");
   });
@@ -163,12 +166,10 @@ const InformationLayout = () => {
     const section = allSections.find(
       (section) => section.page.path === sectioPath
     );
-    return {
-      name: section?.name,
-      path: section?.page.path,
-      icon: section?.icon,
-    };
+    return section;
   });
+
+  const currentSection = breadcrumbs[breadcrumbs.length - 1];
   return (
     <div className="flex h-[100vh] flex-col">
       <div className="grid h-[100%] sm:grid-cols-[0px_auto] md:grid-cols-[0px_auto] lg:grid-cols-[300px_auto]">
@@ -185,23 +186,27 @@ const InformationLayout = () => {
                   backgroundColor: "#E7EBF0",
                 }}
               >
-                {[{ path: "/", icon: <PointIcon /> }, ...breadcrumbs].map(
-                  (section, index) => (
-                    <BreadcrumbLink
-                      key={index}
-                      icon={section.icon}
-                      href={section.path}
-                    >
-                      {section.name}
-                    </BreadcrumbLink>
-                  )
-                )}
+                {[
+                  { name: "", page: { path: "/" }, icon: <PointIcon /> },
+                  ...breadcrumbs,
+                ].map((section, index) => (
+                  <BreadcrumbLink
+                    key={index}
+                    icon={section?.icon}
+                    href={section.page?.path}
+                  >
+                    {section.name}
+                  </BreadcrumbLink>
+                ))}
               </Breadcrumb>
             )}
           </div>
           <div className="grid grid-cols-1 gap-y-4">
             {SECTIONS[sectionId]}
             <Outlet />
+            {currentSection && currentSection.children && (
+              <Contents section={currentSection} />
+            )}
           </div>
         </div>
       </div>
