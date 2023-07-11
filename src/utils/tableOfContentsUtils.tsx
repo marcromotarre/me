@@ -45,7 +45,11 @@ export function getAllSectionsWithPage(
       _filteredSections.push({ ...section, page: { ...section.page } });
       if (recursive && section.children) {
         {
-          subSections = getAllSectionsWithPage(section.children);
+          subSections = getAllSectionsWithPage(
+            section.children,
+            recursive,
+            _filteredSections
+          );
         }
       }
     }
@@ -56,10 +60,7 @@ export function getAllSectionsWithPage(
 export function generateAllRoutes(
   sections: TableOfContents | SectionType
 ): ReactElement {
-  console.log("sections", sections);
-
   const pages = getAllPages(sections);
-  console.log("pages", pages);
   return (
     <>
       {pages.map((page: Page) => (

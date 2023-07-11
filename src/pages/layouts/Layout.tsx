@@ -12,6 +12,10 @@ import BreadcrumbLink from "../../components/common/breadcrumb/BreadcrumbLink";
 import ReactQueryIcon from "../../components/common/icons/mr-icons/ReactQueryIcon";
 import { getLinearList } from "../../utils/menu";
 import TableOfContents from "../../data/table-of-contents/TableOfContents";
+import {
+  getAllPages,
+  getAllSectionsWithPage,
+} from "../../utils/tableOfContentsUtils";
 
 const SECTIONS = {
   "/react/react-query": (
@@ -150,18 +154,21 @@ const InformationLayout = () => {
     location.pathname.startsWith(sectionId)
   );
   const sections = location.pathname.split("/").filter((a) => a !== "");
-  sections.map((section, index) => {
+  const sectionsPath = sections.map((section, index) => {
     return "/" + sections.filter((_, i) => i <= index).join("/");
   });
 
-  const linearList = getLinearList(TableOfContents);
-  const breadcrumbs = sections
-    .map((_, index) => {
-      return "/" + sections.filter((_, i) => i <= index).join("/");
-    })
-    .map((section) =>
-      linearList.find((linearItem) => linearItem.path === section)
+  const allSections = getAllSectionsWithPage(TableOfContents, true);
+  const breadcrumbs = sectionsPath.map((sectioPath) => {
+    const section = allSections.find(
+      (section) => section.page.path === sectioPath
     );
+    return {
+      name: section?.name,
+      path: section?.page.path,
+      icon: section?.icon,
+    };
+  });
   return (
     <div className="flex h-[100vh] flex-col">
       <div className="grid h-[100%] sm:grid-cols-[0px_auto] md:grid-cols-[0px_auto] lg:grid-cols-[300px_auto]">
@@ -170,8 +177,8 @@ const InformationLayout = () => {
         </div>
         <div className="h-[100%] overflow-x-hidden overflow-y-scroll sm:p-4 md:p-8 lg:p-8">
           <div className="mb-4 flex sm:items-center sm:justify-center md:items-center md:justify-center lg:items-center lg:justify-start">
-            {/*{sections.length > 0 &&
-               <Breadcrumb
+            {sections.length > 0 && (
+              <Breadcrumb
                 separator="/"
                 style={{
                   color: "black",
@@ -189,7 +196,8 @@ const InformationLayout = () => {
                     </BreadcrumbLink>
                   )
                 )}
-                  </Breadcrumb>}}*/}
+              </Breadcrumb>
+            )}
           </div>
           <div className="grid grid-cols-1 gap-y-4">
             {SECTIONS[sectionId]}
