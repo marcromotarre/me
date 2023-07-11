@@ -16,9 +16,14 @@ const AccordionSummary = ({
 };
 
 type ComponentProps = {
-  expandIcon?: ReactElement;
-  children?: ReactElement;
-  style: Styles;
+  expandIcon?: ReactElement | undefined;
+  children?: ReactElement | ReactElement[];
+  style?: Styles;
+  __TYPE: "AccordionSummary";
+};
+
+AccordionSummary.defaultProps = {
+  __TYPE: "AccordionSummary",
 };
 
 export default AccordionSummary;

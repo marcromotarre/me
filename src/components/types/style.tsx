@@ -9,6 +9,7 @@ type Styles = {
   width?: string;
   padding?: string;
   margin?: string;
+  position?: string;
 };
 
 export default Styles;

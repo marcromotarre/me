@@ -1,5 +1,10 @@
 import { ReactElement } from "react";
-import { Page, SectionType, TableOfContents } from "../types/tableOfContents";
+import {
+  Page,
+  SectionType,
+  SectionTypeWithPage,
+  TableOfContents,
+} from "../types/tableOfContents";
 import { Route } from "react-router-dom";
 
 /**
@@ -26,6 +31,26 @@ export function getAllPages(
     }
   });
   return [...pages, ...subpages];
+}
+
+export function getAllSectionsWithPage(
+  sections: TableOfContents | SectionType,
+  recursive = false,
+  _filteredSections: SectionTypeWithPage[] = []
+): SectionTypeWithPage[] {
+  let subSections: SectionTypeWithPage[] = [];
+  const arraySections = Array.isArray(sections) ? [...sections] : [sections];
+  arraySections.forEach(function getPageAndSubpages(section: SectionType) {
+    if (section.page) {
+      _filteredSections.push({ ...section, page: { ...section.page } });
+      if (recursive && section.children) {
+        {
+          subSections = getAllSectionsWithPage(section.children);
+        }
+      }
+    }
+  });
+  return [..._filteredSections, ...subSections];
 }
 
 export function generateAllRoutes(

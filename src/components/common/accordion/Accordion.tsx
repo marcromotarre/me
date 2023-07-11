@@ -1,20 +1,16 @@
 import React, { ReactElement, cloneElement, useState } from "react";
-import AccordionDetails from "./AccordionDetails";
-import AccordionSummary from "./AccordionSummary";
+import Styles from "../../types/style";
 
 const Accordion = ({ children, style = {} }: ComponentProps) => {
   const [isOpen, setIsOpen] = useState(false);
-  const AccordionSummaryMemo = React.memo(AccordionSummary);
-  const AccordionDetailsMemo = React.memo(AccordionDetails);
 
-  const accordionSummary = children.find(
-    (child) => child.type.name === AccordionSummaryMemo.type.name
-  );
+  const accordionSummary = [
+    ...(Array.isArray(children) ? children : [children]),
+  ].filter((child) => child?.props.__TYPE === "AccordionSummary");
 
-  const accordionDetails = children.find(
-    (child) => child.type.name === AccordionDetailsMemo.type.name
-  );
-
+  const accordionDetails = [
+    ...(Array.isArray(children) ? children : [children]),
+  ].filter((child) => child?.props.__TYPE === "AccordionDetails");
   return (
     <div className="w-[100%] " style={style}>
       <div
@@ -24,17 +20,17 @@ const Accordion = ({ children, style = {} }: ComponentProps) => {
           if (accordionDetails) setIsOpen(!isOpen);
         }}
       >
-        {cloneElement(accordionSummary, {})}
+        {cloneElement(accordionSummary[0], {})}
       </div>
 
-      {isOpen && cloneElement(accordionDetails, {})}
+      {isOpen && cloneElement(accordionDetails[0], {})}
     </div>
   );
 };
 
 type ComponentProps = {
-  children: Array<ReactElement>;
-  expandMoreIcon: Array<ReactElement>;
+  children: ReactElement | ReactElement[];
+  style?: Styles;
 };
 
 export default Accordion;

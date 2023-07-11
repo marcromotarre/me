@@ -7,6 +7,13 @@ export type SectionType = {
   children?: SectionType[];
 };
 
+export type SectionTypeWithPage = {
+  name: string;
+  icon?: ReactElement;
+  page: Page;
+  children?: SectionType[];
+};
+
 export type TableOfContents = SectionType[];
 
 export type Page = {
