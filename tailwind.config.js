@@ -9,6 +9,9 @@ module.exports = {
         lg: "1100px",
         xl: "1400px",
       },
+      fontFamily: {
+        pokemon: ['"Press Start 2P"'],
+      },
       colors: {
         main: "#171F2D",
         secondary: "#326EAC",

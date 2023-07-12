@@ -1,5 +1,11 @@
 import { api } from ".";
-type PokemonDDBB = { name: string; sprites: { front_shiny: string } };
+type PokemonDDBB = {
+  id: string;
+  name: string;
+  sprites: { front_shiny: string };
+  height: string;
+  weight: string;
+};
 
 const delay = (ms: number) => new Promise((res) => setTimeout(res, ms));
 
@@ -20,9 +26,12 @@ export const getPokemonData = async ({
 const getPokemonAfterWaiting = async ({ url }: { url: string }) => {
   const pokemonResponse = await api.get<PokemonDDBB>(url);
   const pokemon = {
+    id: pokemonResponse.id,
     name: pokemonResponse.name,
     sprite: pokemonResponse.sprites.front_shiny,
     url,
+    height: pokemonResponse.height,
+    weight: pokemonResponse.weight,
   };
   return pokemon;
 };

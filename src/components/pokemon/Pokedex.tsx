@@ -3,6 +3,8 @@ import PokedexSVG from "./PokedexSVG";
 import PokedexPokemonViewer from "./PokedexPokemonViewer";
 import PokedexLeftButton from "./PokedexLeftButton";
 import PokedexRightButton from "./PokedexRightButton";
+import PokedexPokemonName from "./PokedexPokemonName";
+import PokedexPokemonProperties from "./PokedexPokemonProperties";
 
 export default function Pokedex({
   className = "",
@@ -36,6 +38,14 @@ export default function Pokedex({
             pokedexWidth={pokedexWidth}
           />
           <PokedexRightButton
+            stateManager={stateManager}
+            pokedexWidth={pokedexWidth}
+          />
+          <PokedexPokemonName
+            stateManager={stateManager}
+            pokedexWidth={pokedexWidth}
+          />
+          <PokedexPokemonProperties
             stateManager={stateManager}
             pokedexWidth={pokedexWidth}
           />
