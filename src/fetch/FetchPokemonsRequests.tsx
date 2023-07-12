@@ -3,7 +3,7 @@ import { api } from ".";
 export const POKEMONS_URL = "https://pokeapi.co/api/v2/pokemon/";
 
 type PokemonsDDBB = { results: Array<{ name: string; url: string }> };
-type PokemonDDBB = { name: string; sprites: { front_shiny: string } };
+type PokemonDDBB = { name: string; sprites: { front_default: string } };
 
 const delay = (ms: number) => new Promise((res) => setTimeout(res, ms));
 

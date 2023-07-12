@@ -2,7 +2,7 @@ import { api } from ".";
 type PokemonDDBB = {
   id: string;
   name: string;
-  sprites: { front_shiny: string };
+  sprites: { front_default: string };
   height: string;
   weight: string;
 };
@@ -28,7 +28,7 @@ const getPokemonAfterWaiting = async ({ url }: { url: string }) => {
   const pokemon = {
     id: pokemonResponse.id,
     name: pokemonResponse.name,
-    sprite: pokemonResponse.sprites.front_shiny,
+    sprite: pokemonResponse.sprites.front_default,
     url,
     height: pokemonResponse.height,
     weight: pokemonResponse.weight,

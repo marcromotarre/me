@@ -21,7 +21,9 @@ export default function PokedexPokemonName({ stateManager, pokedexWidth }) {
         alignItems: "center",
       }}
     >
-      <p className="p-2 font-pokemon uppercase text-white">{data?.name}</p>
+      <p className="p-2 font-pokemon uppercase text-white sm:text-[9px] md:text-base lg:text-lg">
+        {data?.name}
+      </p>
     </div>
   );
 }

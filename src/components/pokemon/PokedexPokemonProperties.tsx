@@ -1,5 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import PokedexState from "./state-managers/PokedexState";
+import { getPokemonData } from "../../fetch/FetchPokemon";
 
 export default function PokedexPokemonProperties({
   stateManager,
@@ -23,14 +24,14 @@ export default function PokedexPokemonProperties({
       }}
       className="p-4"
     >
-      <div className="grid grid-cols-1 gap-y-2">
-        <p className="font-pokemon uppercase text-white">
+      <div className="grid grid-cols-1 gap-y-2 ">
+        <p className="font-pokemon uppercase text-white sm:text-[9px] md:text-base lg:text-lg">
           Pokemon #: {data?.id}
         </p>
-        <p className="font-pokemon uppercase text-white">
+        <p className="font-pokemon uppercase text-white sm:text-[9px] md:text-base lg:text-lg">
           Weight: {data?.weight}
         </p>
-        <p className="font-pokemon uppercase text-white">
+        <p className="font-pokemon uppercase text-white sm:text-[9px] md:text-base lg:text-lg">
           Height: {data?.height}
         </p>
       </div>
