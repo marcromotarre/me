@@ -270,7 +270,7 @@ export default {
         path: "/react/state-managers",
         pageTitle: "React: State Managers",
       },
-      children: [
+      /*children: [
         {
           name: "Context Api",
           page: {
@@ -303,7 +303,7 @@ export default {
             pageTitle: "React State Managers: Zustand",
           },
         },
-      ],
+      ],*/
     },
     {
       name: "React Query",

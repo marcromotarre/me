@@ -28,12 +28,7 @@ const PokedexSVG = ({
         strokeWidth="3"
       />
       <path d="M2 107H101.5L153.5 55H334.5" stroke="black" strokeWidth="3" />
-      <path
-        d="M68.5 117.5H267.5V319.5H107C85.737 319.5 68.5 302.263 68.5 281V117.5Z"
-        fill="white"
-        stroke="black"
-        strokeWidth="3"
-      />
+
       <mask id="path-4-inside-1_157_433" fill="white">
         <path
           fillRule="evenodd"
@@ -58,16 +53,7 @@ const PokedexSVG = ({
         stroke="black"
         strokeWidth="3"
       />
-      <rect
-        x="84"
-        y="134"
-        width="167"
-        height="160"
-        rx="9"
-        fill="#98CB98"
-        stroke="black"
-        strokeWidth="2"
-      />
+
       <rect
         x="357"
         y="138"
@@ -120,18 +106,6 @@ const PokedexSVG = ({
         strokeWidth="2"
       />
       <circle opacity="0.3" cx="223.5" cy="23.5" r="3.5" fill="white" />
-      <circle
-        cx="106"
-        cy="307"
-        r="6"
-        fill="#FF0102"
-        stroke="black"
-        strokeWidth="2"
-      />
-      <circle opacity="0.3" cx="104" cy="306" r="2" fill="white" />
-      <rect x="208" y="298" width="26" height="3" fill="#030303" />
-      <rect x="208" y="303" width="26" height="3" fill="#030303" />
-      <rect x="208" y="308" width="26" height="3" fill="#030303" />
     </svg>
   );
 };
