@@ -24,6 +24,11 @@ import ReactPatternsPage from "../../../pages/react/patterns/ReactPatternsPage";
 import ReactPatternsProviderPage from "../../../pages/react/patterns/ReactPatternsProviderPage";
 import ReactPatternsRenderPropsPage from "../../../pages/react/patterns/ReactPatternsRenderPropsPage";
 import ReactReactQueryPage from "../../../pages/react/react-query/ReactReactQueryPage";
+import ReactContextApiPage from "../../../pages/react/state-managers/ReactContextApiPage";
+import ReactRecoilPage from "../../../pages/react/state-managers/ReactRecoilPage";
+import ReactReduxPage from "../../../pages/react/state-managers/ReactReduxPage";
+import ReactStateManagersPage from "../../../pages/react/state-managers/ReactStateManagersPage";
+import ReactZustandPage from "../../../pages/react/state-managers/ReactZustandPage";
 
 export default {
   name: "React",
@@ -254,6 +259,48 @@ export default {
             pageComponent: <ReactPatternsPage />,
             path: "/react/patterns/conditional-rendering-design-pattern",
             pageTitle: "React Patterns: Conditional Rendering Design",
+          },
+        },
+      ],
+    },
+    {
+      name: "State Managers",
+      page: {
+        pageComponent: <ReactStateManagersPage />,
+        path: "/react/state-managers",
+        pageTitle: "React: State Managers",
+      },
+      children: [
+        {
+          name: "Context Api",
+          page: {
+            pageComponent: <ReactContextApiPage />,
+            path: "/react/state-managers/context-api",
+            pageTitle: "React State Managers: Context API",
+          },
+        },
+        {
+          name: "Redux",
+          page: {
+            pageComponent: <ReactReduxPage />,
+            path: "/react/state-managers/redux",
+            pageTitle: "React State Managers: Redux",
+          },
+        },
+        {
+          name: "Recoil",
+          page: {
+            pageComponent: <ReactRecoilPage />,
+            path: "/react/state-managers/recoil",
+            pageTitle: "React State Managers: Recoil",
+          },
+        },
+        {
+          name: "Zustand",
+          page: {
+            pageComponent: <ReactZustandPage />,
+            path: "/react/state-managers/zustand",
+            pageTitle: "React State Managers: Zustand",
           },
         },
       ],

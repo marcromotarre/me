@@ -17,6 +17,7 @@ const Button: React.FC<ComponentProps> = (props) => {
 
   return (
     <button
+      disabled={props.disabled}
       data-testid="button"
       onClick={props.onClick}
       style={buttonData.button.style}
@@ -62,6 +63,7 @@ export type ComponentProps = {
   secondaryColor?: string;
   size?: "small" | "medium" | "large";
   onClick?: React.MouseEventHandler;
+  disabled?: boolean;
 };
 
 Button.defaultProps = {
@@ -70,4 +72,5 @@ Button.defaultProps = {
   secondaryColor: "white",
   size: "medium",
   shape: "default",
+  disabled: false,
 };

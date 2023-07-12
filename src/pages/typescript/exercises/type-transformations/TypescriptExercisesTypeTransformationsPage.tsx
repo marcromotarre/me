@@ -10,6 +10,7 @@ import {
   EXERCISE_10_AS_CONST_SOLUTION,
   EXERCISE_11_INDEXED_ACCESS_WITH_UNIONS,
   EXERCISE_11_INDEXED_ACCESS_WITH_UNIONS_SOLUTION,
+  EXERCISE_11_INDEXED_ACCESS_WITH_UNIONS_SOLUTION_2,
   EXERCISE_12_GET_OBJECT_VALUES,
   EXERCISE_12_GET_OBJECT_VALUES_SOLUTION,
   EXERCISE_13_GET_ARRAY_VALUE,
@@ -196,10 +197,19 @@ export default function TypescriptExercisesTypeTransformationsPage() {
         <>{EXERCISE_11_INDEXED_ACCESS_WITH_UNIONS}</>
       </Code>
       <QuestionAnswer>
-        <Question>Solution</Question>
+        <Question>Solution 1</Question>
         <Answer>
           <Code noHeader>
             <>{EXERCISE_11_INDEXED_ACCESS_WITH_UNIONS_SOLUTION}</>
+          </Code>
+        </Answer>
+      </QuestionAnswer>
+
+      <QuestionAnswer>
+        <Question>Solution 2</Question>
+        <Answer>
+          <Code noHeader>
+            <>{EXERCISE_11_INDEXED_ACCESS_WITH_UNIONS_SOLUTION_2}</>
           </Code>
         </Answer>
       </QuestionAnswer>

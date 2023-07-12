@@ -1,5 +1,10 @@
 import Modal from "../common/modal/Modal";
-import { PokeballIcon, ReactQueryIcon, RightIcon } from "../common/icons";
+import {
+  LeftIcon,
+  PokeballIcon,
+  ReactQueryIcon,
+  RightIcon,
+} from "../common/icons";
 import React, { useEffect, useState } from "react";
 import Pokemon from "../Pokemon";
 import Card from "../common/card/Card";
@@ -59,7 +64,9 @@ const ReactQueryPokemonModal = ({
   });
 
   const previousPage = () => {
-    setOffset(offset - LIMIT);
+    if (offset > 0) {
+      setOffset(offset - LIMIT);
+    }
   };
 
   const nextPage = () => {
@@ -89,17 +96,15 @@ const ReactQueryPokemonModal = ({
               Each query has a 3 seconds delay
             </Alert>
             <div className="grid grid-cols-[max-content_auto_auto_auto_max-content] items-center justify-center gap-x-4">
-              {offset > 0 ? (
-                <Button
-                  shape="rounded"
-                  variant="text"
-                  size="large"
-                  startIcon={<RightIcon />}
-                  onClick={previousPage}
-                ></Button>
-              ) : (
-                <div></div>
-              )}
+              <Button
+                disabled={offset <= 0}
+                shape="rounded"
+                variant="text"
+                size="large"
+                color={offset <= 0 ? "white" : "black"}
+                startIcon={<LeftIcon />}
+                onClick={previousPage}
+              ></Button>
               {!isLoading &&
                 data?.map(({ name, url }, index) => (
                   <ReactQueryPokemon url={url} name={name} />
@@ -116,6 +121,7 @@ const ReactQueryPokemonModal = ({
                 shape="rounded"
                 variant="text"
                 size="large"
+                color="black"
                 startIcon={<RightIcon />}
               ></Button>
             </div>
