@@ -12,7 +12,6 @@ export default function PokedexPokemonProperties({
     queryKey: ["pokemon", pokemonId],
     queryFn: () => getPokemonData({ url, waiting: 0 }),
   });
-  console.log(data);
   return (
     <div
       style={{

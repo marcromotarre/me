@@ -1,13 +1,11 @@
 import { create } from "zustand";
+import { FIRST_POKEMON_INDEX, LAST_POKEMON_INDEX } from "./PokedexState";
 
 type Store = {
   pokemonId: number;
   increment: () => void;
   decrement: () => void;
 };
-
-const FIRST_POKEMON_INDEX = 1;
-const LAST_POKEMON_INDEX = 1010;
 
 export const usePokedexStore = create<Store>()((set) => ({
   pokemonId: 1,

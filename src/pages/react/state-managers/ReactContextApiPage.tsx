@@ -1,5 +1,5 @@
 import Pokedex from "../../../components/pokemon/Pokedex";
-import { PokedexProvider } from "../../../components/pokemon/PokedexProvider";
+import { PokedexProvider } from "../../../components/pokemon/state-managers/PokedexProvider";
 
 export default function ReactContextApiPage() {
   return (

@@ -9,7 +9,10 @@ type Styles = {
   width?: string;
   padding?: string;
   margin?: string;
-  position?: string;
+  top?: string;
+  right?: string;
+  left?: string;
+  bottom?: string;
 };
 
 export default Styles;

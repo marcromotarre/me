@@ -9,9 +9,11 @@ import List from "../../../components/common/list/List";
 import ListItem from "../../../components/common/list/ListItem";
 import Pokedex from "../../../components/pokemon/Pokedex";
 import { RecoilRoot } from "recoil";
-import { PokedexProvider } from "../../../components/pokemon/PokedexProvider";
+import { PokedexProvider } from "../../../components/pokemon/state-managers/PokedexProvider";
 import Typography from "../../../components/common/typography/Typography";
 import Alert from "../../../components/common/alert/Alert";
+import { Provider } from "react-redux";
+import store from "../../../components/pokemon/state-managers/redux/store";
 
 const DEFAULT_STATE_MANAGER = "ContextApi";
 export default function ReactStateManagersPage() {
@@ -98,6 +100,9 @@ export default function ReactStateManagersPage() {
         <RecoilRoot>
           {stateManager == "Zustand" && <Pokedex stateManager="Zustand" />}
         </RecoilRoot>
+        <Provider store={store}>
+          {stateManager == "Redux" && <Pokedex stateManager="Redux" />}
+        </Provider>
       </div>
     </>
   );

@@ -1,7 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { getPokemonData } from "../../fetch/FetchPokemon";
 import Styles from "../types/style";
-import PokedexState from "./state-managers/PokedexState";
+import PokedexState, { StateManagerType } from "./state-managers/PokedexState";
 
 export default function Pokemon({ style = {}, stateManager }: ComponentProps) {
   const { pokemonId } = PokedexState(stateManager);
@@ -18,4 +18,5 @@ export default function Pokemon({ style = {}, stateManager }: ComponentProps) {
 
 type ComponentProps = {
   style?: Styles;
+  stateManager: StateManagerType;
 };

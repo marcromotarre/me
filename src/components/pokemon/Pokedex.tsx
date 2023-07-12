@@ -14,7 +14,6 @@ export default function Pokedex({
 
   const [pokedexWidth, setPokedexWidth] = useState<number | null>(null);
   useLayoutEffect(() => {
-    console.log("update", ref?.current?.clientWidth);
     if (ref?.current?.clientWidth) {
       setPokedexWidth(Math.min(Number(ref?.current?.clientWidth) * 0.8, 700));
     }

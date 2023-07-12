@@ -1,9 +1,14 @@
-import { createContext, useContext, useState } from "react";
+import { ReactElement, createContext, useContext, useState } from "react";
 
-export const PokedexContext = createContext();
+export const PokedexContext = createContext<PokedexContextType>({
+  pokemonId: 1,
+  increment: () => {},
+  decrement: () => {},
+});
+
 const FIRST_POKEMON_INDEX = 1;
 const LAST_POKEMON_INDEX = 1010;
-export const PokedexProvider = ({ children }) => {
+export const PokedexProvider = ({ children }: { children: ReactElement }) => {
   const [pokemonId, setPokemonId] = useState(FIRST_POKEMON_INDEX);
 
   const increment = () => {

@@ -1,7 +1,10 @@
-import { usePokedexContext } from "./PokedexProvider";
-import PokedexState from "./state-managers/PokedexState";
+import { usePokedexContext } from "./state-managers/PokedexProvider";
+import PokedexState, { StateManagerType } from "./state-managers/PokedexState";
 
-export default function PokedexRightButton({ pokedexWidth, stateManager }) {
+export default function PokedexRightButton({
+  pokedexWidth,
+  stateManager,
+}: ComponentProps) {
   const { increment } = PokedexState(stateManager);
 
   return (
@@ -17,3 +20,8 @@ export default function PokedexRightButton({ pokedexWidth, stateManager }) {
     ></button>
   );
 }
+
+type ComponentProps = {
+  pokedexWidth: number;
+  stateManager: StateManagerType;
+};

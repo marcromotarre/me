@@ -1,4 +1,4 @@
-import { usePokedexContext } from "./PokedexProvider";
+import { usePokedexContext } from "./state-managers/PokedexProvider";
 import PokedexState from "./state-managers/PokedexState";
 
 export default function PokedexLeftButton({ pokedexWidth, stateManager }) {

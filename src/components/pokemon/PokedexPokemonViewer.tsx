@@ -1,7 +1,8 @@
 import Styles from "../types/style";
 import PokedexPokemonViewerSVG from "./PokedexPokemonViewerSVG";
-import { usePokedexContext } from "./PokedexProvider";
+import { usePokedexContext } from "./state-managers/PokedexProvider";
 import Pokemon from "./Pokemon";
+import { StateManagerType } from "./state-managers/PokedexState";
 
 const WIDTH = 200;
 export default function PokedexPokemonViewer({
@@ -32,4 +33,5 @@ export default function PokedexPokemonViewer({
 
 type ComponentProps = {
   style: Styles;
+  stateManager: StateManagerType;
 };

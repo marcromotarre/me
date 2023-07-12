@@ -1,14 +1,17 @@
 import { useQuery } from "@tanstack/react-query";
-import PokedexState from "./state-managers/PokedexState";
+import PokedexState, { StateManagerType } from "./state-managers/PokedexState";
 
-export default function PokedexPokemonName({ stateManager, pokedexWidth }) {
+export default function PokedexPokemonName({
+  stateManager,
+  pokedexWidth,
+}: ComponentProps) {
   const { pokemonId } = PokedexState(stateManager);
   const url = `https://pokeapi.co/api/v2/pokemon/${pokemonId}/`;
   const { isLoading, isError, data, error } = useQuery({
     queryKey: ["pokemon", pokemonId],
     queryFn: () => getPokemonData({ url, waiting: 0 }),
   });
-  console.log(data);
+
   return (
     <div
       style={{
@@ -27,3 +30,8 @@ export default function PokedexPokemonName({ stateManager, pokedexWidth }) {
     </div>
   );
 }
+
+type ComponentProps = {
+  stateManager: StateManagerType;
+  pokedexWidth: number;
+};
