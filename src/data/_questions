@@ -36,6 +36,12 @@ fetch data
 
 
 
+// dependency vs devDepency
+
+    // dependency se añaden al bundler
+    // en una pipe se pueden omitir las devDependencies (si esta configurado en pipe)
+
+
 
 webpack 
     plugins
@@ -45,3 +51,102 @@ css
     sass
 
 next serverside
+
+
+// node (back)
+    // ej. leer de un fichero fs
+
+// indexed DB
+    // offline first
+
+// https://www.sqlite.org/index.html
+
+// fire base
+
+// systems design
+    // design twitter example
+    // choose DDBB (load Balancers , caching, different DDBB)
+    // byte byte go
+    // kafka, celery (backend)
+        // cola de tareas -> no sync (ej email de confirmacion al registrarse (no hace falta hacerla en la cola del registro))
+        // microservicios borrar en cascada (desventaja -> eventual consistency -> ej. usuario con comentarios (se borra usuario y aun no se han borrada los comentarios.))
+    // front 
+    // CDN
+
+    // https://www.algoexpert.io/product
+
+    // EventEmmiter Node
+
+        // depends on the browser
+            // http1 -> max 6 req
+            // http2 -> no limit
+
+    // accesibility
+        // accesibility levels
+        // https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles
+        // color contrast
+        // daltonic
+        // autocomplete (arrow up focus on the other element, esc --> close modal example) (if you are not using mouse)
+
+
+        // react performance
+            // a lot of re renders
+                // why the render? maybe a component its being rerenderized because the parent is re rendering ej React.Memo
+
+            // highly cost render
+                // useState (2000 numbers)
+                // reduce(promedio entre los numeros del estado) useMemo or useCallback --> functions as a callback to a children component in the rerender a new isntace is created
+
+
+
+// What are some ways you may improve your website's scrolling performance?
+        // infinite scrolling
+        // virtualitzation (material ui uses it)
+
+// Explain the difference between layout, painting and compositing.
+        // layout: html, css runtime browser check size of each box and its location
+        // paintin transform translate instead of position will be more efficient only affects the element you are transforming
+
+        https://web.dev/simplify-paint-complexity-and-reduce-paint-areas/
+
+
+
+        // copilot
+        // https://aws.amazon.com/es/codewhisperer/?trk=3b4f4975-dcd3-48c3-a593-289dd737cbd5&sc_channel=ps&ef_id=CjwKCAjwwb6lBhBJEiwAbuVUSixD28DHYaEdTiDLLZcZ1xWMx_mezNuwcjfc-e_1oMWJfmYY09CAAhoCiA8QAvD_BwE:G:s&s_kwcid=AL!4422!3!654862225843!e!!g!!codewhisperer!19974487360!150945370991
+
+        // enzyme vs react testing library
+                // shallowRendering not good is enzyme 
+                // test should interact with the code in the same way the user interacts with the code
+
+        // component testing
+            // cypress components
+
+        // What is the difference between a unit test and a functional/integration test?
+
+            // unit test all functions called inside the tested function should be mocked
+            
+            // coverage of use cases --> component testing
+
+
+    // What is the purpose of a code style linting tool?
+            // git trash lines
+
+        // Do your best to describe the process from the time you type in a website's URL to it finishing loading on your screen.
+            // DNS
+
+    // websockewts problem with scalability aprox 65k ports if all are occupied you can not stablish new coneection
+    // LongPolling stream a response
+
+    // youtube channer about backend
+        // 
+
+
+// js
+    // What is event loop?
+        // how js manage asyncron calls -> delegates tu event queue out aff the runtime stack
+
+    // service workers
+
+
+
+// NEXT MEETINGS

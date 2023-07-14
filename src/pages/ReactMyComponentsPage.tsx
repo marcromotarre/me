@@ -10,26 +10,6 @@ const ReactMyComponents = () => {
         to know more information such as the implementation code or some
         examples of them.
       </p>
-      <div className="flex flex-wrap justify-start">
-        {ComponentsData.map((componentData, index) => (
-          <button
-            onClick={() => {
-              navigate(componentData.url);
-            }}
-            key={index}
-            className={classnames(
-              componentData.backgoundColor,
-              "m-2",
-              "rounded-md",
-              "p-3"
-            )}
-          >
-            <p className={`w-max font-light text-white`}>
-              {componentData.name}
-            </p>
-          </button>
-        ))}
-      </div>
     </div>
   );
 };

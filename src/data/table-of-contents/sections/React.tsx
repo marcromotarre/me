@@ -15,6 +15,7 @@ import ReactMyComponentsAlertPage from "../../../pages/react/my-components/React
 import ReactMyComponentsBreadcrumbPage from "../../../pages/react/my-components/ReactMyComponentsBreadcrumbPage";
 import ReactMyComponentsCardPage from "../../../pages/react/my-components/ReactMyComponentsCardPage";
 import ReactMyComponentsTypographyPage from "../../../pages/react/my-components/ReactMyComponentsTypographyPage";
+import ReactMyComponentsCalendarPage from "../../../pages/react/my-components/calendar/ReactMyComponentsCalendarPage";
 import ReactMyComponentsListPage from "../../../pages/react/my-components/list/ReactMyComponentsListPage";
 import ReactPatternsCompoundComponentPage from "../../../pages/react/patterns/ReactPatternsCompoundComponentPage";
 import ReactPatternsContainerPresentationPage from "../../../pages/react/patterns/ReactPatternsContainerPresentationPage";
@@ -151,6 +152,14 @@ export default {
             pageComponent: <ReactMyComponentsListPage />,
             path: "/react/my-components/list",
             pageTitle: "React My Components: List",
+          },
+        },
+        {
+          name: "Calendar",
+          page: {
+            pageComponent: <ReactMyComponentsCalendarPage />,
+            path: "/react/my-components/calendar",
+            pageTitle: "React My Components: Calendar",
           },
         },
       ],
