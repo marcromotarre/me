@@ -4,10 +4,9 @@ import { LeftIcon, RightIcon } from "../icons";
 import {
   getDateId,
   getDateProps,
-  getDaysInMonth,
   getDaysInWeek,
   getMonthCalendar,
-  isDayIncluded,
+  isSameMonth,
   monthDelay,
   months,
 } from "./utils/date";
@@ -15,7 +14,6 @@ import Styles from "../../types/style";
 
 const DEFAULT_STYLES = {
   width: "250px",
-  height: "200px",
 };
 
 const commonStyle = {
@@ -52,18 +50,30 @@ const dayInivisibleStyle = {
   color: "white",
 };
 
+const DEFAULT_CONFIG = {
+  selectionType: "day",
+  allowOutMonthSelection: false,
+  showOutMonth: false,
+};
+
+type CalendarConfig = {
+  selectionType?: "day" | "week";
+  allowOutMonthSelection?: boolean;
+  showOutMonth?: boolean;
+};
+
 export default function Calendar({
   style = {},
   date = new Date(),
   completed = false,
   selection = "day",
   onClick = () => {},
+  config = {},
 }: ComponentProps) {
-  const config = {
-    selectionType: "day",
-    allowOutMonthSelection: false,
-    showOutMonth: true,
-  };
+  const _config = { ...DEFAULT_CONFIG, ...config };
+  _config.showOutMonth = _config.allowOutMonthSelection
+    ? true
+    : _config.showOutMonth;
 
   const _style = { ...DEFAULT_STYLES, ...style };
   const currentDate = new Date();
@@ -82,6 +92,7 @@ export default function Calendar({
   }
 
   function clickOnDay(date: Date) {
+    setDateShowed(date);
     setSelectedDate(date);
     onClick(date);
   }
@@ -130,10 +141,11 @@ export default function Calendar({
         </Typography>
         {datesThisMonth.map((day, index) => {
           const { isCurrent, isVisible, isHighlighted, isDisabled } =
-            getDateProps(day, currentDate, dateSelected, dateShowed, config);
+            getDateProps(day, currentDate, dateSelected, dateShowed, _config);
           return (
             <button
               onClick={() => clickOnDay(day)}
+              disabled={isDisabled}
               style={
                 !isVisible
                   ? dayInivisibleStyle
@@ -141,7 +153,7 @@ export default function Calendar({
                   ? dayHighlightedStyle
                   : isCurrent
                   ? dayCurrentStyle
-                  : isDisabled
+                  : !isSameMonth(day, dateShowed)
                   ? dayDisabledStyle
                   : dayVisibleStyle
               }
@@ -163,6 +175,7 @@ type ComponentProps = {
   completed?: boolean;
   selection?: "day" | "week";
   onClick?: (date?: Date) => void;
+  config?: CalendarConfig;
 };
 
 /* <button

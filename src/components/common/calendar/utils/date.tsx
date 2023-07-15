@@ -118,8 +118,10 @@ export function getDateProps(
     }
   } else {
     if (config.showOutMonth) {
-      isDisabled = true;
       isVisible = true;
+    }
+    if (!config.allowOutMonthSelection) {
+      isDisabled = true;
     }
     const firstDayInMonth = getFirstDayInMonth(showedDate);
     const lastDayInMonth = getLastDayInMonth(showedDate);
