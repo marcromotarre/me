@@ -132,7 +132,11 @@ export function getDateProps(
       isVisible = false;
     }
   }
-
+  if (config.selectionType === "week") {
+    if (isSameWeek(date, selectedDate)) {
+      isHighlighted = true;
+    }
+  }
   return {
     isSelectable,
     isHighlighted,

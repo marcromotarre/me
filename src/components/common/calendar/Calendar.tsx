@@ -11,44 +11,15 @@ import {
   months,
 } from "./utils/date";
 import Styles from "../../types/style";
-
-const DEFAULT_STYLES = {
-  width: "250px",
-};
-
-const commonStyle = {
-  width: "100%",
-};
-
-const dayCurrentStyle = {
-  ...commonStyle,
-  borderRadius: "100%",
-  border: "1px solid #266EF1",
-  color: "#266EF1",
-};
-
-const dayHighlightedStyle = {
-  ...commonStyle,
-  ...dayCurrentStyle,
-  backgroundColor: "#266EF1",
-  color: "white",
-};
-
-const dayDisabledStyle = {
-  ...commonStyle,
-  borderRadius: "100%",
-  color: "#CCC",
-};
-
-const dayVisibleStyle = {
-  ...commonStyle,
-  color: "black",
-};
-
-const dayInivisibleStyle = {
-  ...commonStyle,
-  color: "white",
-};
+import {
+  DEFAULT_STYLES,
+  dayCurrentStyle,
+  dayDisabledStyle,
+  dayHighlightedOutOfMonthStyle,
+  dayHighlightedStyle,
+  dayInivisibleStyle,
+  dayVisibleStyle,
+} from "./styles";
 
 const DEFAULT_CONFIG = {
   selectionType: "day",
@@ -150,7 +121,9 @@ export default function Calendar({
                 !isVisible
                   ? dayInivisibleStyle
                   : isHighlighted
-                  ? dayHighlightedStyle
+                  ? isSameMonth(day, dateShowed)
+                    ? dayHighlightedStyle
+                    : dayHighlightedOutOfMonthStyle
                   : isCurrent
                   ? dayCurrentStyle
                   : !isSameMonth(day, dateShowed)

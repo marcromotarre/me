@@ -75,6 +75,17 @@ export default function ReactMyComponentsCalendarPage() {
           <Calendar config={{ allowOutMonthSelection: true }}></Calendar>
         </Card>
       </div>
+      <Typography variant="h6">Selection Type week</Typography>
+      <Typography>
+        You can also allow the user to select a whole week
+      </Typography>
+      <div className="flex w-full justify-center">
+        <Card type="type1">
+          <Calendar
+            config={{ showOutMonth: true, selectionType: "week" }}
+          ></Calendar>
+        </Card>
+      </div>
     </>
   );
 }
