@@ -5,6 +5,7 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Layout from "./pages/layouts/Layout";
 import { generateAllRoutes } from "./utils/tableOfContentsUtils";
 import TableOfContents from "./data/table-of-contents/TableOfContents";
+import MainPage from "./pages/MainPage";
 
 const App = () => {
   const queryClient = new QueryClient();
@@ -14,7 +15,10 @@ const App = () => {
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
         <Routes>
-          <Route element={<Layout />}>{tableOfContentsRoutes}</Route>
+          <Route element={<Layout />}>
+            <Route path="/" element={<MainPage />} />
+            {tableOfContentsRoutes}
+          </Route>
         </Routes>
       </BrowserRouter>
     </QueryClientProvider>

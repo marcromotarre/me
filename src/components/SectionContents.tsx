@@ -7,7 +7,6 @@ import Typography from "./common/typography/Typography";
 export default function SectionContents({ section }: { section: SectionType }) {
   const subSections = section.children;
   const navigate = useNavigate();
-
   return (
     <>
       <Typography variant="h6">

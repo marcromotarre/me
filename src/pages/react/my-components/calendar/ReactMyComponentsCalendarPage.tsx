@@ -1,4 +1,5 @@
 import Calendar from "../../../../components/common/calendar/Calendar";
+import { dayDelay } from "../../../../components/common/calendar/utils/date";
 import Card from "../../../../components/common/card/Card";
 import Code from "../../../../components/common/code/Code";
 import Typography from "../../../../components/common/typography/Typography";
@@ -48,6 +49,33 @@ export default function ReactMyComponentsCalendarPage() {
         The Calendar component allows a lot of configuration. Lets see some
         examples
       </Typography>
+
+      <Typography variant="h6">Default selected dates</Typography>
+      <Typography>
+        The calendar component allows the user to change the currentDate
+        (simulation that you are in a different date than the actual), the
+        default selected date, and the month to show
+      </Typography>
+      <Typography>
+        Imagine than you want to set the selected date to tomorrow
+      </Typography>
+
+      <div className="flex w-full justify-center">
+        <Card type="type1">
+          <Calendar date={dayDelay(new Date(), 1)}></Calendar>
+        </Card>
+      </div>
+
+      <Typography>
+        or for example we want to simulate that the current date is yesterday
+      </Typography>
+      <div className="flex w-full justify-center">
+        <Card type="type1">
+          <Calendar currentDate={dayDelay(new Date(), -1)}></Calendar>
+        </Card>
+      </div>
+      <Typography>last but not least you can set the showed month</Typography>
+
       <Typography variant="h6">Show Out of Month Days</Typography>
       <Typography>
         As you can see in this example you can show as disabled the days from

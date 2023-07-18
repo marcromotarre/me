@@ -203,10 +203,12 @@ const InformationLayout = () => {
           </div>
           <div className="grid grid-cols-1 gap-y-4">
             <div className="flex justify-center">
-              <Title
-                icon={currentSection.icon}
-                title={currentSection?.page?.pageTitle}
-              />
+              {currentSection && (
+                <Title
+                  icon={currentSection.icon}
+                  title={currentSection?.page?.pageTitle}
+                />
+              )}
             </div>
             <Outlet />
             {currentSection && currentSection.children && (

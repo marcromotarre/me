@@ -4,7 +4,6 @@ import { LeftIcon, RightIcon } from "../icons";
 import {
   getDateId,
   getDateProps,
-  getDaysInWeek,
   getMonthCalendar,
   isSameMonth,
   monthDelay,
@@ -36,8 +35,7 @@ type CalendarConfig = {
 export default function Calendar({
   style = {},
   date = new Date(),
-  completed = false,
-  selection = "day",
+  currentDate = new Date(),
   onClick = () => {},
   config = {},
 }: ComponentProps) {
@@ -47,7 +45,6 @@ export default function Calendar({
     : _config.showOutMonth;
 
   const _style = { ...DEFAULT_STYLES, ...style };
-  const currentDate = new Date();
 
   const [dateSelected, setSelectedDate] = useState(date);
   const [dateShowed, setDateShowed] = useState(date);
@@ -67,8 +64,6 @@ export default function Calendar({
     setSelectedDate(date);
     onClick(date);
   }
-
-  const weekD = getDaysInWeek(dateSelected);
 
   return (
     <div style={_style} className="grid grid-cols-1 gap-y-4">
@@ -144,56 +139,10 @@ export default function Calendar({
 
 type ComponentProps = {
   date?: Date;
+  currentDate?: Date;
   style?: Styles;
   completed?: boolean;
   selection?: "day" | "week";
   onClick?: (date?: Date) => void;
   config?: CalendarConfig;
 };
-
-/* <button
-                  disabled={day.getMonth() !== dateShowed.getMonth()}
-                  style={
-                    (selection == "day" &&
-                      dateSelected.getMonth() === dateShowed.getMonth() &&
-                      dateSelected.getFullYear() === dateShowed.getFullYear() &&
-                      dateSelected.getDate() === day.getDate() &&
-                      dateSelected.getMonth() === day.getMonth()) ||
-                    (selection == "week" && isDayIncluded(weekD, day))
-                      ? {
-                          borderRadius: "100%",
-                          backgroundColor:
-                            dateSelected.getMonth() === day?.getMonth()
-                              ? "#266EF1"
-                              : "#CCC",
-                          border: "1px solid #266EF1",
-                          width: "100%",
-                          color: "white",
-                        }
-                      : currentDate.getMonth() === dateShowed.getMonth() &&
-                        currentDate.getFullYear() ===
-                          dateShowed.getFullYear() &&
-                        currentDate.getDate() === day.getDate()
-                      ? {
-                          borderRadius: "100%",
-                          border: "1px solid #266EF1",
-                          width: "100%",
-                          color: "#266EF1",
-                        }
-                      : {
-                          width: "100%",
-                          color:
-                            day.getMonth() != dateShowed.getMonth()
-                              ? "#CCC"
-                              : "black",
-                        }
-                  }
-                  onClick={() => clickOnDay(day)}
-                  key={`calendar-day-${day.getDate()}-${dateShowed.getMonth()}`}
-                  className="aspect-square self-center justify-self-center"
-                >
-                  {day.getDate()}
-                </button>
-              ) : (
-                <div key={`calendar-day-${index}`}></div>
-              )} */

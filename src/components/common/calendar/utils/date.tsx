@@ -26,6 +26,18 @@ export const weekDays = [
 export function getDateId(date: Date) {
   return `${date.getDate()}_${date.getMonth()}_${date.getFullYear()}_${date.getHours()}_${date.getMinutes()}_${date.getSeconds()}`;
 }
+
+export function dayDelay(date: Date, delay = 0) {
+  return new Date(
+    date.getFullYear(),
+    date.getMonth(),
+    date.getDate() + delay,
+    date.getHours(),
+    date.getMinutes(),
+    date.getSeconds()
+  );
+}
+
 export function monthDelay(date: Date, delay = 0) {
   return new Date(
     date.getFullYear(),
