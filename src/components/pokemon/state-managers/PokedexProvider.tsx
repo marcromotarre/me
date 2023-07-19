@@ -1,6 +1,6 @@
 import { ReactElement, createContext, useContext, useState } from "react";
 
-export const PokedexContext = createContext<PokedexContextType>({
+export const PokedexContext = createContext({
   pokemonId: 1,
   increment: () => {},
   decrement: () => {},

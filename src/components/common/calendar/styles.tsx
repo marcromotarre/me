@@ -28,12 +28,8 @@ export const dayHighlightedStyle = {
 };
 
 export const dayHighlightedOutOfMonthStyle = {
-  ...commonStyle,
-  ...dayCurrentStyle,
-  backgroundColor: "#CCC",
-  border: "1px solid #266EF1",
-  width: "100%",
-  color: "white",
+  ...dayHighlightedStyle,
+  opacity: 0.3,
 };
 
 export const dayDisabledStyle = {

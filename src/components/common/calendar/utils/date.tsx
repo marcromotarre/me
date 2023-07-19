@@ -127,6 +127,26 @@ type Config = {
   disabled: disabledConfig[];
 };
 
+export function isDayDisabled(date: Date, disableConfig = []): boolean {
+  for (
+    let disableConfigIndex = 0;
+    disableConfigIndex < disableConfig.length;
+    disableConfigIndex++
+  ) {
+    const disableOption = disableConfig[disableConfigIndex];
+    if (typeof disableOption === "string") {
+      const weekDayIndex = weekDaysPlural.indexOf(disableOption);
+      if (
+        weekDayIndex !== -1 &&
+        date.getDay() === weekDaysIndex[weekDayIndex]
+      ) {
+        return true;
+      }
+    }
+  }
+  return false;
+}
+
 export function getDateProps(
   date: Date,
   currentDate: Date,
@@ -183,20 +203,11 @@ export function getDateProps(
       isHighlighted = true;
     }
   }
-  if (config.disable.length > 0) {
-    config.disable.forEach((disableOption) => {
-      if (typeof disableOption === "string") {
-        const weekDayIndex = weekDaysPlural.indexOf(disableOption);
-        if (
-          weekDayIndex !== 1 &&
-          date.getDay() === weekDaysIndex[weekDayIndex]
-        ) {
-          isDisabled = true;
-          isSelectable = false;
-        }
-      }
-    });
+  if (isDayDisabled(date, config.disable)) {
+    isDisabled = true;
+    isSelectable = false;
   }
+
   return {
     isClickable,
     isSelectable,

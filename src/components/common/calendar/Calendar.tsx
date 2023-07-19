@@ -5,6 +5,7 @@ import {
   getDateId,
   getDateProps,
   getMonthCalendar,
+  isDayDisabled,
   isSameMonth,
   monthDelay,
   months,
@@ -39,7 +40,7 @@ type CalendarConfig = {
 export default function Calendar({
   style = {},
   date,
-  selectedDate,
+  selectedDate = new Date(),
   showedDate,
   currentDate = new Date(),
   onClick = () => {},
@@ -53,7 +54,7 @@ export default function Calendar({
   const _style = { ...DEFAULT_STYLES, ...style };
 
   const [dateSelected, setSelectedDate] = useState(
-    selectedDate ? selectedDate : date ? date : new Date()
+    isDayDisabled(selectedDate, _config.disable) ? undefined : selectedDate
   );
   const [dateShowed, setDateShowed] = useState(
     showedDate ? showedDate : date ? date : new Date()
