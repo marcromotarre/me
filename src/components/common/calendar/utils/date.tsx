@@ -23,6 +23,18 @@ export const weekDays = [
   "sunday",
 ];
 
+export const weekDaysPlural = [
+  "mondays",
+  "tuesdays",
+  "wednesdays",
+  "thursdays",
+  "fridays",
+  "saturdays",
+  "sundays",
+];
+
+export const weekDaysIndex = [1, 2, 3, 4, 5, 6, 0];
+
 export function getDateId(date: Date) {
   return `${date.getDate()}_${date.getMonth()}_${date.getFullYear()}_${date.getHours()}_${date.getMinutes()}_${date.getSeconds()}`;
 }
@@ -94,21 +106,35 @@ type DayProps = {
   isVisible: boolean;
   isCurrent: boolean;
   isDisabled: boolean;
+  isClickable: boolean;
 };
+
+type weekDaysType =
+  | "mondays"
+  | "tuesdays"
+  | "wednesdays"
+  | "thursdays"
+  | "fridays"
+  | "saturdays"
+  | "sundays";
+
+type disabledConfig = weekDaysType | Date;
 
 type Config = {
   selectionType: "day" | "week";
   allowOutMonthSelection: boolean;
   showOutMonth: boolean;
+  disabled: disabledConfig[];
 };
 
 export function getDateProps(
   date: Date,
   currentDate: Date,
-  selectedDate: Date,
+  selectedDate: Date | undefined,
   showedDate: Date,
   config: Config
 ): DayProps {
+  let isClickable = false;
   let isSelectable = false;
   let isVisible = false;
   let isHighlighted = false;
@@ -117,10 +143,14 @@ export function getDateProps(
 
   if (isSameDay(date, currentDate)) {
     isCurrent = true;
+    isClickable = true;
+    isSelectable = true;
   }
 
   if (isSameDay(date, selectedDate)) {
     isHighlighted = true;
+    isClickable = true;
+    isSelectable = true;
   }
 
   if (isSameMonth(date, showedDate)) {
@@ -132,8 +162,12 @@ export function getDateProps(
     if (config.showOutMonth) {
       isVisible = true;
     }
-    if (!config.allowOutMonthSelection) {
+    if (config.allowOutMonthSelection) {
       isDisabled = true;
+      isSelectable = true;
+    } else {
+      isDisabled = true;
+      isSelectable = false;
     }
     const firstDayInMonth = getFirstDayInMonth(showedDate);
     const lastDayInMonth = getLastDayInMonth(showedDate);
@@ -149,7 +183,22 @@ export function getDateProps(
       isHighlighted = true;
     }
   }
+  if (config.disable.length > 0) {
+    config.disable.forEach((disableOption) => {
+      if (typeof disableOption === "string") {
+        const weekDayIndex = weekDaysPlural.indexOf(disableOption);
+        if (
+          weekDayIndex !== 1 &&
+          date.getDay() === weekDaysIndex[weekDayIndex]
+        ) {
+          isDisabled = true;
+          isSelectable = false;
+        }
+      }
+    });
+  }
   return {
+    isClickable,
     isSelectable,
     isHighlighted,
     isVisible,
@@ -216,19 +265,23 @@ export const getWeek = (date: Date) => {
   );
 };
 
-export const isSameWeek = (dateA: Date, dateB: Date) => {
-  return getWeek(dateA) === getWeek(dateB);
+export const isSameWeek = (d1?: Date, d2?: Date) => {
+  if (!d1 || !d2) return false;
+  return getWeek(d1) === getWeek(d2);
 };
 
-export function isSameDay(d1: Date, d2: Date) {
+export function isSameDay(d1?: Date, d2?: Date) {
+  if (!d1 || !d2) return false;
   return d1.getDate() === d2.getDate() && isSameMonth(d1, d2);
 }
 
-export function isSameMonth(d1: Date, d2: Date) {
+export function isSameMonth(d1?: Date, d2?: Date) {
+  if (!d1 || !d2) return false;
   return isSameYear(d1, d2) && d1.getMonth() === d2.getMonth();
 }
 
-export function isSameYear(d1: Date, d2: Date) {
+export function isSameYear(d1?: Date, d2?: Date) {
+  if (!d1 || !d2) return false;
   return (
     d1.getFullYear() === d2.getFullYear() && d1.getMonth() === d2.getMonth()
   );

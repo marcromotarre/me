@@ -13,6 +13,13 @@ export const dayCurrentStyle = {
   color: "#266EF1",
 };
 
+export const dayCurrentDisabledStyle = {
+  ...commonStyle,
+  borderRadius: "100%",
+  border: "1px solid #CCC",
+  color: "#CCC",
+};
+
 export const dayHighlightedStyle = {
   ...commonStyle,
   ...dayCurrentStyle,

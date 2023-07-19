@@ -74,8 +74,13 @@ export default function ReactMyComponentsCalendarPage() {
           <Calendar currentDate={dayDelay(new Date(), -1)}></Calendar>
         </Card>
       </div>
-      <Typography>last but not least you can set the showed month</Typography>
-
+      <Typography>you can set the showed month</Typography>
+      <Typography>or just do not sete any selected date at all</Typography>
+      <div className="flex w-full justify-center">
+        <Card type="type1">
+          <Calendar date={undefined}></Calendar>
+        </Card>
+      </div>
       <Typography variant="h6">Show Out of Month Days</Typography>
       <Typography>
         As you can see in this example you can show as disabled the days from
@@ -111,6 +116,14 @@ export default function ReactMyComponentsCalendarPage() {
         <Card type="type1">
           <Calendar
             config={{ showOutMonth: true, selectionType: "week" }}
+          ></Calendar>
+        </Card>
+      </div>
+      <Typography variant="h6">Disable some days</Typography>
+      <div className="flex w-full justify-center">
+        <Card type="type1">
+          <Calendar
+            config={{ disable: ["saturdays", "wednesdays", "sundays"] }}
           ></Calendar>
         </Card>
       </div>

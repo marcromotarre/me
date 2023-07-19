@@ -18,23 +18,29 @@ import {
   dayHighlightedStyle,
   dayInivisibleStyle,
   dayVisibleStyle,
+  dayCurrentDisabledStyle,
 } from "./styles";
 
 const DEFAULT_CONFIG = {
   selectionType: "day",
+  disable: [],
   allowOutMonthSelection: false,
   showOutMonth: false,
 };
 
 type CalendarConfig = {
   selectionType?: "day" | "week";
+  disable: string[] | Date[];
+
   allowOutMonthSelection?: boolean;
   showOutMonth?: boolean;
 };
 
 export default function Calendar({
   style = {},
-  date = new Date(),
+  date,
+  selectedDate,
+  showedDate,
   currentDate = new Date(),
   onClick = () => {},
   config = {},
@@ -46,8 +52,12 @@ export default function Calendar({
 
   const _style = { ...DEFAULT_STYLES, ...style };
 
-  const [dateSelected, setSelectedDate] = useState(date);
-  const [dateShowed, setDateShowed] = useState(date);
+  const [dateSelected, setSelectedDate] = useState(
+    selectedDate ? selectedDate : date ? date : new Date()
+  );
+  const [dateShowed, setDateShowed] = useState(
+    showedDate ? showedDate : date ? date : new Date()
+  );
 
   const datesThisMonth = getMonthCalendar(dateShowed);
 
@@ -106,22 +116,30 @@ export default function Calendar({
           S
         </Typography>
         {datesThisMonth.map((day, index) => {
-          const { isCurrent, isVisible, isHighlighted, isDisabled } =
-            getDateProps(day, currentDate, dateSelected, dateShowed, _config);
+          const {
+            isSelectable,
+            isCurrent,
+            isVisible,
+            isHighlighted,
+            isDisabled,
+            isClickable,
+          } = getDateProps(day, currentDate, dateSelected, dateShowed, _config);
           return (
             <button
               onClick={() => clickOnDay(day)}
-              disabled={isDisabled}
+              disabled={!isSelectable}
               style={
                 !isVisible
                   ? dayInivisibleStyle
                   : isHighlighted
-                  ? isSameMonth(day, dateShowed)
-                    ? dayHighlightedStyle
-                    : dayHighlightedOutOfMonthStyle
+                  ? isDisabled
+                    ? dayHighlightedOutOfMonthStyle
+                    : dayHighlightedStyle
                   : isCurrent
-                  ? dayCurrentStyle
-                  : !isSameMonth(day, dateShowed)
+                  ? isDisabled
+                    ? dayCurrentDisabledStyle
+                    : dayCurrentStyle
+                  : isDisabled
                   ? dayDisabledStyle
                   : dayVisibleStyle
               }
@@ -139,6 +157,8 @@ export default function Calendar({
 
 type ComponentProps = {
   date?: Date;
+  selectedDate?: Date;
+  showedDate?: Date;
   currentDate?: Date;
   style?: Styles;
   completed?: boolean;
