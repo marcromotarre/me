@@ -1,6 +1,7 @@
 type Styles = {
   color?: string;
   backgroundColor?: string;
+  border: string;
   borderRadius?: string;
   fontWeight?: string;
   fontSize?: string;

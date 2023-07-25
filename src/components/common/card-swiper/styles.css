@@ -1,0 +1,53 @@
+.origin-position {
+  transition: transform 2s;
+  transform: translateX(0px) rotate(0deg);
+}
+
+.like {
+  animation: likeanimation 0.3s forwards;
+}
+
+.dislike {
+  animation: dislikeanimation 0.3s forwards;
+}
+
+.neutral {
+  animation: neutralanimation 0.3s forwards;
+}
+
+@keyframes neutralanimation {
+  100% {
+    transform: translateX(0) rotate(0);
+    opacity: 1;
+  }
+}
+
+@keyframes dislikeanimation {
+  0% {
+    opacity: 1;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(-244px) rotate(-24deg);
+    opacity: 0;
+  }
+}
+
+@keyframes likeanimation {
+  0% {
+    opacity: 1;
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(244px) rotate(24deg);
+    opacity: 0;
+  }
+}

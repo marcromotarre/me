@@ -5,6 +5,7 @@ import ReactMyComponentsButtonPage from "../../../pages/ReactMyComponentsButtonP
 import ReactMyComponentsButtonSnapshotsPage from "../../../pages/ReactMyComponentsButtonSnapshotsPage";
 import ReactMyComponentsButtonTestsPage from "../../../pages/ReactMyComponentsButtonTestsPage";
 import ReactMyComponentsButtonUsePage from "../../../pages/ReactMyComponentsButtonUsePage";
+import ReactMyComponentsCardSwipperPage from "../../../pages/ReactMyComponentsCardSwipperPage";
 import ReactMyComponentsIcon from "../../../pages/ReactMyComponentsIconPage";
 import ReactMyComponentsModal from "../../../pages/ReactMyComponentsModal";
 import ReactMyComponents from "../../../pages/ReactMyComponentsPage";
@@ -16,6 +17,7 @@ import ReactMyComponentsBreadcrumbPage from "../../../pages/react/my-components/
 import ReactMyComponentsCardPage from "../../../pages/react/my-components/ReactMyComponentsCardPage";
 import ReactMyComponentsTypographyPage from "../../../pages/react/my-components/ReactMyComponentsTypographyPage";
 import ReactMyComponentsCalendarPage from "../../../pages/react/my-components/calendar/ReactMyComponentsCalendarPage";
+import ReactMyComponentsChipPage from "../../../pages/react/my-components/chip/ReactMyComponentsChipPage";
 import ReactMyComponentsListPage from "../../../pages/react/my-components/list/ReactMyComponentsListPage";
 import ReactPatternsCompoundComponentPage from "../../../pages/react/patterns/ReactPatternsCompoundComponentPage";
 import ReactPatternsContainerPresentationPage from "../../../pages/react/patterns/ReactPatternsContainerPresentationPage";
@@ -48,6 +50,31 @@ export default {
         pageTitle: "React: My Components",
       },
       children: [
+        {
+          name: "Accordion",
+          page: {
+            pageComponent: <ReactMyComponentsAccordionPage />,
+            path: "/react/my-components/accordion",
+            pageTitle: "React My Components: Accordion",
+          },
+        },
+        {
+          name: "Alert",
+          page: {
+            pageComponent: <ReactMyComponentsAlertPage />,
+            path: "/react/my-components/alert",
+            pageTitle: "React My Components: Alert",
+          },
+        },
+
+        {
+          name: "Breadcrumb",
+          page: {
+            pageComponent: <ReactMyComponentsBreadcrumbPage />,
+            path: "/react/my-components/breadcrumb",
+            pageTitle: "React My Components: Breadcrumb",
+          },
+        },
         {
           name: "Button",
           page: {
@@ -91,27 +118,11 @@ export default {
           ],
         },
         {
-          name: "Alert",
+          name: "Calendar",
           page: {
-            pageComponent: <ReactMyComponentsAlertPage />,
-            path: "/react/my-components/alert",
-            pageTitle: "React My Components: Alert",
-          },
-        },
-        {
-          name: "Accordion",
-          page: {
-            pageComponent: <ReactMyComponentsAccordionPage />,
-            path: "/react/my-components/accordion",
-            pageTitle: "React My Components: Accordion",
-          },
-        },
-        {
-          name: "Breadcrumb",
-          page: {
-            pageComponent: <ReactMyComponentsBreadcrumbPage />,
-            path: "/react/my-components/breadcrumb",
-            pageTitle: "React My Components: Breadcrumb",
+            pageComponent: <ReactMyComponentsCalendarPage />,
+            path: "/react/my-components/calendar",
+            pageTitle: "React My Components: Calendar",
           },
         },
         {
@@ -123,19 +134,19 @@ export default {
           },
         },
         {
-          name: "Typography",
+          name: "CardSwipper",
           page: {
-            pageComponent: <ReactMyComponentsTypographyPage />,
-            path: "/react/my-components/typography",
-            pageTitle: "React My Components: Typography",
+            pageComponent: <ReactMyComponentsCardSwipperPage />,
+            path: "/react/my-components/card-swipper",
+            pageTitle: "React My Components: CardSwipper",
           },
         },
         {
-          name: "Modal",
+          name: "Chip",
           page: {
-            pageComponent: <ReactMyComponentsModal />,
-            path: "/react/my-components/modal",
-            pageTitle: "React My Components: Modal",
+            pageComponent: <ReactMyComponentsChipPage />,
+            path: "/react/my-components/chip",
+            pageTitle: "React My Components: Chip",
           },
         },
         {
@@ -155,11 +166,20 @@ export default {
           },
         },
         {
-          name: "Calendar",
+          name: "Modal",
           page: {
-            pageComponent: <ReactMyComponentsCalendarPage />,
-            path: "/react/my-components/calendar",
-            pageTitle: "React My Components: Calendar",
+            pageComponent: <ReactMyComponentsModal />,
+            path: "/react/my-components/modal",
+            pageTitle: "React My Components: Modal",
+          },
+        },
+
+        {
+          name: "Typography",
+          page: {
+            pageComponent: <ReactMyComponentsTypographyPage />,
+            path: "/react/my-components/typography",
+            pageTitle: "React My Components: Typography",
           },
         },
       ],

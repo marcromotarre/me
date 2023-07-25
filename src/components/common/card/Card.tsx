@@ -3,7 +3,10 @@ import Styles from "../../types/style";
 
 const Card = ({ children, type = "type1", style = {} }: ComponentProps) => {
   return (
-    <div style={style} className={`w-fit rounded-md p-6 ${shadows[type]}`}>
+    <div
+      style={style}
+      className={`h-fit w-fit rounded-md p-6 ${shadows[type]}`}
+    >
       {children}
     </div>
   );
