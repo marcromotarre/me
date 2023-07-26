@@ -6,6 +6,7 @@ import Card from "../components/common/card/Card";
 import Typography from "../components/common/typography/Typography";
 
 function PokemonCard({
+  id,
   sprite,
   name,
   sprites,
@@ -13,6 +14,12 @@ function PokemonCard({
   sprite: string;
   name: string;
 }) {
+  console.log(id);
+  useEffect(() => {
+    console.log(name, spriteIndex);
+    setSpriteIndex(0);
+  }, [id]);
+
   useEffect(() => {
     return function remove() {
       setSpriteIndex(0);
@@ -22,7 +29,6 @@ function PokemonCard({
   const [spriteIndex, setSpriteIndex] = useState(0);
 
   function nextImage() {
-    debugger;
     if (spriteIndex < sprites.length - 1) setSpriteIndex(spriteIndex + 1);
   }
 
@@ -52,11 +58,11 @@ function PokemonCard({
       <>
         <div
           onClick={previousImage}
-          className="absolute left-0 h-full w-[50%]"
+          className="absolute left-0 z-50 h-full w-[50%]"
         ></div>
         <div
           onClick={nextImage}
-          className="absolute right-0 h-full w-[50%]  bg-red-400"
+          className="absolute right-0 z-50 h-full w-[50%]"
         ></div>
         <div className="absolute flex h-full w-full justify-center pl-1 pr-1 pt-1">
           <div

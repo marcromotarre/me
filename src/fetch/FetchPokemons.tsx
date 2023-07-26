@@ -56,6 +56,7 @@ const getPokemonsAfterWaiting = async ({
     const url = results[index].url;
     const pokemonResponse = await api.get<PokemonDDBB>(url);
     pokemons.push({
+      id: pokemonResponse.id,
       name: pokemonResponse.name,
       sprite: pokemonResponse.sprites.front_default,
       sprites: getSprites(pokemonResponse.sprites),

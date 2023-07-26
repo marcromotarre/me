@@ -56,14 +56,18 @@ export default function CardSwipper({ cardComponent, fetch }: ComponentProps) {
       {elementsToShow[1] && (
         <div style={{ position: "absolute" }}>
           <Card type="back" applyChange={goToNextCard}>
-            {cloneElement(cardComponent, elementsToShow[1])}
+            {cloneElement(cardComponent, {
+              ...elementsToShow[1],
+            })}
           </Card>
         </div>
       )}
       {elementsToShow[0] && (
         <div style={{}}>
           <Card type="frontal" applyChange={goToNextCard}>
-            {cloneElement(cardComponent, elementsToShow[0])}
+            {cloneElement(cardComponent, {
+              ...elementsToShow[0],
+            })}
           </Card>
         </div>
       )}
