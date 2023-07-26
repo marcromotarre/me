@@ -12,6 +12,16 @@ export default function CardSwipper({ cardComponent, fetch }: ComponentProps) {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    const a = async () => {
+      if (elements.length < 2) {
+        const refetchData = await refetch();
+        setElements([...elements, ...refetchData]);
+      }
+    };
+    a();
+  }, [elements]);
+
   const fetchData = async () => {
     const { data, next } = await fetch();
     setElementsToShow([...data.splice(0, 1), ...data.splice(0, 1)]);
@@ -20,24 +30,20 @@ export default function CardSwipper({ cardComponent, fetch }: ComponentProps) {
   };
 
   const refetch = async () => {
-    const { data, next: nextData } = await fetch({ next });
-    setNext(nextData);
-    return data;
+    if (next) {
+      const { data, next: nextData } = await fetch(next);
+      setNext(nextData);
+      return data;
+    }
+    return [];
   };
 
   const goToNextCard = async (action) => {
     let copiedElements = [...elements];
     const element = copiedElements.splice(0, 1);
-    if (elements.length < 2) {
-      const refetchData = await refetch();
-      copiedElements = [...copiedElements, ...refetchData];
-    }
-
     setElementsToShow([...elementsToShow.splice(1, 1), ...element]);
     setElements(copiedElements);
   };
-
-  console.log("elements", elements);
 
   return (
     <div
@@ -45,7 +51,6 @@ export default function CardSwipper({ cardComponent, fetch }: ComponentProps) {
         width: "fit-content",
         height: "fit-content",
         position: "relative",
-        backgroundColor: "red",
       }}
     >
       {elementsToShow[1] && (
@@ -56,7 +61,7 @@ export default function CardSwipper({ cardComponent, fetch }: ComponentProps) {
         </div>
       )}
       {elementsToShow[0] && (
-        <div style={{ position: "absolute" }}>
+        <div style={{}}>
           <Card type="frontal" applyChange={goToNextCard}>
             {cloneElement(cardComponent, elementsToShow[0])}
           </Card>

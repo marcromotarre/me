@@ -1,23 +1,82 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import CardSwipper from "../components/common/card-swiper/CardSwiper";
 import { getPokemonData } from "../fetch/FetchPokemon";
 import { getPokemonsData } from "../fetch/FetchPokemons";
 import Card from "../components/common/card/Card";
+import Typography from "../components/common/typography/Typography";
 
-function PokemonCard({ sprite, name }: { sprite: string; name: string }) {
+function PokemonCard({
+  sprite,
+  name,
+  sprites,
+}: {
+  sprite: string;
+  name: string;
+}) {
+  useEffect(() => {
+    return function remove() {
+      setSpriteIndex(0);
+    };
+  }, []);
+
+  const [spriteIndex, setSpriteIndex] = useState(0);
+
+  function nextImage() {
+    debugger;
+    if (spriteIndex < sprites.length - 1) setSpriteIndex(spriteIndex + 1);
+  }
+
+  function previousImage() {
+    if (spriteIndex > 0) setSpriteIndex(spriteIndex - 1);
+  }
   return (
-    <Card>
-      <div
-        className="flex items-center justify-center"
-        style={{
-          width: "100px",
-          height: "100px",
-          backgroundColor: "white",
-        }}
-      >
-        <img src={sprite} alt={name}></img>
+    <div
+      className="relative grid grid-cols-1 justify-items-center gap-y-2 rounded-md p-4 shadow-md"
+      style={{
+        backgroundColor: "white",
+      }}
+    >
+      <div className="relative">
+        <img
+          style={{
+            userSelect: "none",
+            width: "150px",
+            height: "150px",
+          }}
+          draggable={false}
+          src={sprites[spriteIndex]}
+          alt={name}
+        ></img>
       </div>
-    </Card>
+      <Typography variant="button">{name}</Typography>
+      <>
+        <div
+          onClick={previousImage}
+          className="absolute left-0 h-full w-[50%]"
+        ></div>
+        <div
+          onClick={nextImage}
+          className="absolute right-0 h-full w-[50%]  bg-red-400"
+        ></div>
+        <div className="absolute flex h-full w-full justify-center pl-1 pr-1 pt-1">
+          <div
+            className="grid h-[3px] w-full gap-x-1"
+            style={{ gridTemplateColumns: `repeat(${sprites.length}, auto)` }}
+          >
+            {sprites.map((_, index) => (
+              <div
+                key={index}
+                className="h-full w-full rounded"
+                style={{
+                  backgroundColor: spriteIndex === index ? "black" : "white",
+                  border: `1px solid ${spriteIndex === index ? "" : "black"}`,
+                }}
+              ></div>
+            ))}
+          </div>
+        </div>
+      </>
+    </div>
   );
 }
 
@@ -28,6 +87,7 @@ export default function ReactMyComponentsCardSwipperPage() {
       limit: elementsToFetch,
       offset: next.offset,
     });
+
     return { data: pokemonsData, next: { offset: next.offset + 5 } };
   };
 

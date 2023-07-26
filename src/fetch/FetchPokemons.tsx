@@ -23,6 +23,21 @@ export const getPokemonsData = async ({
   }, []);
 };
 
+const getSprites = (sprites) => {
+  const _sprites = [];
+  if (sprites.front_default) {
+    _sprites.push(sprites.front_default);
+  }
+  if (sprites.back_default) {
+    _sprites.push(sprites.back_default);
+  }
+
+  if (sprites.other.dream_world.front_default) {
+    _sprites.push(sprites.other.dream_world.front_default);
+  }
+  return _sprites;
+};
+
 const getPokemonsAfterWaiting = async ({
   offset,
   limit,
@@ -43,6 +58,7 @@ const getPokemonsAfterWaiting = async ({
     pokemons.push({
       name: pokemonResponse.name,
       sprite: pokemonResponse.sprites.front_default,
+      sprites: getSprites(pokemonResponse.sprites),
       url,
     });
   }

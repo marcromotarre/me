@@ -14,42 +14,34 @@ export default function Card({
   const [mouseStartPositionX, setMouseStartPositionX] = useState(0);
   const [className, setClassName] = useState("");
 
+  let _isAnimating = false;
+  let _mousePositionX = 0;
+  let _mouseStartPositionX = 0;
+
+  useEffect(() => {
+    if (type === "frontal") {
+      document.addEventListener("mousedown", (event) => {
+        handleClickOutside(event, isAnimating, setIsAnimating);
+      });
+      document.addEventListener("mousemove", (event) => {
+        handleMove(event, isAnimating);
+      });
+      document.addEventListener("mouseup", handleUp);
+    }
+    return function cleanup() {
+      if (type === "frontal") {
+        document.removeEventListener("mousedown", handleClickOutside);
+        document.removeEventListener("mousemove", handleMove);
+        document.removeEventListener("mouseup", handleUp);
+      }
+    };
+  }, []);
+
   useEffect(() => {
     const xDelay = mousePositionX - mouseStartPositionX;
     const deg = xDelay / 10;
     cardRef.current.style.transform = `translateX(${xDelay}px) rotate(${deg}deg)`;
   }, [isAnimating, mouseStartPositionX, mousePositionX]);
-
-  function startMovement(e) {
-    console.log("haha");
-    if (type === "frontal") {
-      const x = e.changedTouches[0].pageX;
-      setIsAnimating(true);
-      setMousePositionX(x);
-      setMouseStartPositionX(x);
-    }
-  }
-
-  function move(e) {
-    if (isAnimating && type === "frontal") {
-      const x = e.changedTouches[0].pageX;
-      setMousePositionX(x);
-    }
-  }
-
-  function endMovement() {
-    if (type === "frontal") {
-      const xDelay = mousePositionX - mouseStartPositionX;
-      if (xDelay > 50) {
-        setClassName("like");
-      } else if (xDelay < -50) {
-        setClassName("dislike");
-      } else {
-        setClassName("neutral");
-      }
-      setIsAnimating(false);
-    }
-  }
 
   const onAnimationEnd = () => {
     if (className !== "neutral") {
@@ -60,18 +52,42 @@ export default function Card({
     setMouseStartPositionX(0);
   };
 
+  const handleClickOutside = (event) => {
+    _isAnimating = true;
+    const x = event.pageX;
+    setIsAnimating(true);
+    setMousePositionX(x);
+    setMouseStartPositionX(x);
+    _mousePositionX = x;
+    _mouseStartPositionX = x;
+  };
+
+  const handleMove = (event) => {
+    const x = event.pageX;
+    if (_isAnimating) {
+      _mousePositionX = x;
+      setMousePositionX(x);
+    }
+  };
+
+  const handleUp = (event) => {
+    _isAnimating = false;
+    const xDelay = _mousePositionX - _mouseStartPositionX;
+    if (xDelay > 50) {
+      setClassName("like");
+    } else if (xDelay < -50) {
+      setClassName("dislike");
+    } else {
+      setClassName("neutral");
+    }
+    setIsAnimating(false);
+  };
+
   return (
     <div
       ref={cardRef}
       className={className}
       style={{ position: "relative" }}
-      onTouchMove={(e) => {
-        move(e);
-      }}
-      onTouchStart={(e) => {
-        startMovement(e);
-      }}
-      onTouchEnd={endMovement}
       onAnimationEnd={onAnimationEnd}
     >
       {children}
